@@ -12,6 +12,7 @@ Template Name: Installation
 <?php endwhile; ?>
 <?php endif; ?>
 
+
 <?php get_footer();?>
 
 
