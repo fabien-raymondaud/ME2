@@ -76,18 +76,60 @@ Template Name: Accueil
 	    			$texte_articles = "articles";
 	    		}
 	   	?>
-				<div class="panneau-thematique">
+				<div class="panneau-thematique principal">
 					<div class="descriptif-thematique">
 						<p class="nb-articles"><?php echo $term->count.' '.$texte_articles;?></p>
-						<h3><?php echo $term->name;?></h3>
+						<h3><?php echo "#".$term->name;?></h3>
 						<div class="texte-thematique">
 							<?php the_field('descriptif_categorie', 'thematique_'.$thematique_dossier);?>
 						</div>
 					</div>
 				</div>
+
+				
+
 	   	<?php
-	    		;
-	    	}
+	   			$args = array(
+					        'posts_per_page' => -1,
+					        'post_type' => 'post',
+					        'tax_query' => array(
+					            array(
+					                'taxonomy' => 'thematique',
+					                'field' => 'term_id',
+					                'terms' => $thematique_dossier,
+					            )
+					        )
+					    );
+	   			$liste_articles_thematique = get_posts($args);
+
+	   			foreach ($liste_articles_thematique as $article_thematique){
+	   				$thumbnail_desktop_retina_src = wp_get_attachment_image_src(get_post_thumbnail_id($article_thematique->ID), 'full', false);
+	   				//Pour l'affichage du type éditorial de l'article	    		
+		    		$types_editoriaux = wp_get_post_terms($article_thematique->ID, 'type_editorial');
+		    		$tableau_types_editoriaux = array();
+		    		foreach($types_editoriaux as $type_editorial){
+		    			$tableau_types_editoriaux[]=$type_editorial->name;
+		    		}
+		    		$chaine_types_editoriaux = implode(', ', $tableau_types_editoriaux);
+	   	?>
+					<div class="panneau-thematique principal">
+						<div class="image-article">
+							<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($article_thematique->ID);?>">
+						</div>
+						<div class="descriptif-article">
+							<h3><?php echo get_the_title($article_thematique->ID);?></h3>
+		<?php
+							if($chaine_types_editoriaux!=""){
+		?>
+	    						<p class="types-editoriaux"><?php echo $chaine_types_editoriaux;?></p>
+		<?php
+							}
+		?>
+						</div>
+					</div>
+	   	<?php
+	   			}
+	   		}
 	    ?>
 	</div>
 </div>
