@@ -21,12 +21,11 @@ Template Name: Accueil
 	    		}
 	    		$chaine_types_editoriaux = implode(', ', $tableau_types_editoriaux);
 
-	    		//Pour l'affichage des thamétiques et hashtags de l'article
+	    		//Pour l'affichage des thématiques et hashtags de l'article
 	    		$thematiques = wp_get_post_terms($article_une->ID, 'thematique');
 	    		$tableau_hashtags = array();
 	    		foreach($thematiques as $thematique){
 	    			$tableau_hashtags[]='<a href="'.get_term_link($thematique).'" title="Lien vers '.$thematique->name.'">#'.$thematique->name.'</a>';
-	    			var_dump();
 	    		}
 
 	    		$hashtags = wp_get_post_terms($article_une->ID);
@@ -34,11 +33,32 @@ Template Name: Accueil
 	    			$tableau_hashtags[]='<a href="'.get_term_link($hashtag).'" title="Lien vers '.$hashtag->name.'">#'.$hashtag->name.'</a>';
 	    		}
 
-	    		$chaine_hashtags = implode(' ', $tableau_hashtags);
+	    		$chaine_hashtags = implode(' ', $tableau_hashtags);	
 	    ?>		
 				<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($article_une->ID);?>">
+		<?php
+			if($chaine_types_editoriaux!=""){
+		?>
 	    		<p class="types-editoriaux"><?php echo $chaine_types_editoriaux;?></p>
+		<?php
+			}
+		?>
+
+		<?php
+			if(get_field('annees_affichees', $article_une->ID)!=""){
+		?>
+	    		<p class="annees"><?php the_field('annees_affichees', $article_une->ID);?></p>
+		<?php
+			}
+		?>
+
+		<?php
+			if($chaine_hashtags!=""){
+		?>
 	    		<p class="hashtags"><?php echo $chaine_hashtags;?></p>
+		<?php
+			}
+		?>
 	    		<h2><?php echo get_the_title($article_une->ID);?></h2>
 	    		<a href="<?php echo get_permalink($article_une->ID);?>">Lire l'article</a>
 	    <?php
