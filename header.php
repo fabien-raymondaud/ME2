@@ -38,4 +38,45 @@
 </head>
 
 <body <?php body_class(); ?>>
-	
+	<header class="header-general">
+		<h1><a href="<?php echo site_url(); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/css/svg/logo.svg" alt="Mémoires électriques"></a></h1>
+		<div class="player">
+			
+		</div>
+		<div class="recherche">
+			
+		</div>
+		<button class="burger">
+			
+		</button>
+		<nav class="nav-burger">
+			<ul class="nav-1">
+				<li class="entree-principale"><a href="<?php echo site_url(); ?>">Accueil</a></li>
+				<li class="entree-principale"><a href="">Tous les articles</a></li>
+				<li><a href="">Rapido</a></li>
+				<li><a href="">Portrait</a></li>
+				<li><a href="">Reportages</a></li>
+				<li><a href="">Épopées</a></li>
+				<li><a href="">L'humeur de ...</a></li>
+			</ul>
+			<ul class="nav-2">
+				<li class="entree-principale"><a href="">Dans le rétro</a></li>
+				<li class="entree-principale"><a href="">Les playlists</a></li>
+			</ul>
+			<ul class="nav-installation">
+				<li><a href="<?php the_permalink(2);?>">L'installation</a></li>
+			</ul>
+			<ul class="nav-3">
+				<li class="entree-principale"><a href="<?php the_permalink(101);?>">À propos</a></li>
+				<li><a href="<?php the_permalink(103);?>">Contact</a></li>
+				<li><a href="<?php the_permalink(105);?>">Nous suivre</a></li>
+			</ul>
+			<ul class="nav-rs">
+				<li><a href="<?php the_field('compte_twitter', 'options');?>" class="twitter" target="_blank"></a></li>
+				<li><a href="<?php the_field('compte_facebook', 'options');?>" class="facebook" target="_blank"></a></li>
+			</ul>
+			<ul class="nav-mentions">
+				<li class="entree-minimale"><a href="<?php the_permalink(99);?>">Mentions légales</a></li>
+			</ul>
+		</nav>
+	</header>
