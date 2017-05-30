@@ -108,6 +108,20 @@ Template Name: Accueil
 		    			$tableau_types_editoriaux[]=$type_editorial->name;
 		    		}
 		    		$chaine_types_editoriaux = implode(', ', $tableau_types_editoriaux);
+
+		    		//Pour l'affichage des thématiques et hashtags de l'article
+		    		$thematiques = wp_get_post_terms($article_thematique->ID, 'thematique');
+		    		$tableau_hashtags = array();
+		    		foreach($thematiques as $thematique){
+		    			$tableau_hashtags[]='<a href="'.get_term_link($thematique).'" title="Lien vers '.$thematique->name.'">#'.$thematique->name.'</a>';
+		    		}
+
+		    		$hashtags = wp_get_post_terms($article_thematique->ID);
+		    		foreach($hashtags as $hashtag){
+		    			$tableau_hashtags[]='<a href="'.get_term_link($hashtag).'" title="Lien vers '.$hashtag->name.'">#'.$hashtag->name.'</a>';
+		    		}
+
+		    		$chaine_hashtags = implode(' ', $tableau_hashtags);	
 	   	?>
 					<div class="panneau-thematique principal">
 						<div class="image-article">
@@ -126,6 +140,63 @@ Template Name: Accueil
 					</div>
 	   	<?php
 	   			}
+	   		}
+	    ?>
+	</div>
+
+	<div class="derniers-articles" style="background:#999">
+	    <?php
+   			$args = array(
+				        'posts_per_page' => 5,
+				        'post_type' => 'post',
+				        'orderby' => 'menu_order',
+				        'order' => 'DESC'
+				    );
+
+   			$liste_derniers_articles = get_posts($args);
+
+   			foreach ($liste_derniers_articles as $dernier_article){
+   				$thumbnail_desktop_retina_src = wp_get_attachment_image_src(get_post_thumbnail_id($dernier_article->ID), 'full', false);
+   				//Pour l'affichage du type éditorial de l'article	    		
+	    		$types_editoriaux = wp_get_post_terms($dernier_article->ID, 'type_editorial');
+	    		$tableau_types_editoriaux = array();
+	    		foreach($types_editoriaux as $type_editorial){
+	    			$tableau_types_editoriaux[]=$type_editorial->name;
+	    		}
+	    		$chaine_types_editoriaux = implode(', ', $tableau_types_editoriaux);
+	   	?>
+				<div class="panneau-article">
+		<?php
+				if($thumbnail_desktop_retina_src[0]!=""){
+		?>
+					<div class="image-article">
+						<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($dernier_article->ID);?>">
+					</div>
+		<?php
+				}
+		?>
+					<div class="descriptif-article">
+		<?php
+					if($chaine_hashtags!=""){
+		?>
+	    				<p class="hashtags"><?php echo $chaine_hashtags;?></p>
+		<?php
+					}
+		?>
+						<h3><?php echo get_the_title($dernier_article->ID);?></h3>
+		<?php
+						if($chaine_types_editoriaux!=""){
+		?>
+	    					<p class="types-editoriaux"><?php echo $chaine_types_editoriaux;?></p>
+		<?php
+						}
+		?>
+						<div class="excerpt-article">
+							<?php the_excerpt();?>
+						</div>
+					</div>
+				</div>
+	   	<?php
 	   		}
 	    ?>
 	</div>
