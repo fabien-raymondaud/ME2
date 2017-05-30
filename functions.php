@@ -99,5 +99,4 @@ if( ! function_exists ('my_register_taxonomies')) {
 		));
 	}
 }
-
 ?>

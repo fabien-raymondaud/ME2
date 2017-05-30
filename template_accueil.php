@@ -65,6 +65,31 @@ Template Name: Accueil
 	    	}
 	    ?>
 	</div>
+
+	<div class="dossiers-thematiques" style="background:#aaa">
+	    <?php // remontées articles à la une
+	    	$thematiques_dossiers = get_field('thematiques_dossiers');
+	    	foreach($thematiques_dossiers as $thematique_dossier){
+	    		$term = get_term($thematique_dossier);
+	    		$texte_articles = "article";
+	    		if($term->count>1){
+	    			$texte_articles = "articles";
+	    		}
+	   	?>
+				<div class="panneau-thematique">
+					<div class="descriptif-thematique">
+						<p class="nb-articles"><?php echo $term->count.' '.$texte_articles;?></p>
+						<h3><?php echo $term->name;?></h3>
+						<div class="texte-thematique">
+							<?php the_field('descriptif_categorie', 'thematique_'.$thematique_dossier);?>
+						</div>
+					</div>
+				</div>
+	   	<?php
+	    		;
+	    	}
+	    ?>
+	</div>
 </div>
 <?php endwhile; ?>
 <?php endif; ?>
