@@ -4,6 +4,11 @@ $(document).ready(function() {
 		$('button.burger svg').toggleClass('invisible');
 	});
 
+	$('.flexslider').flexslider({
+		animation: "slide",
+		controlNav : false
+	});
+
 	$(window).resize( function() {
         
     });
