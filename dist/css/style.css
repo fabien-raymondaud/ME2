@@ -2456,6 +2456,11 @@ body {
 }
 .nav-burger ul li {
   list-style-type: none;
+  line-height: 1;
+  margin-bottom: 13px;
+}
+.nav-burger ul li.entree-secondaire {
+  margin-bottom: 9px;
 }
 .nav-burger.ouvert {
   right: 0;
@@ -2491,6 +2496,12 @@ body {
           border-radius: 17px;
   background: #FF6045;
   margin: auto;
+}
+.nav-burger .nav-mentions {
+  margin-top: 40px;
+}
+.nav-burger .nav-2 {
+  margin-top: 30px;
 }
 
 .nav-burger .twitter svg, .nav-burger .facebook svg, .nav-footer .twitter svg, .nav-footer .facebook svg {

@@ -244,6 +244,12 @@ body{
 
 		li{
 			list-style-type: none;
+			line-height: 1;
+			margin-bottom: 13px;
+
+			&.entree-secondaire{
+				margin-bottom: 9px;
+			}
 		}
 	}
 
@@ -274,6 +280,14 @@ body{
 				margin: auto;
 			}
 		}
+	}
+
+	.nav-mentions{
+		margin-top: 40px;
+	}
+
+	.nav-2{
+		margin-top: 30px;
 	}
 }
 
