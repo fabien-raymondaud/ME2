@@ -18,6 +18,8 @@ if ( ! function_exists( 'memoires_setup' ) ){
 
     	register_nav_menus( array( 'principal' => "Menu Principal" ) );
     	register_nav_menus( array( 'responsive' => "Menu mobile" ) );
+
+    	add_image_size('image-slider-a-la-une', 1792, 800, true);
 	}
 }
 

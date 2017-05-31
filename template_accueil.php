@@ -6,12 +6,12 @@ Template Name: Accueil
 <?php get_header();?>
 
 <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
-	<div class="flexslider">
+	<div class="a-la-une flexslider">
 		<ul class="slides">
 	    <?php // remontées articles à la une
 	    	$a_la_une = get_field('articles_a_la_une');
 	    	foreach($a_la_une as $article_une){
-	    		$thumbnail_desktop_retina_src = wp_get_attachment_image_src(get_post_thumbnail_id($article_une->ID), 'full', false);
+	    		$thumbnail_desktop_retina_src = wp_get_attachment_image_src(get_post_thumbnail_id($article_une->ID), 'image-slider-a-la-une', false);
 				
 				//Pour l'affichage du type éditorial de l'article	    		
 	    		$types_editoriaux = wp_get_post_terms($article_une->ID, 'type_editorial');
@@ -37,31 +37,33 @@ Template Name: Accueil
 	    ?>		
 	    		<li>
 					<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($article_une->ID);?>">
+					<div class="contenu-slide">
 		<?php
-				if($chaine_types_editoriaux!=""){
+					if($chaine_types_editoriaux!=""){
 		?>
-	    			<p class="types-editoriaux"><?php echo $chaine_types_editoriaux;?></p>
+	    				<p class="types-editoriaux size14 typo1"><?php echo $chaine_types_editoriaux;?></p>
 		<?php
-				}
-		?>
-
-		<?php
-				if(get_field('annees_affichees', $article_une->ID)!=""){
-		?>
-	    			<p class="annees"><?php the_field('annees_affichees', $article_une->ID);?></p>
-		<?php
-				}
+					}
 		?>
 
 		<?php
-				if($chaine_hashtags!=""){
+					if(get_field('annees_affichees', $article_une->ID)!=""){
 		?>
-	    			<p class="hashtags"><?php echo $chaine_hashtags;?></p>
+	    				<p class="annees size14 typo1"><?php the_field('annees_affichees', $article_une->ID);?></p>
 		<?php
-				}
+					}
 		?>
-	    			<h2><?php echo get_the_title($article_une->ID);?></h2>
-	    			<a href="<?php echo get_permalink($article_une->ID);?>">Lire l'article</a>
+
+		<?php
+					if($chaine_hashtags!=""){
+		?>
+	    				<p class="hashtags size14 typo1"><?php echo $chaine_hashtags;?></p>
+		<?php
+					}
+		?>
+		    			<h2 class="size50"><?php echo get_the_title($article_une->ID);?></h2>
+		    			<a href="<?php echo get_permalink($article_une->ID);?>" class="typo1 lire-article">Lire l'article</a>
+	    			</div>
 	    		</li>
 	    <?php
 	    	}
