@@ -52,28 +52,28 @@
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.48 18.1" class="invisible"><g id="Calque_1-2" data-name="Calque 1"><path class="cls-1" d="M15.24,1.64,1.77,17.75A1,1,0,1,1,.23,16.46L13.71.36a1,1,0,1,1,1.53,1.28Z"/><path class="cls-1" d="M.23,1.64l13.48,16.1a1,1,0,1,0,1.53-1.28L1.77.36A1,1,0,1,0,.23,1.64Z"/></g></svg>
 		</button>
 		<nav class="nav-burger">
-			<ul class="nav-1">
+			<ul class="nav-1 unstyled">
 				<li class="entree-principale"><a href="<?php echo site_url(); ?>">Accueil</a></li>
 				<li class="entree-principale"><a href="">Tous les articles</a></li>
-				<li class="entree-secondaire"><a href="">Rapido</a></li>
-				<li class="entree-secondaire"><a href="">Portrait</a></li>
-				<li class="entree-secondaire"><a href="">Reportages</a></li>
-				<li class="entree-secondaire"><a href="">Épopées</a></li>
-				<li class="entree-secondaire"><a href="">L'humeur de ...</a></li>
+				<li class="entree-secondaire typo1"><a href="">Rapido</a></li>
+				<li class="entree-secondaire typo1"><a href="">Portrait</a></li>
+				<li class="entree-secondaire typo1"><a href="">Reportages</a></li>
+				<li class="entree-secondaire typo1"><a href="">Épopées</a></li>
+				<li class="entree-secondaire typo1"><a href="">L'humeur de ...</a></li>
 			</ul>
-			<ul class="nav-2">
+			<ul class="nav-2 unstyled">
 				<li class="entree-principale"><a href="">Dans le rétro</a></li>
 				<li class="entree-principale"><a href="">Les playlists</a></li>
 			</ul>
-			<ul class="nav-installation">
-				<li><a href="<?php the_permalink(2);?>">L'installation</a></li>
+			<ul class="nav-installation unstyled">
+				<li class="typo1"><a href="<?php the_permalink(2);?>">L'installation</a></li>
 			</ul>
-			<ul class="nav-3">
+			<ul class="nav-3 unstyled">
 				<li class="entree-principale"><a href="<?php the_permalink(101);?>">À propos</a></li>
-				<li class="entree-secondaire"><a href="<?php the_permalink(103);?>">Contact</a></li>
-				<li class="entree-secondaire"><a href="<?php the_permalink(105);?>">Nous suivre</a></li>
+				<li class="entree-secondaire typo1"><a href="<?php the_permalink(103);?>">Contact</a></li>
+				<li class="entree-secondaire typo1"><a href="<?php the_permalink(105);?>">Nous suivre</a></li>
 			</ul>
-			<ul class="nav-rs flex-container-h">
+			<ul class="nav-rs flex-container-h unstyled">
 				<li>
 					<a href="<?php the_field('compte_twitter', 'options');?>" class="twitter" target="_blank">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.02 36.02"><g id="Calque_1-2" data-name="Calque 1"><path class="cls-1" d="M18,36A18,18,0,1,0,0,18,18,18,0,0,0,18,36"/><path class="cls-2" d="M27,13.29a7.46,7.46,0,0,1-2.12.58,3.7,3.7,0,0,0,1.63-2,7.35,7.35,0,0,1-2.35.9,3.7,3.7,0,0,0-6.4,2.53,3.6,3.6,0,0,0,.1.84,10.49,10.49,0,0,1-7.63-3.87,3.71,3.71,0,0,0,1.14,4.94,3.72,3.72,0,0,1-1.68-.46v0a3.7,3.7,0,0,0,3,3.63,3.69,3.69,0,0,1-1.67.06A3.7,3.7,0,0,0,14.48,23a7.44,7.44,0,0,1-4.6,1.58A7.32,7.32,0,0,1,9,24.55a10.52,10.52,0,0,0,16.2-8.87c0-.16,0-.32,0-.48A7.46,7.46,0,0,0,27,13.29"/></g></svg>
@@ -85,8 +85,8 @@
 					</a>
 				</li>
 			</ul>
-			<ul class="nav-mentions">
-				<li class="entree-minimale"><a href="<?php the_permalink(99);?>">Mentions légales</a></li>
+			<ul class="nav-mentions unstyled">
+				<li class="entree-minimale typo1"><a href="<?php the_permalink(99);?>">Mentions légales</a></li>
 			</ul>
 		</nav>
 	</header>

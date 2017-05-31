@@ -432,6 +432,24 @@ textarea {
   /* 2 */
 }
 
+@font-face {
+  font-family: 'sofia_pro_regular';
+  src: url("fonts/sofiaproregular-webfont.woff2") format("woff2"), url("fonts/sofiaproregular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'sofia_probold';
+  src: url("fonts/sofiapro-bold-webfont.woff2") format("woff2"), url("fonts/sofiapro-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'sofia_prolight';
+  src: url("fonts/sofiapro-light-webfont.woff2") format("woff2"), url("fonts/sofiapro-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 /* ----------------------------- */
 /* ==Base (basic styles)         */
 /* ----------------------------- */
@@ -2278,12 +2296,24 @@ ul.is-unstyled, ul.unstyled {
   font-size: 2rem;
 }
 
+.size19 {
+  font-size: 1.9rem;
+}
+
 .size17 {
   font-size: 1.7rem;
 }
 
+.size16 {
+  font-size: 1.6rem;
+}
+
 .size15 {
   font-size: 1.5rem;
+}
+
+.size14 {
+  font-size: 1.4rem;
 }
 
 .size13 {
@@ -2330,6 +2360,18 @@ ul.is-unstyled, ul.unstyled {
   color: #666;
 }
 
+.typo1 {
+  font-family: "sofia_pro_regular", "Montserrat", Helvetica, Arial, sans-serif !important;
+}
+
+.typo2 {
+  font-family: "sofia_probold", "Montserrat", Helvetica, Arial, sans-serif !important;
+}
+
+.typo3 {
+  font-family: "sofia_prolight", "Montserrat", Helvetica, Arial, sans-serif !important;
+}
+
 .unstyled {
   list-style-type: none;
 }
@@ -2344,6 +2386,12 @@ ul.is-unstyled, ul.unstyled {
 
 a {
   text-decoration: none;
+}
+
+body {
+  font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Header */
@@ -2415,23 +2463,11 @@ a {
 .nav-burger a {
   color: #fff;
 }
-.nav-burger .twitter svg, .nav-burger .facebook svg {
-  width: 36px;
-}
-.nav-burger .twitter .cls-1, .nav-burger .facebook .cls-1 {
-  fill: #1a1a1a;
-}
-.nav-burger .twitter .cls-2, .nav-burger .facebook .cls-2 {
-  fill: #fff;
-}
 .nav-burger .nav-rs {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-.nav-burger .nav-rs li + li {
-  margin-left: 12px;
 }
 .nav-burger .nav-installation {
   margin: 45px 0;
@@ -2457,6 +2493,29 @@ a {
   margin: auto;
 }
 
+.nav-burger .twitter svg, .nav-burger .facebook svg, .nav-footer .twitter svg, .nav-footer .facebook svg {
+  width: 36px;
+}
+.nav-burger .twitter .cls-1, .nav-burger .twitter .cls-2, .nav-burger .facebook .cls-1, .nav-burger .facebook .cls-2, .nav-footer .twitter .cls-1, .nav-footer .twitter .cls-2, .nav-footer .facebook .cls-1, .nav-footer .facebook .cls-2 {
+  -webkit-transition: fill 0.3s ease;
+          transition: fill 0.3s ease;
+}
+.nav-burger .twitter .cls-1, .nav-burger .facebook .cls-1, .nav-footer .twitter .cls-1, .nav-footer .facebook .cls-1 {
+  fill: #1a1a1a;
+}
+.nav-burger .twitter .cls-2, .nav-burger .facebook .cls-2, .nav-footer .twitter .cls-2, .nav-footer .facebook .cls-2 {
+  fill: #fff;
+}
+.nav-burger .twitter:hover .cls-1, .nav-burger .twitter:focus .cls-1, .nav-burger .facebook:hover .cls-1, .nav-burger .facebook:focus .cls-1, .nav-footer .twitter:hover .cls-1, .nav-footer .twitter:focus .cls-1, .nav-footer .facebook:hover .cls-1, .nav-footer .facebook:focus .cls-1 {
+  fill: #fff;
+}
+.nav-burger .twitter:hover .cls-2, .nav-burger .twitter:focus .cls-2, .nav-burger .facebook:hover .cls-2, .nav-burger .facebook:focus .cls-2, .nav-footer .twitter:hover .cls-2, .nav-footer .twitter:focus .cls-2, .nav-footer .facebook:hover .cls-2, .nav-footer .facebook:focus .cls-2 {
+  fill: #1a1a1a;
+}
+.nav-burger .nav-rs li + li, .nav-footer .nav-rs li + li {
+  margin-left: 12px;
+}
+
 .entree-principale a {
   font-weight: 600;
 }
@@ -2467,7 +2526,66 @@ a {
 
 /* Fin header */
 /* Footer */
+.footer-principal {
+  background: #eee url("../../img/css/svg/big-wave-footer.svg") no-repeat left bottom;
+  -webkit-background-size: cover;
+          background-size: cover;
+  min-height: 892px;
+  padding-top: 58px;
+}
+
+.dans-le-retro {
+  background: #fff;
+  min-height: 372px;
+  width: 87.5%;
+  margin-left: 12.5%;
+}
+.dans-le-retro img {
+  width: 300px;
+}
+
+.nav-footer {
+  padding: 75px 8.333%;
+}
+.nav-footer a {
+  color: #1a1a1a;
+}
+.nav-footer .nav-installation a {
+  color: #FF6045;
+}
+.nav-footer .colonne-1 {
+  margin-right: 4.166%;
+  width: 213px;
+}
+.nav-footer .colonne-2 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.nav-footer .entree-principale {
+  font-size: 1.9rem;
+}
+.nav-footer .entree-secondaire {
+  font-size: 1.6rem;
+}
+.nav-footer ul {
+  margin: 0;
+}
+.nav-footer ul.nav-rs {
+  margin-bottom: 20px;
+}
+.nav-footer ul.nav-rs li {
+  margin-bottom: 0;
+}
+.nav-footer ul li {
+  margin-bottom: 13px;
+  line-height: 1;
+}
+
 .cn-bottom .cookie-notice-container {
+  font-family: "sofia_pro_regular", "Montserrat", Helvetica, Arial, sans-serif !important;
+  font-size: 1.4rem;
   min-height: 60px;
   padding: 0 40px;
   display: -webkit-box;
@@ -2484,6 +2602,7 @@ a {
           align-items: center;
 }
 .cn-bottom .cookie-notice-container .button {
+  font-size: 1.6rem;
   height: 34px;
   width: 168px;
   -webkit-border-radius: 17px;

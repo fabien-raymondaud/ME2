@@ -200,46 +200,6 @@ Template Name: Accueil
 	   		}
 	    ?>
 	</div>
-
-	<div class="dans-le-retro" style="background:#777">
-	    <?php // remontées articles selon année
-	    	$annees = get_terms('annee');
-	    	foreach($annees as $annee){
-	    		$texte_articles = "article";
-	    		if($annee->count>1){
-	    			$texte_articles = "articles";
-	    		}
-	    		$thumbnail_desktop_retina_src = wp_get_attachment_image_src(get_field('image_categorie', 'annee_'.$annee->term_id), 'full', false);
-	   	?>
-				<div class="panneau-annee">
-		<?php
-				if($thumbnail_desktop_retina_src[0]!=""){
-		?>
-					<div class="image-annee">
-						<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo $annee->name;?>">
-					</div>
-		<?php
-				}
-		?>
-					<div class="descriptif-annee">
-						<p class="nb-articles"><?php echo $annee->count.' '.$texte_articles;?></p>
-						<h3><?php echo "#".$annee->name;?></h3>
-		<?php
-				if(get_field('descriptif_categorie', 'annee_'.$annee->term_id)!=""){
-		?>
-						<div class="texte-thematique">
-							<?php the_field('descriptif_categorie', 'annee_'.$annee->term_id);?>
-						</div>
-		<?php
-				}
-		?>
-						<a href="<?php echo get_term_link($annee);?>" title="Lien vers <?php echo $annee->name;?>">Tous les articles</a>
-					</div>
-				</div>
-	   	<?php
-	   		}
-	    ?>
-	</div>
 </div>
 <?php endwhile; ?>
 <?php endif; ?>

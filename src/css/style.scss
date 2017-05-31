@@ -80,12 +80,24 @@
 	font-size : $size-20;
 }
 
+.size19{
+	font-size : $size-19;
+}
+
 .size17{
 	font-size : $size-17;
 }
 
+.size16{
+	font-size : $size-16;
+}
+
 .size15{
 	font-size : $size-15;
+}
+
+.size14{
+	font-size : $size-14;
 }
 
 .size13{
@@ -132,6 +144,18 @@
 	color: $color7;
 }
 
+.typo1{
+	font-family:$typo1;
+}
+
+.typo2{
+	font-family:$typo2;
+}
+
+.typo3{
+	font-family:$typo3;
+}
+
 .unstyled{
 	list-style-type:none;
 }
@@ -150,7 +174,9 @@ a{
 }
 
 body{
-	
+	font-family:"Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 /* Header */
@@ -229,25 +255,9 @@ body{
 		color:$color2;
 	}
 
-	.twitter, .facebook{
-		svg{
-			width: 36px;
-		}
-
-		.cls-1{
-			fill:$color4;
-		}
-
-		.cls-2{
-			fill:$color2;
-		}
-	}
 
 	.nav-rs{
 		justify-content:center;
-		li + li{
-			margin-left: 12px;
-		}
 	}
 
 	.nav-installation{
@@ -267,6 +277,42 @@ body{
 	}
 }
 
+.nav-burger, .nav-footer{
+	.twitter, .facebook{
+		svg{
+			width: 36px;
+		}
+
+		.cls-1, .cls-2{
+			transition:fill 0.3s ease;
+		}
+
+		.cls-1{
+			fill:$color4;
+		}
+
+		.cls-2{
+			fill:$color2;
+		}
+
+		&:hover, &:focus{
+			.cls-1{
+				fill:$color2;
+			}
+
+			.cls-2{
+				fill:$color4;
+			}
+		}
+	}
+
+	.nav-rs{
+		li + li{
+			margin-left: 12px;
+		}
+	}
+}
+
 .entree-principale{
 	a{
 		font-weight: 600;
@@ -282,14 +328,81 @@ body{
 /* Fin header */
 
 /* Footer */
+.footer-principal{
+	background:#eee url('../../img/css/svg/big-wave-footer.svg') no-repeat left bottom;
+	background-size:cover;
+	min-height: 892px;
+	padding-top: 58px;
+}
+
+.dans-le-retro{
+	background:$color2;
+	min-height:372px;
+	width: 87.5%;
+	margin-left: 12.5%;
+	img{
+		width: 300px;
+	}
+}
+
+.nav-footer{
+	padding: 75px 8.333%;
+
+	a{
+		color:$color4;
+	}
+
+	.nav-installation{
+		a{
+			color:$color5;
+		}
+	}
+
+	.colonne-1{
+		margin-right: 4.166%;
+		width: 213px;
+	}
+
+	.colonne-2{
+		flex:1;
+	}
+
+	.entree-principale{
+		font-size: $size-19;
+	}
+
+	.entree-secondaire{
+		font-size: $size-16;
+	}
+
+	ul{
+		margin: 0;
+		&.nav-rs{
+			margin-bottom: 20px;
+
+			li{
+				margin-bottom: 0;
+			}
+		}
+
+		li{
+			margin-bottom: 13px;
+			line-height: 1;
+		}
+	}
+}
+
 .cn-bottom{
 	.cookie-notice-container{
+		font-family: $typo1;
+		font-size: $size-14;
 		min-height: 60px;
 		padding: 0 40px;
 		display: flex;
 		justify-content:space-between;
 		align-items:center;
 		.button{
+			font-size: $size-16;
 			height: 34px;
 			width: 168px;
 			border-radius: 17px;
