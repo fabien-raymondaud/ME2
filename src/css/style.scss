@@ -689,6 +689,22 @@ html[xmlns] .flexslider .slides {
 /* Fin Commun */
 
 /* Home */
+.conteneur-a-la-une{
+	display: flex;
+
+	> h3{
+		display: flex;
+		flex:1;
+		align-items:center;
+		justify-content:center;
+		margin: 83px 0 0;
+		color:$color6;
+		span{
+			transform:rotate(90deg);
+		}
+	}
+}
+
 .a-la-une{
 	width: 87.5%;
 	margin-top: 83px;

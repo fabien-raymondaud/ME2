@@ -36,7 +36,7 @@ $color2    : #fff !default;
 $color3    : #001FFF !default;
 $color4    : #1a1a1a !default;
 $color5    : #FF6045 !default;
-$color6	   : #d0021b !default;
+$color6	   : #000 !default;
 $color7	   : #666 !default;
 
 $typo1 : "sofia_pro_regular","Montserrat",Helvetica,Arial,sans-serif !important;
@@ -44,8 +44,8 @@ $typo2 : "sofia_probold","Montserrat",Helvetica,Arial,sans-serif !important;
 $typo3 : "sofia_prolight","Montserrat",Helvetica,Arial,sans-serif !important;
 
 // colors used in project
-$base-color: $color1;
-$link-color: $color3;
+$base-color: $color4;
+$link-color: $color4;
 $base-background : $color2;
 // If you don't want any effect on focused/hovered links,
 // comment variable below or make it equal to either $link-color or false or null

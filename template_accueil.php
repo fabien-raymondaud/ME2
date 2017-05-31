@@ -6,69 +6,73 @@ Template Name: Accueil
 <?php get_header();?>
 
 <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
-	<div class="a-la-une flexslider">
-		<ul class="slides">
-	    <?php // remontées articles à la une
-	    	$a_la_une = get_field('articles_a_la_une');
-	    	foreach($a_la_une as $article_une){
-	    		$thumbnail_desktop_retina_src = wp_get_attachment_image_src(get_post_thumbnail_id($article_une->ID), 'image-slider-a-la-une', false);
-				
-				//Pour l'affichage du type éditorial de l'article	    		
-	    		$types_editoriaux = wp_get_post_terms($article_une->ID, 'type_editorial');
-	    		$tableau_types_editoriaux = array();
-	    		foreach($types_editoriaux as $type_editorial){
-	    			$tableau_types_editoriaux[]=$type_editorial->name;
-	    		}
-	    		$chaine_types_editoriaux = implode(', ', $tableau_types_editoriaux);
+	<div class="conteneur-a-la-une">
+		<div class="a-la-une flexslider">
+			<ul class="slides">
+		    <?php // remontées articles à la une
+		    	$a_la_une = get_field('articles_a_la_une');
+		    	foreach($a_la_une as $article_une){
+		    		$thumbnail_desktop_retina_src = wp_get_attachment_image_src(get_post_thumbnail_id($article_une->ID), 'image-slider-a-la-une', false);
+					
+					//Pour l'affichage du type éditorial de l'article	    		
+		    		$types_editoriaux = wp_get_post_terms($article_une->ID, 'type_editorial');
+		    		$tableau_types_editoriaux = array();
+		    		foreach($types_editoriaux as $type_editorial){
+		    			$tableau_types_editoriaux[]=$type_editorial->name;
+		    		}
+		    		$chaine_types_editoriaux = implode(', ', $tableau_types_editoriaux);
 
-	    		//Pour l'affichage des thématiques et hashtags de l'article
-	    		$thematiques = wp_get_post_terms($article_une->ID, 'thematique');
-	    		$tableau_hashtags = array();
-	    		foreach($thematiques as $thematique){
-	    			$tableau_hashtags[]='<a href="'.get_term_link($thematique).'" title="Lien vers '.$thematique->name.'">#'.$thematique->name.'</a>';
-	    		}
+		    		//Pour l'affichage des thématiques et hashtags de l'article
+		    		$thematiques = wp_get_post_terms($article_une->ID, 'thematique');
+		    		$tableau_hashtags = array();
+		    		foreach($thematiques as $thematique){
+		    			$tableau_hashtags[]='<a href="'.get_term_link($thematique).'" title="Lien vers '.$thematique->name.'">#'.$thematique->name.'</a>';
+		    		}
 
-	    		$hashtags = wp_get_post_terms($article_une->ID);
-	    		foreach($hashtags as $hashtag){
-	    			$tableau_hashtags[]='<a href="'.get_term_link($hashtag).'" title="Lien vers '.$hashtag->name.'">#'.$hashtag->name.'</a>';
-	    		}
+		    		$hashtags = wp_get_post_terms($article_une->ID);
+		    		foreach($hashtags as $hashtag){
+		    			$tableau_hashtags[]='<a href="'.get_term_link($hashtag).'" title="Lien vers '.$hashtag->name.'">#'.$hashtag->name.'</a>';
+		    		}
 
-	    		$chaine_hashtags = implode(' ', $tableau_hashtags);	
-	    ?>		
-	    		<li>
-					<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($article_une->ID);?>">
-					<div class="contenu-slide">
-		<?php
-					if($chaine_types_editoriaux!=""){
-		?>
-	    				<p class="types-editoriaux size14 typo1"><?php echo $chaine_types_editoriaux;?></p>
-		<?php
-					}
-		?>
+		    		$chaine_hashtags = implode(' ', $tableau_hashtags);	
+		    ?>		
+		    		<li>
+						<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($article_une->ID);?>">
+						<div class="contenu-slide">
+			<?php
+						if($chaine_types_editoriaux!=""){
+			?>
+		    				<p class="types-editoriaux size14 typo1"><?php echo $chaine_types_editoriaux;?></p>
+			<?php
+						}
+			?>
 
-		<?php
-					if(get_field('annees_affichees', $article_une->ID)!=""){
-		?>
-	    				<p class="annees size14 typo1"><?php the_field('annees_affichees', $article_une->ID);?></p>
-		<?php
-					}
-		?>
+			<?php
+						if(get_field('annees_affichees', $article_une->ID)!=""){
+			?>
+		    				<p class="annees size14 typo1"><?php the_field('annees_affichees', $article_une->ID);?></p>
+			<?php
+						}
+			?>
 
-		<?php
-					if($chaine_hashtags!=""){
-		?>
-	    				<p class="hashtags size14 typo1"><?php echo $chaine_hashtags;?></p>
-		<?php
-					}
-		?>
-		    			<h2 class="size50"><?php echo get_the_title($article_une->ID);?></h2>
-		    			<a href="<?php echo get_permalink($article_une->ID);?>" class="typo1 lire-article">Lire l'article</a>
-	    			</div>
-	    		</li>
-	    <?php
-	    	}
-	    ?>
-		</ul>
+			<?php
+						if($chaine_hashtags!=""){
+			?>
+		    				<p class="hashtags size14 typo1"><?php echo $chaine_hashtags;?></p>
+			<?php
+						}
+			?>
+			    			<h2 class="size50"><?php echo get_the_title($article_une->ID);?></h2>
+			    			<a href="<?php echo get_permalink($article_une->ID);?>" class="typo1 lire-article">Lire l'article</a>
+		    			</div>
+		    		</li>
+		    <?php
+		    	}
+		    ?>
+			</ul>
+		</div>
+
+		<h3 class="uppercase size16"><span>à la une</span></h3>
 	</div>
 
 	<div class="dossiers-thematiques" style="background:#aaa">
