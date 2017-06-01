@@ -75,10 +75,10 @@ Template Name: Accueil
 	</div>
 
 	<div class="super-conteneur-dossiers-thematiques">
-		<div class="conteneur-dossiers">
-			<h3 class="uppercase">Dossiers</h3>
+		<div class="conteneur-dossiers flex-container-h">
+			<h3 class="uppercase size16"><span>Dossiers</span></h3>
 
-			<div class="dossiers-thematiques flexslider">
+			<div class="dossiers-thematiques flexslider-dossier">
 				<ul class="slides">
 			    <?php // remontées articles dossiers thématique
 			    	$thematiques_dossiers = get_field('thematiques_dossiers');
@@ -89,7 +89,7 @@ Template Name: Accueil
 			    			$texte_articles = "articles";
 			    		}
 			   	?>
-			   			<li>
+			   			<li class="flex-container-h">
 							<div class="panneau-thematique principal">
 								<div class="descriptif-thematique">
 									<p class="nb-articles"><?php echo $term->count.' '.$texte_articles;?></p>
@@ -138,7 +138,7 @@ Template Name: Accueil
 					    		$chaine_hashtags = implode(' ', $tableau_hashtags);	
 			   	?>
 								<div class="panneau-thematique secondaire" style="background-image:url('<?php echo $thumbnail_desktop_retina_src[0];?>')">
-									<div class="descriptif-article">
+									<div class="descriptif-article flex-container-v">
 										<h2><?php echo get_the_title($article_thematique->ID);?></h2>
 				<?php
 										if($chaine_types_editoriaux!=""){
