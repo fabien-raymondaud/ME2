@@ -36,8 +36,7 @@ Template Name: Accueil
 
 		    		$chaine_hashtags = implode(' ', $tableau_hashtags);	
 		    ?>		
-		    		<li>
-						<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($article_une->ID);?>">
+		    		<li style="background-image:url('<?php echo $thumbnail_desktop_retina_src[0];?>')">
 						<div class="contenu-slide">
 			<?php
 						if($chaine_types_editoriaux!=""){

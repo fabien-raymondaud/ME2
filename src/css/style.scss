@@ -672,19 +672,7 @@ html[xmlns] .flexslider .slides {
   opacity: 1;
   cursor: default;
 }
-/* ====================================================================================================================
- * RESPONSIVE
- * ====================================================================================================================*/
-@media screen and (max-width: 860px) {
-  .flex-direction-nav .flex-prev {
-    opacity: 1;
-    left: 10px;
-  }
-  .flex-direction-nav .flex-next {
-    opacity: 1;
-    right: 10px;
-  }
-}
+
 
 /* Fin Commun */
 
@@ -708,15 +696,23 @@ html[xmlns] .flexslider .slides {
 .a-la-une{
 	width: 87.5%;
 	margin-top: 83px;
+	
+	.flex-viewport, .flexslider{
+		height: 400px;
+	}
 
-	.slides li{
-		position:relative;	
+	.slides{
+		height: 400px;
+		li{
+			position:relative;	
+			height: 400px;
+			background-repeat:none;
+			background-position:center;
+			background-size:cover;
+		}
 	}
 
 	.contenu-slide{
-		position:absolute;
-		left: 0;
-		top:0;
 		width: 100%;
 		height: 100%;
 		display: flex;
@@ -736,6 +732,7 @@ html[xmlns] .flexslider .slides {
 			text-align: center;
 			line-height: 1;
 			margin-top: 3px;
+			padding: 0 40px;
 		}
 	}
 

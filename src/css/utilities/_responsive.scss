@@ -294,3 +294,118 @@
 @media(max-width : $tiny){
   
 }
+
+/* ====================================================================================================================
+ * RESPONSIVE flexslider
+ * ====================================================================================================================*/
+@media screen and (max-width: 768px) {
+  .a-la-une{
+    .flex-direction-nav{
+      .flex-prev {
+        opacity: 1;
+        left: 27px;
+      }
+
+      .flex-next {
+        opacity: 1;
+        right: 27px;
+      }
+
+      a{
+        transition: none;
+      }
+    }
+
+    &.flexslider{
+      &:hover{
+        .flex-direction-nav{
+          .flex-prev {
+            left: 27px;
+          }
+
+          .flex-next {
+            right: 27px;
+          }
+        }
+      }
+    }
+
+    .contenu-slide{
+      h2{
+        font-size: 4.5rem;
+        margin-bottom: 31px;
+      }
+
+      .hashtags, .annees{
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .conteneur-a-la-une{
+    h3{
+      display: none;
+    }
+
+    .a-la-une{
+      width: 100%;
+    }
+  }
+
+  .a-la-une{
+    .flex-direction-nav{
+      bottom:30px;
+      width: 88px;
+      display: flex;
+      justify-content: space-between;
+      left: 50%;
+      margin-left: -44px;
+      position: absolute;
+      
+      .flex-prev, .flex-next{
+        position:relative;
+        top:inherit;
+        left: inherit;
+        right: inherit;
+      }
+
+      .flex-prev {
+        transform:none;
+      }
+
+      .flex-next {
+        transform:rotate(180deg);
+      }
+
+      a{
+        width: 35px;
+        height: 35px;
+        background:url('../../img/css/svg/icn-nav-diaporama.svg') no-repeat;
+      }
+    }
+
+    &.flexslider{
+      &:hover{
+        .flex-direction-nav{
+          .flex-prev, .flex-next{
+            left: inherit;
+            right: inherit;
+          }
+        }
+      }
+    }
+
+    .contenu-slide{
+      h2{
+        font-size: 3rem;
+        margin-bottom: 25px;
+        padding: 0 30px;
+        margin-top: 20px;
+        hyphens: none;
+        line-height: 1.15em;
+      }
+    }
+  }
+}
