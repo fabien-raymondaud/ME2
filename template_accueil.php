@@ -74,82 +74,91 @@ Template Name: Accueil
 		<h3 class="uppercase size16"><span>à la une</span></h3>
 	</div>
 
-	<div class="dossiers-thematiques" style="background:#aaa">
-	    <?php // remontées articles dossiers thématique
-	    	$thematiques_dossiers = get_field('thematiques_dossiers');
-	    	foreach($thematiques_dossiers as $thematique_dossier){
-	    		$term = get_term($thematique_dossier);
-	    		$texte_articles = "article";
-	    		if($term->count>1){
-	    			$texte_articles = "articles";
-	    		}
-	   	?>
-				<div class="panneau-thematique principal">
-					<div class="descriptif-thematique">
-						<p class="nb-articles"><?php echo $term->count.' '.$texte_articles;?></p>
-						<h3><?php echo "#".$term->name;?></h3>
-						<div class="texte-thematique tk-utopia-std-display">
-							<?php the_field('descriptif_categorie', 'thematique_'.$thematique_dossier);?>
-						</div>
-					</div>
-				</div>
-	   	<?php
-	   			$args = array(
-					        'posts_per_page' => -1,
-					        'post_type' => 'post',
-					        'tax_query' => array(
-					            array(
-					                'taxonomy' => 'thematique',
-					                'field' => 'term_id',
-					                'terms' => $thematique_dossier,
-					            )
-					        )
-					    );
-	   			$liste_articles_thematique = get_posts($args);
+	<div class="super-conteneur-dossiers-thematiques">
+		<div class="conteneur-dossiers">
+			<h3 class="uppercase">Dossiers</h3>
 
-	   			foreach ($liste_articles_thematique as $article_thematique){
-	   				$thumbnail_desktop_retina_src = wp_get_attachment_image_src(get_post_thumbnail_id($article_thematique->ID), 'full', false);
-	   				//Pour l'affichage du type éditorial de l'article	    		
-		    		$types_editoriaux = wp_get_post_terms($article_thematique->ID, 'type_editorial');
-		    		$tableau_types_editoriaux = array();
-		    		foreach($types_editoriaux as $type_editorial){
-		    			$tableau_types_editoriaux[]=$type_editorial->name;
-		    		}
-		    		$chaine_types_editoriaux = implode(', ', $tableau_types_editoriaux);
+			<div class="dossiers-thematiques flexslider">
+				<ul class="slides">
+			    <?php // remontées articles dossiers thématique
+			    	$thematiques_dossiers = get_field('thematiques_dossiers');
+			    	foreach($thematiques_dossiers as $thematique_dossier){
+			    		$term = get_term($thematique_dossier);
+			    		$texte_articles = "article";
+			    		if($term->count>1){
+			    			$texte_articles = "articles";
+			    		}
+			   	?>
+			   			<li>
+							<div class="panneau-thematique principal">
+								<div class="descriptif-thematique">
+									<p class="nb-articles"><?php echo $term->count.' '.$texte_articles;?></p>
+									<h2><?php echo "#".$term->name;?></h2>
+									<div class="texte-thematique tk-utopia-std-display">
+										<?php the_field('descriptif_categorie', 'thematique_'.$thematique_dossier);?>
+									</div>
+								</div>
+							</div>
+			   	<?php
+				   			$args = array(
+								        'posts_per_page' => -1,
+								        'post_type' => 'post',
+								        'tax_query' => array(
+								            array(
+								                'taxonomy' => 'thematique',
+								                'field' => 'term_id',
+								                'terms' => $thematique_dossier,
+								            )
+								        )
+								    );
+				   			$liste_articles_thematique = get_posts($args);
 
-		    		//Pour l'affichage des thématiques et hashtags de l'article
-		    		$thematiques = wp_get_post_terms($article_thematique->ID, 'thematique');
-		    		$tableau_hashtags = array();
-		    		foreach($thematiques as $thematique){
-		    			$tableau_hashtags[]='<a href="'.get_term_link($thematique).'" title="Lien vers '.$thematique->name.'">#'.$thematique->name.'</a>';
-		    		}
+				   			foreach ($liste_articles_thematique as $article_thematique){
+				   				$thumbnail_desktop_retina_src = wp_get_attachment_image_src(get_post_thumbnail_id($article_thematique->ID), 'full', false);
+				   				//Pour l'affichage du type éditorial de l'article	    		
+					    		$types_editoriaux = wp_get_post_terms($article_thematique->ID, 'type_editorial');
+					    		$tableau_types_editoriaux = array();
+					    		foreach($types_editoriaux as $type_editorial){
+					    			$tableau_types_editoriaux[]=$type_editorial->name;
+					    		}
+					    		$chaine_types_editoriaux = implode(', ', $tableau_types_editoriaux);
 
-		    		$hashtags = wp_get_post_terms($article_thematique->ID);
-		    		foreach($hashtags as $hashtag){
-		    			$tableau_hashtags[]='<a href="'.get_term_link($hashtag).'" title="Lien vers '.$hashtag->name.'">#'.$hashtag->name.'</a>';
-		    		}
+					    		//Pour l'affichage des thématiques et hashtags de l'article
+					    		$thematiques = wp_get_post_terms($article_thematique->ID, 'thematique');
+					    		$tableau_hashtags = array();
+					    		foreach($thematiques as $thematique){
+					    			$tableau_hashtags[]='<a href="'.get_term_link($thematique).'" title="Lien vers '.$thematique->name.'">#'.$thematique->name.'</a>';
+					    		}
 
-		    		$chaine_hashtags = implode(' ', $tableau_hashtags);	
-	   	?>
-					<div class="panneau-thematique principal">
-						<div class="image-article">
-							<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($article_thematique->ID);?>">
-						</div>
-						<div class="descriptif-article">
-							<h3><?php echo get_the_title($article_thematique->ID);?></h3>
-		<?php
-							if($chaine_types_editoriaux!=""){
-		?>
-	    						<p class="types-editoriaux"><?php echo $chaine_types_editoriaux;?></p>
-		<?php
-							}
-		?>
-						</div>
-					</div>
-	   	<?php
-	   			}
-	   		}
-	    ?>
+					    		$hashtags = wp_get_post_terms($article_thematique->ID);
+					    		foreach($hashtags as $hashtag){
+					    			$tableau_hashtags[]='<a href="'.get_term_link($hashtag).'" title="Lien vers '.$hashtag->name.'">#'.$hashtag->name.'</a>';
+					    		}
+
+					    		$chaine_hashtags = implode(' ', $tableau_hashtags);	
+			   	?>
+								<div class="panneau-thematique secondaire" style="background-image:url('<?php echo $thumbnail_desktop_retina_src[0];?>')">
+									<div class="descriptif-article">
+										<h2><?php echo get_the_title($article_thematique->ID);?></h2>
+				<?php
+										if($chaine_types_editoriaux!=""){
+				?>
+			    							<p class="types-editoriaux"><?php echo $chaine_types_editoriaux;?></p>
+				<?php
+										}
+				?>
+									</div>
+								</div>
+			   	<?php
+			   				}
+			   	?>
+						</li>
+			   	<?php
+			   		}
+			    ?>
+	    		</ul>
+	    	</div>
+	    </div>
 	</div>
 
 	<div class="derniers-articles" style="background:#999">
