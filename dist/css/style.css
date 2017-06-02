@@ -3150,6 +3150,40 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides {
   color: #001FFF;
 }
 
+.derniers-articles {
+  margin-top: 20px;
+}
+.derniers-articles .dernier-article, .derniers-articles .autres-articles {
+  width: 50%;
+}
+.derniers-articles .dernier-article > h3 {
+  width: 25%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.derniers-articles .dernier-article > h3 span {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  min-width: 205px;
+}
+.derniers-articles .dernier-article > div {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
 /* Fin Home */
 /* -------------------------- */
 /* ==Responsive helpers       */
