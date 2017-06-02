@@ -936,6 +936,24 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides {
 
 	.dernier-article, .autres-articles{
 		width: 50%;
+
+		.descriptif-article{
+			h3{
+				line-height: 1.15em;
+				margin-bottom: 0;
+
+				+ p{
+					margin-top: 3px;
+				}
+			}
+
+			.excerpt-article{
+				margin-top: 25px;
+				p{
+					line-height: 1.2em;
+				}
+			}
+		}
 	}
 
 	.dernier-article{
@@ -953,6 +971,24 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides {
 
 		> div{
 			flex:1;
+		}
+
+		.panneau-article{
+			align-self: flex-start;
+			background: $color7;
+
+			> div{
+				padding-left: 21%;
+			}
+
+			.descriptif-article{
+				padding: 35px 50px 55px 21%;
+				color:$color2;
+
+				a{
+					color:$color2;
+				}
+			}
 		}
 	}
 }

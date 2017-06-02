@@ -200,20 +200,20 @@ Template Name: Accueil
 		<?php
 					if($chaine_hashtags!=""){
 		?>
-	    				<p class="hashtags"><?php echo $chaine_hashtags;?></p>
+	    				<p class="hashtags size14 typo1"><?php echo $chaine_hashtags;?></p>
 		<?php
 					}
 		?>
-						<h3><?php echo get_the_title($dernier_article->ID);?></h3>
+						<h3 class="size24"><?php echo get_the_title($dernier_article->ID);?></h3>
 		<?php
 						if($chaine_types_editoriaux!=""){
 		?>
-	    					<p class="types-editoriaux"><?php echo $chaine_types_editoriaux;?></p>
+	    					<p class="types-editoriaux size14 uppercase typo2"><?php echo $chaine_types_editoriaux;?></p>
 		<?php
 						}
 		?>
 						<div class="excerpt-article tk-utopia-std-display">
-							<?php the_excerpt();?>
+							<?php the_field('resume_remontee', $dernier_article->ID);?>
 						</div>
 					</div>
 				</div>
@@ -259,20 +259,20 @@ Template Name: Accueil
 		<?php
 					if($chaine_hashtags!=""){
 		?>
-	    				<p class="hashtags"><?php echo $chaine_hashtags;?></p>
+	    				<p class="hashtags typo1 size14"><?php echo $chaine_hashtags;?></p>
 		<?php
 					}
 		?>
-						<h3><?php echo get_the_title($dernier_article->ID);?></h3>
+						<h3 class="size24"><?php echo get_the_title($dernier_article->ID);?></h3>
 		<?php
 						if($chaine_types_editoriaux!=""){
 		?>
-	    					<p class="types-editoriaux"><?php echo $chaine_types_editoriaux;?></p>
+	    					<p class="types-editoriaux size14 uppercase typo2"><?php echo $chaine_types_editoriaux;?></p>
 		<?php
 						}
 		?>
 						<div class="excerpt-article tk-utopia-std-display">
-							<?php the_excerpt();?>
+							<?php the_field('resume_remontee', $dernier_article->ID);?>
 						</div>
 					</div>
 				</div>

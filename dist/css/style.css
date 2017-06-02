@@ -2358,7 +2358,7 @@ ul.is-unstyled, ul.unstyled {
 }
 
 .color7 {
-  color: #666;
+  color: #333;
 }
 
 .typo1 {
@@ -3156,6 +3156,19 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides {
 .derniers-articles .dernier-article, .derniers-articles .autres-articles {
   width: 50%;
 }
+.derniers-articles .dernier-article .descriptif-article h3, .derniers-articles .autres-articles .descriptif-article h3 {
+  line-height: 1.15em;
+  margin-bottom: 0;
+}
+.derniers-articles .dernier-article .descriptif-article h3 + p, .derniers-articles .autres-articles .descriptif-article h3 + p {
+  margin-top: 3px;
+}
+.derniers-articles .dernier-article .descriptif-article .excerpt-article, .derniers-articles .autres-articles .descriptif-article .excerpt-article {
+  margin-top: 25px;
+}
+.derniers-articles .dernier-article .descriptif-article .excerpt-article p, .derniers-articles .autres-articles .descriptif-article .excerpt-article p {
+  line-height: 1.2em;
+}
 .derniers-articles .dernier-article > h3 {
   width: 25%;
   display: -webkit-box;
@@ -3182,6 +3195,22 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+.derniers-articles .dernier-article .panneau-article {
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
+  background: #333;
+}
+.derniers-articles .dernier-article .panneau-article > div {
+  padding-left: 21%;
+}
+.derniers-articles .dernier-article .panneau-article .descriptif-article {
+  padding: 35px 50px 55px 21%;
+  color: #fff;
+}
+.derniers-articles .dernier-article .panneau-article .descriptif-article a {
+  color: #fff;
 }
 
 /* Fin Home */
