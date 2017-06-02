@@ -267,7 +267,7 @@ Template Name: Accueil
 		<?php
 						if($chaine_types_editoriaux!=""){
 		?>
-	    					<p class="types-editoriaux size14 uppercase typo2"><?php echo $chaine_types_editoriaux;?></p>
+	    					<p class="types-editoriaux size14 uppercase typo2 color3"><?php echo $chaine_types_editoriaux;?></p>
 		<?php
 						}
 		?>
