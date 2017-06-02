@@ -92,11 +92,12 @@ Template Name: Accueil
 			   			<li class="flex-container-h">
 							<div class="panneau-thematique principal">
 								<div class="descriptif-thematique">
-									<p class="nb-articles"><?php echo $term->count.' '.$texte_articles;?></p>
-									<h2><?php echo "#".$term->name;?></h2>
-									<div class="texte-thematique tk-utopia-std-display">
+									<p class="nb-articles size14"><?php echo $term->count.' '.$texte_articles;?></p>
+									<h2 class="size30"><?php echo "#".$term->name;?></h2>
+									<div class="texte-thematique tk-utopia-std-display size18">
 										<?php the_field('descriptif_categorie', 'thematique_'.$thematique_dossier);?>
 									</div>
+									<a href="<?php echo get_term_link($term);?>" title="Lien vers tous les articles <?php echo $term->name;?>" class="tous-articles typo1">Tous les articles</a>
 								</div>
 							</div>
 			   	<?php
@@ -138,16 +139,18 @@ Template Name: Accueil
 					    		$chaine_hashtags = implode(' ', $tableau_hashtags);	
 			   	?>
 								<div class="panneau-thematique secondaire" style="background-image:url('<?php echo $thumbnail_desktop_retina_src[0];?>')">
-									<div class="descriptif-article flex-container-v">
-										<h2><?php echo get_the_title($article_thematique->ID);?></h2>
+									<a href="<?php the_permalink($article_thematique->ID);?>" title="Aller à <?php echo get_the_title($article_thematique->ID);?>">
+										<div class="descriptif-article flex-container-v">
+											<h2 class="size24"><?php echo get_the_title($article_thematique->ID);?></h2>
 				<?php
-										if($chaine_types_editoriaux!=""){
+											if($chaine_types_editoriaux!=""){
 				?>
-			    							<p class="types-editoriaux"><?php echo $chaine_types_editoriaux;?></p>
+				    							<p class="types-editoriaux typo2 uppercase size14"><?php echo $chaine_types_editoriaux;?></p>
 				<?php
-										}
+											}
 				?>
-									</div>
+										</div>
+									</a>
 								</div>
 			   	<?php
 			   				}

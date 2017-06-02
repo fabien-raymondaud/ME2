@@ -2297,6 +2297,10 @@ ul.is-unstyled, ul.unstyled {
   font-size: 1.9rem;
 }
 
+.size18 {
+  font-size: 1.8rem;
+}
+
 .size17 {
   font-size: 1.7rem;
 }
@@ -2772,18 +2776,46 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides {
   z-index: -1;
 }
 
-.flexslider:hover .flex-direction-nav .flex-prev, .flexslider-dossier:hover .flex-direction-nav .flex-prev {
+.flexslider-dossier .flex-direction-nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  top: 176px;
+  right: 55.6%;
+}
+.flexslider-dossier .flex-direction-nav a {
+  background: url("../../img/css/svg/icn-nav-slider-black.svg") no-repeat;
+  -webkit-transition: none;
+          transition: none;
+  height: 36px;
+  width: 36px;
+  margin: 0;
+  position: relative;
+  left: inherit;
+  top: inherit;
+  right: inherit;
+  opacity: 1;
+}
+
+.flexslider:hover .flex-direction-nav .flex-prev {
   opacity: 1;
   left: 37px;
 }
-.flexslider:hover .flex-direction-nav .flex-prev:hover, .flexslider-dossier:hover .flex-direction-nav .flex-prev:hover {
+.flexslider:hover .flex-direction-nav .flex-prev:hover {
   opacity: 1;
 }
-.flexslider:hover .flex-direction-nav .flex-next, .flexslider-dossier:hover .flex-direction-nav .flex-next {
+.flexslider:hover .flex-direction-nav .flex-next {
   opacity: 1;
   right: 37px;
 }
-.flexslider:hover .flex-direction-nav .flex-next:hover, .flexslider-dossier:hover .flex-direction-nav .flex-next:hover {
+.flexslider:hover .flex-direction-nav .flex-next:hover {
   opacity: 1;
 }
 
@@ -3051,6 +3083,9 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides {
   background-position: center;
   background-repeat: no-repeat;
 }
+.super-conteneur-dossiers-thematiques .flexslider-dossier li .secondaire > a {
+  color: #fff;
+}
 .super-conteneur-dossiers-thematiques .flexslider-dossier li .secondaire .descriptif-article {
   width: 100%;
   height: 100%;
@@ -3063,6 +3098,56 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+          transition: opacity 0.3s ease;
+}
+.super-conteneur-dossiers-thematiques .flexslider-dossier li .secondaire:hover .descriptif-article, .super-conteneur-dossiers-thematiques .flexslider-dossier li .secondaire:focus .descriptif-article {
+  opacity: 1;
+}
+.super-conteneur-dossiers-thematiques .flexslider-dossier li .secondaire h2 {
+  font-weight: 800;
+  line-height: 1.1em;
+  padding: 0 40px;
+  margin-bottom: 5px;
+}
+.super-conteneur-dossiers-thematiques .flexslider-dossier li .principal h2 {
+  margin-top: 0;
+  line-height: 1.2em;
+}
+.super-conteneur-dossiers-thematiques .flexslider-dossier li .principal .texte-thematique p {
+  font-size: 1.8rem;
+}
+.super-conteneur-dossiers-thematiques .flexslider-dossier li .principal .tous-articles {
+  margin-top: 25px;
+}
+
+.tous-articles {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 170px;
+  height: 34px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #001FFF;
+  color: #fff;
+  -webkit-border-radius: 17px;
+          border-radius: 17px;
+  border: 1px solid #001FFF;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+}
+.tous-articles:hover, .tous-articles:focus {
+  background: #fff;
+  color: #001FFF;
 }
 
 /* Fin Home */
