@@ -365,6 +365,16 @@
       }
     }
   }
+
+  .derniers-articles{
+    .autres-articles{
+      padding-right: 30px;
+    }
+
+    .dernier-article .panneau-article .descriptif-article{
+      padding-right: 20px;
+    }
+  }
 }
 
 @media screen and (max-width: 728px) {
