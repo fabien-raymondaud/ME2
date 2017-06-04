@@ -1,45 +1,57 @@
 <footer class="footer-principal">
 <?php 
 if(is_home() || is_front_page()){
+	$annees = get_terms('annee');
+
+	foreach($annees as $annee){
 ?>
-	<div class="dans-le-retro">
-	    <?php // remontées articles selon année
-	    	$annees = get_terms('annee');
-	    	foreach($annees as $annee){
-	    		$texte_articles = "article";
-	    		if($annee->count>1){
-	    			$texte_articles = "articles";
-	    		}
-	    		$thumbnail_desktop_retina_src = wp_get_attachment_image_src(get_field('image_categorie', 'annee_'.$annee->term_id), 'full', false);
-	   	?>
-				<div class="panneau-annee">
-		<?php
-				if($thumbnail_desktop_retina_src[0]!=""){
-		?>
-					<div class="image-annee">
-						<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo $annee->name;?>">
-					</div>
-		<?php
-				}
-		?>
-					<div class="descriptif-annee">
-						<p class="nb-articles"><?php echo $annee->count.' '.$texte_articles;?></p>
-						<h3><?php echo "#".$annee->name;?></h3>
-		<?php
-				if(get_field('descriptif_categorie', 'annee_'.$annee->term_id)!=""){
-		?>
-						<div class="texte-thematique">
-							<?php the_field('descriptif_categorie', 'annee_'.$annee->term_id);?>
+		<span class="invisible element-annee" data-annee="<?php echo $annee->name;?>"></span>	
+<?php
+	}
+?>
+	<div class="dans-le-retro flex-container-h">
+		<h3 class="uppercase size16"><span>Dans le rétro</span></h3>
+		<div class="flexslider-retro">
+			<ul class="slides">
+		    <?php // remontées articles selon année
+		    	
+		    	foreach($annees as $annee){
+		    		$texte_articles = "article";
+		    		if($annee->count>1){
+		    			$texte_articles = "articles";
+		    		}
+		    		$thumbnail_desktop_retina_src = wp_get_attachment_image_src(get_field('image_categorie', 'annee_'.$annee->term_id), 'full', false);
+		   	?>
+					<li class="panneau-annee flex-container-h">
+			<?php
+					if($thumbnail_desktop_retina_src[0]!=""){
+			?>
+						<div class="image-annee">
+							<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo $annee->name;?>">
 						</div>
-		<?php
-				}
-		?>
-						<a href="<?php echo get_term_link($annee);?>" title="Lien vers <?php echo $annee->name;?>">Tous les articles</a>
-					</div>
-				</div>
-	   	<?php
-	   		}
-	    ?>
+			<?php
+					}
+			?>
+						<div class="descriptif-annee">
+							<p class="nb-articles typo1 size14"><?php echo $annee->count.' '.$texte_articles;?></p>
+							<h3 class="size50 mtn mbs"><?php echo "#".$annee->name;?></h3>
+			<?php
+					if(get_field('descriptif_categorie', 'annee_'.$annee->term_id)!=""){
+			?>
+							<div class="texte-thematique tk-utopia-std-display size18 mtm">
+								<?php the_field('descriptif_categorie', 'annee_'.$annee->term_id);?>
+							</div>
+			<?php
+					}
+			?>
+							<a href="<?php echo get_term_link($annee);?>" title="Lien vers <?php echo $annee->name;?>" class="typo1 size13 tous-articles">Tous les articles</a>
+						</div>
+					</li>
+		   	<?php
+		   		}
+		    ?>
+		    </ul>
+		</div>
 	</div>
 <?php
 }
