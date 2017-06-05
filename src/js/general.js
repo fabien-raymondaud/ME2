@@ -26,19 +26,23 @@ $(document).ready(function() {
 	var compteur_annees = 0;
 
 	$('.flexslider-retro .flex-control-nav a').each(function(){
-		$(this).html($(annees[compteur_annees]).data('annee'));
+		$(this).html('<span>'+$(annees[compteur_annees]).data('annee')+'</span>');
 		compteur_annees++;
 	});
 
+	var compteur_click_nav_retro = 0;
+
 	$('.flexslider-retro .flex-next').click(function(){
-		var decalage = $('.flex-active').parent().prev().width()+24;
-		$('.flex-control-nav').css('left', '-='+decalage);
+		compteur_click_nav_retro--;
+		var decalage = compteur_click_nav_retro * 85;
+		$('.flex-control-nav').css('left', decalage+'px');
 
 	});
 
 	$('.flexslider-retro .flex-prev').click(function(){
-		var decalage = $('.flex-active').width()+24;
-		$('.flex-control-nav').css('left', '+='+decalage);
+		compteur_click_nav_retro++;
+		var decalage = compteur_click_nav_retro * 85;
+		$('.flex-control-nav').css('left', decalage+'px');
 
 	});
 

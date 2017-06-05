@@ -3202,7 +3202,9 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
   display: block;
   width: 110px;
   height: 50px;
-  background: #fff;
+  background-image: -webkit-gradient(linear, right top, left top, from(white), color-stop(50%, white), to(rgba(255, 255, 255, 0)));
+  background-image: -webkit-linear-gradient(right, white, white 50%, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to left, white, white 50%, rgba(255, 255, 255, 0));
   position: absolute;
   z-index: 2;
   top: -12px;
@@ -3212,6 +3214,9 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 .flexslider-retro .conteneur-nav-retro::before {
   left: 0;
   right: inherit;
+  background-image: -webkit-gradient(linear, left top, right top, from(white), color-stop(50%, white), to(rgba(255, 255, 255, 0)));
+  background-image: -webkit-linear-gradient(left, white, white 50%, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to right, white, white 50%, rgba(255, 255, 255, 0));
 }
 .flexslider-retro .conteneur-nav-retro .flex-control-nav {
   position: relative;
@@ -3239,6 +3244,8 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 }
 .flexslider-retro .flex-control-paging li {
   margin: 0 12px;
+  width: 61px;
+  text-align: center;
 }
 .flexslider-retro .flex-control-paging li a {
   -webkit-box-shadow: none;
