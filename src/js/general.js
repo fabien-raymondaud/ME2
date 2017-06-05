@@ -17,7 +17,8 @@ $(document).ready(function() {
 
 	$('.flexslider-retro').flexslider({
 		animation: "slide",
-		slideshow : false
+		slideshow : false,
+		controlsContainer : '.conteneur-nav-retro'
 	});
 
 	var annees = $('.element-annee').toArray();

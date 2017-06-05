@@ -965,28 +965,107 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 .flexslider-retro{
 	flex: 1;
 
-	.flex-control-nav{
+	.conteneur-nav-retro{
 		width: calc(100% + 45px);
 		position: absolute;
-		top: -62px;
+		top: -72px;
 		text-align: center;
 		border-bottom: 1px solid #808080;
 		left: -90px;
 		bottom:inherit;
+		overflow: hidden;
+		padding-top: 10px;
+
+		&::after, &::before{
+			display: block;
+			width: 110px;
+			height: 50px;
+			background: $color2;
+			position: absolute;
+			z-index: 2;
+			top:-12px;
+			right: 0;
+			content:'';
+		}
+
+		&::before{
+			left: 0;
+			right: inherit;
+		}
+
+		.flex-control-nav{
+			position: relative;
+			left: 0;
+			bottom:inherit;
+			width: 1000%;
+			overflow: hidden;
+			text-align: left;
+			padding-left: 100px;
+		}
+	}
+
+	.flex-direction-nav{
+		a{
+			opacity:1;
+			background: url(../../img/css/svg/nav-timeline.svg) no-repeat;
+			width: 16px;
+			height: 25px;
+			top: 20px;
+
+			&.flex-prev{
+				left: 15px;
+			}
+
+			&.flex-next{
+				right: 15px;
+			}
+		}
+	}
+
+
+	.flex-control-paging{
+		li{
+			margin: 0 12px;
+			a{
+				box-shadow: none;
+				background: none;
+				text-indent: 0;
+				height: auto;
+				width:auto;
+				font-weight: 800;
+				font-size: 2.3rem;
+				color:#808080;
+				line-height: 1;
+				padding-bottom: 8px;
+				border-bottom:7px solid transparent;
+				border-radius: 0;
+
+				&.flex-active{
+					background: none;
+					color:$color3;
+					border-bottom:7px solid $color3;
+				}
+			}
+		}
 	}
 }
+
+
 
 .panneau-annee{
 	display: flex !important;
 	
 	.image-annee{
 		width:39%;
+
+		+ .descriptif-annee{
+			padding-left: 42px;
+		}
 	}
 
 	.descriptif-annee{
 		flex:1;
 		padding-right: 42px;
-		padding-left: 42px;
 
 		.nb-articles{
 			margin-bottom: 7px;

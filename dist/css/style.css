@@ -3190,14 +3190,77 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
       -ms-flex: 1;
           flex: 1;
 }
-.flexslider-retro .flex-control-nav {
+.flexslider-retro .conteneur-nav-retro {
   width: calc(100% + 45px);
   position: absolute;
-  top: -62px;
+  top: -72px;
   text-align: center;
   border-bottom: 1px solid #808080;
   left: -90px;
   bottom: inherit;
+  overflow: hidden;
+  padding-top: 10px;
+}
+.flexslider-retro .conteneur-nav-retro::after, .flexslider-retro .conteneur-nav-retro::before {
+  display: block;
+  width: 110px;
+  height: 50px;
+  background: #fff;
+  position: absolute;
+  z-index: 2;
+  top: -12px;
+  right: 0;
+  content: '';
+}
+.flexslider-retro .conteneur-nav-retro::before {
+  left: 0;
+  right: inherit;
+}
+.flexslider-retro .conteneur-nav-retro .flex-control-nav {
+  position: relative;
+  left: 0;
+  bottom: inherit;
+  width: 1000%;
+  overflow: hidden;
+  text-align: left;
+  padding-left: 100px;
+}
+.flexslider-retro .flex-direction-nav a {
+  opacity: 1;
+  background: url(../../img/css/svg/nav-timeline.svg) no-repeat;
+  width: 16px;
+  height: 25px;
+  top: 20px;
+}
+.flexslider-retro .flex-direction-nav a.flex-prev {
+  left: 15px;
+}
+.flexslider-retro .flex-direction-nav a.flex-next {
+  right: 15px;
+}
+.flexslider-retro .flex-control-paging li {
+  margin: 0 12px;
+}
+.flexslider-retro .flex-control-paging li a {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: none;
+  text-indent: 0;
+  height: auto;
+  width: auto;
+  font-weight: 800;
+  font-size: 2.3rem;
+  color: #808080;
+  line-height: 1;
+  padding-bottom: 8px;
+  border-bottom: 7px solid transparent;
+  -webkit-border-radius: 0;
+          border-radius: 0;
+}
+.flexslider-retro .flex-control-paging li a.flex-active {
+  background: none;
+  color: #001FFF;
+  border-bottom: 7px solid #001FFF;
 }
 
 .panneau-annee {
@@ -3209,13 +3272,15 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 .panneau-annee .image-annee {
   width: 39%;
 }
+.panneau-annee .image-annee + .descriptif-annee {
+  padding-left: 42px;
+}
 .panneau-annee .descriptif-annee {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
   padding-right: 42px;
-  padding-left: 42px;
 }
 .panneau-annee .descriptif-annee .nb-articles {
   margin-bottom: 7px;
