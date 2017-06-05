@@ -18,16 +18,28 @@ $(document).ready(function() {
 	$('.flexslider-retro').flexslider({
 		animation: "slide",
 		slideshow : false,
-		controlsContainer : '.conteneur-nav-retro'
+		controlsContainer : '.conteneur-nav-retro',
+		animationLoop : false
 	});
 
 	var annees = $('.element-annee').toArray();
 	var compteur_annees = 0;
 
 	$('.flexslider-retro .flex-control-nav a').each(function(){
-		console.log($(annees[compteur_annees]));
 		$(this).html($(annees[compteur_annees]).data('annee'));
 		compteur_annees++;
+	});
+
+	$('.flexslider-retro .flex-next').click(function(){
+		var decalage = $('.flex-active').parent().prev().width()+24;
+		$('.flex-control-nav').css('left', '-='+decalage);
+
+	});
+
+	$('.flexslider-retro .flex-prev').click(function(){
+		var decalage = $('.flex-active').width()+24;
+		$('.flex-control-nav').css('left', '+='+decalage);
+
 	});
 
 	$(window).resize( function() {
