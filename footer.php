@@ -100,6 +100,16 @@ if(is_home() || is_front_page()){
 				<li class="entree-secondaire typo1"><a href="<?php the_permalink(99);?>">Mentions légales</a></li>
 			</ul>
 		</div>
+
+		<div class="back-to-top">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39">
+				<g id="Calque_1-2" data-name="Calque 1">
+					<circle class="cls-1" cx="19.5" cy="19.5" r="18.5"/>
+					<polygon class="cls-2" points="27.06 19.49 27.05 19.5 27.06 19.51 17.53 28.5 15.94 27 23.89 19.5 15.94 12 17.53 10.5 27.06 19.49"/>
+					<circle class="cls-2" cx="17.27" cy="19.5" r="1.32"/>
+				</g>
+			</svg>
+		</div>
 	</nav>
 </footer>
 <?php wp_footer(); ?>

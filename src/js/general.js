@@ -1,4 +1,12 @@
 $(document).ready(function() {
+	$('.back-to-top').on('click', function (e) {
+        $('html,body').animate({
+            scrollTop: 0
+        }, 700);
+
+        return false;
+    });
+
 	$('button.burger').click(function(){
 		$('.nav-burger').toggleClass('ouvert');
 		$('button.burger svg').toggleClass('invisible');
@@ -54,6 +62,8 @@ $(document).ready(function() {
 		decalage = compteur_click_nav_retro * multiplicateur;
 		$('.flex-control-nav').css('left', decalage+'px');
 	});
+
+
 	
 
 	$(window).resize( function() {
