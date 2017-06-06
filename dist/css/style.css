@@ -3295,6 +3295,7 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 }
 .panneau-annee .descriptif-annee h3 {
   line-height: 1;
+  font-weight: 800;
 }
 .panneau-annee .descriptif-annee .tous-articles {
   width: 125px;
@@ -3822,5 +3823,85 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
         -ms-hyphens: none;
             hyphens: none;
     line-height: 1.15em;
+  }
+
+  .footer-principal {
+    padding-top: 0;
+  }
+
+  .dans-le-retro {
+    width: 100%;
+    margin-left: 0;
+    display: block;
+  }
+  .dans-le-retro > h3 {
+    padding: 0;
+    margin: 0 0 70px;
+    width: 100%;
+    text-align: center;
+  }
+  .dans-le-retro > h3 span {
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+  }
+
+  .flexslider-retro {
+    width: 100%;
+    text-align: center;
+  }
+  .flexslider-retro .conteneur-nav-retro {
+    width: 100%;
+    padding: 20px 30px 0;
+    border-bottom: none;
+    left: 0;
+    top: -58px;
+  }
+  .flexslider-retro .conteneur-nav-retro .flex-control-nav {
+    width: 20000px;
+    padding-left: 0;
+  }
+  .flexslider-retro .flex-control-paging li {
+    width: 560px;
+    text-align: center;
+    margin: 0;
+  }
+  .flexslider-retro .flex-control-paging li a {
+    display: inline-block;
+  }
+  .flexslider-retro .flex-direction-nav a {
+    top: 30px;
+  }
+  .flexslider-retro .flex-direction-nav a.flex-prev {
+    left: 31px;
+  }
+  .flexslider-retro .flex-direction-nav a.flex-next {
+    right: 31px;
+  }
+
+  .panneau-annee {
+    display: block !important;
+  }
+  .panneau-annee .descriptif-annee {
+    padding: 0 30px;
+  }
+  .panneau-annee .descriptif-annee h3 {
+    font-size: 2.4rem;
+  }
+  .panneau-annee .descriptif-annee .tous-articles {
+    margin: 25px auto;
+    width: 170px;
+    height: 34px;
+    -webkit-border-radius: 17px;
+            border-radius: 17px;
+    font-size: 1.6rem;
+  }
+  .panneau-annee .image-annee {
+    width: 100%;
+    padding: 0 30px;
+  }
+  .panneau-annee .image-annee + .descriptif-annee {
+    padding-left: 0;
+    margin-top: 30px;
   }
 }

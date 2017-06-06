@@ -504,5 +504,95 @@
     }
   }
 
-  
+  .footer-principal{
+    padding-top: 0;
+  }
+
+  .dans-le-retro{
+    width: 100%;
+    margin-left: 0;
+    display: block;
+
+    > h3{
+      padding: 0;
+      margin: 0 0 70px;
+      width: 100%;
+      text-align: center;
+
+      span{
+        transform: none;
+      }
+    }
+  }
+
+  .flexslider-retro{
+    width: 100%;
+    text-align: center;
+
+    .conteneur-nav-retro{
+      width: 100%;
+      padding: 20px 30px 0;
+      border-bottom:none;
+      left: 0;
+      top: -58px;
+
+      .flex-control-nav{
+        width: 20000px;
+        padding-left: 0;
+      }
+    }
+
+    .flex-control-paging{
+      li{
+        width: 560px;
+        text-align: center;
+        margin: 0;
+
+        a{
+          display: inline-block;
+        }
+      }
+    }
+
+    .flex-direction-nav{
+      a{
+        top: 30px;
+        &.flex-prev{
+          left: 31px;
+        }
+
+        &.flex-next{
+          right: 31px;
+        }
+      }
+    }
+  }
+
+
+  .panneau-annee{
+    display: block !important;
+    
+    .descriptif-annee{
+      padding: 0 30px;
+      h3{
+        font-size: 2.4rem;
+      }
+      .tous-articles{
+        margin: 25px auto;
+        width: 170px;
+        height: 34px;
+        border-radius:17px;
+        font-size: 1.6rem;
+      }
+    }
+
+    .image-annee{
+      width: 100%;
+      padding: 0 30px;
+      + .descriptif-annee{
+        padding-left: 0;
+        margin-top: 30px;
+      }
+    }
+  }
 }

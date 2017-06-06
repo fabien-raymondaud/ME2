@@ -489,7 +489,7 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 	}
 
 	.flex-disabled{
-		opacity: 0!important;
+		opacity: 0 !important;
 		filter: alpha(opacity=0);
 		cursor: default;
 		z-index: -1;
@@ -1079,6 +1079,7 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 
 		h3{
 			line-height: 1;
+			font-weight: 800;
 		}
 
 		.tous-articles{
