@@ -2408,7 +2408,7 @@ body {
   left: 0;
   width: 100%;
   background: #fff;
-  z-index: 10;
+  z-index: 30;
 }
 .header-general h1 {
   margin: 0;
@@ -3984,6 +3984,7 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
   }
   .panneau-annee .descriptif-annee {
     padding: 0 30px;
+    margin-top: 30px;
   }
   .panneau-annee .descriptif-annee h3 {
     font-size: 2.4rem;
@@ -4002,7 +4003,6 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
   }
   .panneau-annee .image-annee + .descriptif-annee {
     padding-left: 0;
-    margin-top: 30px;
   }
 
   .cn-bottom .cookie-notice-container {
