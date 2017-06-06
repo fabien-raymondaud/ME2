@@ -1189,6 +1189,65 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 	}
 }
 
+.nav-footer{
+	.nav-partager{
+		.facebook, .twitter{
+			svg{
+				width: 34px;
+				height: 34px;
+
+				.cls-1{
+					fill:$color3;
+				}
+			}
+
+			&:focus, &:hover{
+				.cls-1{
+					fill:$color2;
+				}
+
+				.cls-2{
+					fill:$color3;
+				}
+			}
+		} 
+	}
+}
+
+.nav-partager{
+	position:fixed;
+	bottom: 50px;
+	right: 25px;
+	display:flex;
+	z-index:20;
+    h4{
+    	order:1;
+    	margin-left: -30px;
+    	margin-bottom: 0;
+    	display: flex;
+    	font-weight: 400;
+		span{
+			transform: rotate(90deg);
+		}
+    }
+
+    ul{
+      display: flex;
+      flex-direction:column;
+      position:relative;
+      z-index: 2;
+
+      li{
+      	margin-bottom: 0;
+      	line-height: 0;
+        + li{
+          order:-1;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
 /* Fin Footer */
 
 
