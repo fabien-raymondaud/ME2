@@ -605,3 +605,34 @@
     margin: 20px auto 0 !important;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .dans-le-retro{
+    padding-bottom: 0;
+  }
+
+  .nav-footer{
+    padding-left: 30px;
+    padding-right: 30px;
+    display: block;
+
+    .colonne-1, .colonne-2{
+      width: 100%;
+      margin: 0;
+      text-align: center;
+    }
+
+    ul{
+      &.nav-rs{
+        display: none;
+      }
+      &.nav-3{
+        li:last-child{
+          display: none;
+        }
+      }
+    }
+
+
+  }
+}

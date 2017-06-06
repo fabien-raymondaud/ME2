@@ -3914,3 +3914,25 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
     margin: 20px auto 0 !important;
   }
 }
+@media screen and (max-width: 480px) {
+  .dans-le-retro {
+    padding-bottom: 0;
+  }
+
+  .nav-footer {
+    padding-left: 30px;
+    padding-right: 30px;
+    display: block;
+  }
+  .nav-footer .colonne-1, .nav-footer .colonne-2 {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .nav-footer ul.nav-rs {
+    display: none;
+  }
+  .nav-footer ul.nav-3 li:last-child {
+    display: none;
+  }
+}

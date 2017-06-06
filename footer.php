@@ -82,7 +82,7 @@ if(is_home() || is_front_page()){
 			<ul class="nav-3 unstyled">
 				<li class="entree-principale"><a href="<?php the_permalink(101);?>">À propos</a></li>
 				<li class="entree-secondaire typo1"><a href="<?php the_permalink(103);?>">Contact</a></li>
-				<li class="entree-secondaire typo1"><a href="<?php the_permalink(105);?>">Nous suivre</a></li>
+				<li class="entree-secondaire typo1">Nous suivre</li>
 			</ul>
 			<ul class="nav-rs unstyled flex-container-h">
 				<li>
