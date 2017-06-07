@@ -1070,8 +1070,11 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 .footer-principal{
 	background:#eee url('../../img/css/svg/big-wave-footer.svg') no-repeat left bottom;
 	background-size:cover;
-	min-height: 892px;
-	padding-top: 58px;
+	
+	&.footer-home{
+		min-height: 892px;
+		padding-top: 58px;
+	}
 }
 
 .dans-le-retro{

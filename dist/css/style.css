@@ -3267,6 +3267,8 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
   background: #eee url("../../img/css/svg/big-wave-footer.svg") no-repeat left bottom;
   -webkit-background-size: cover;
           background-size: cover;
+}
+.footer-principal.footer-home {
   min-height: 892px;
   padding-top: 58px;
 }

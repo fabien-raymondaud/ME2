@@ -1,4 +1,10 @@
-<footer class="footer-principal">
+<?php
+$class_footer = ""; 
+if(is_home() || is_front_page()){
+	$class_footer = "footer-home";
+}
+?>
+<footer class="footer-principal <?php echo $class_footer;?>">
 <?php 
 if(is_home() || is_front_page()){
 	$annees = get_terms('annee');
