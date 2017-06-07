@@ -774,7 +774,7 @@ sub {
   top: 0.5ex;
 }
 
-blockquote {
+/*blockquote {
   position: relative;
   padding-left: 3em;
   min-height: 2em;
@@ -789,18 +789,18 @@ blockquote::before {
   font-size: 5em;
   height: .4em;
   line-height: .9;
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, .3);
 }
 
 blockquote > footer {
   margin-top: .75em;
   font-size: 0.9em;
-  color: rgba(0, 0, 0, 0.7);
-}
-blockquote > footer::before {
-  content: "\2014 \0020";
-}
+  color: rgba(0, 0, 0, .7);
 
+  &::before {
+    content: "\2014 \0020";
+  }
+}*/
 q {
   font-style: normal;
 }
@@ -3138,6 +3138,130 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 }
 
 /* Fin Home */
+/* Single */
+.single-central .media-entete {
+  overflow: hidden;
+  margin-top: 83px;
+  width: 87.5%;
+}
+.single-central .image-entete {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 400px;
+  overflow: hidden;
+}
+.single-central .image-entete img {
+  min-height: 400px;
+}
+.single-central .legende-entete {
+  position: relative;
+}
+.single-central .legende-entete::before {
+  content: '';
+  width: 9.5%;
+  background: #5551FB;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.bordures-single {
+  width: 87.5%;
+  padding-left: 16.6%;
+  padding-right: 45px;
+  position: relative;
+}
+.bordures-single::before {
+  content: '';
+  width: 9.5%;
+  background: #5551FB;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.entete-article {
+  padding-top: 40px;
+}
+.entete-article h2 {
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.entete-article h1 {
+  line-height: 1;
+  font-weight: 800;
+}
+
+.bloc-chapo {
+  position: relative;
+}
+.bloc-chapo svg {
+  width: 51px;
+  margin-top: 50px;
+  display: block;
+}
+.bloc-chapo svg .cls-1 {
+  fill: #333;
+}
+.bloc-chapo p {
+  line-height: 1.25em;
+}
+
+.bloc-texte-courant p {
+  font-size: 1.8rem;
+  font-family: "utopia-std-display", serif;
+  line-height: 1.35em;
+}
+.bloc-texte-courant p a {
+  color: #001FFF;
+  text-decoration: underline;
+}
+.bloc-texte-courant p + p {
+  margin-top: 15px;
+}
+.bloc-texte-courant h2, .bloc-texte-courant h3 {
+  margin: 50px 0 30px;
+  line-height: 1.2em;
+  font-weight: 800;
+}
+.bloc-texte-courant h2:first-child, .bloc-texte-courant h3:first-child {
+  margin-top: 0;
+}
+.bloc-texte-courant h2 {
+  font-size: 3rem;
+}
+.bloc-texte-courant h3 {
+  font-size: 2.4rem;
+}
+
+.la-citation {
+  width: 75%;
+  margin: auto;
+  padding: 50px 0 10px;
+}
+.la-citation blockquote p {
+  color: #5551FB;
+  font-size: 3.6rem;
+  font-weight: 200;
+  line-height: 1;
+}
+.la-citation .legende-citation {
+  margin-top: 7px;
+}
+
+/* Fin Single */
 /* Footer */
 .footer-principal {
   background: #eee url("../../img/css/svg/big-wave-footer.svg") no-repeat left bottom;
@@ -3752,6 +3876,15 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
     padding: 0 !important;
   }
 }
+@media screen and (max-width: 1023px) {
+  .bordures-single {
+    padding-right: 0;
+  }
+
+  .size50 {
+    font-size: 4.5rem;
+  }
+}
 @media screen and (max-width: 820px) {
   .super-conteneur-dossiers-thematiques .flexslider-dossier li .principal .descriptif-thematique {
     display: -webkit-box;
@@ -3816,6 +3949,56 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
   }
   .nav-partager h4 {
     display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .single-central .media-entete {
+    width: 100%;
+  }
+  .single-central .legende-entete::before {
+    display: none;
+  }
+
+  .bordures-single {
+    width: 100%;
+    border-left: none;
+    padding: 0 30px;
+  }
+  .bordures-single::before {
+    display: none;
+  }
+
+  .entete-article {
+    padding-top: 35px;
+  }
+  .entete-article h1 {
+    font-size: 3rem;
+  }
+
+  .bloc-chapo {
+    padding-top: 35px;
+  }
+  .bloc-chapo p {
+    font-size: 1.8rem;
+    line-height: 1.35em;
+  }
+
+  .bloc-texte-courant {
+    padding-top: 35px;
+  }
+  .bloc-texte-courant h2 {
+    font-size: 2.4rem;
+  }
+  .bloc-texte-courant h3 {
+    font-size: 1.8rem;
+  }
+
+  .la-citation {
+    width: 80%;
+    padding: 40px 0 10px;
+  }
+  .la-citation blockquote p {
+    font-size: 2.4rem;
   }
 }
 @media screen and (max-width: 728px) {

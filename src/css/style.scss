@@ -928,6 +928,144 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 
 /* Fin Home */
 
+/* Single */
+.single-central{
+	.media-entete{
+		overflow: hidden;
+		margin-top: 83px;
+		width: 87.5%;
+	}
+
+	.image-entete{
+		display: flex;
+		justify-content: center;
+		align-items:center;
+		height: 400px;
+		overflow:hidden;
+
+		img{
+			min-height: 400px;
+		}
+	}
+
+	.legende-entete{
+		position:relative;
+		&::before{
+			content:'';
+			width: 9.5%;
+			background:$color1;
+			position:absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+		}
+	}
+}
+
+.bordures-single{
+	width: 87.5%;
+	padding-left: 16.6%;
+	padding-right: 45px;
+	position:relative;
+
+	&::before{
+		content:'';
+		width: 9.5%;
+		background:$color1;
+		position:absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+	}
+}
+
+.entete-article{
+	padding-top: 40px;
+	h2{
+		font-weight:400;
+		margin-bottom: 5px;
+	}
+
+	h1{
+		line-height: 1;
+		font-weight: 800;
+	}
+}
+
+.bloc-chapo{
+	position:relative;
+
+	svg{
+		width: 51px;
+		margin-top: 50px;
+		display: block;
+		.cls-1{
+			fill:$color7;
+		}
+	}
+
+	p{
+		line-height: 1.25em;
+	}
+}
+
+.bloc-texte-courant{
+	p{
+		font-size: $size-18;
+		font-family: "utopia-std-display", serif;
+		line-height: 1.35em;
+
+		a{
+			color:$color3;
+			text-decoration: underline;
+		}
+
+		+ p{
+			margin-top: 15px;
+		}
+	}
+
+	h2, h3{
+		margin: 50px 0 30px;
+		line-height: 1.2em;
+		font-weight: 800;
+
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+
+	h2{
+		font-size: $size-30;
+	}
+
+	h3{
+		font-size: $size-24;
+	}
+}
+
+.la-citation{
+	width: 75%;
+	margin: auto;
+	padding: 50px 0 10px;
+
+	blockquote{
+		p{
+			color:$color1;
+			font-size: $size-36;
+			font-weight:200;
+			line-height: 1;
+		}
+	}
+
+	.legende-citation{
+		margin-top: 7px;
+	}
+}
+
+
+/* Fin Single */
+
 /* Footer */
 .footer-principal{
 	background:#eee url('../../img/css/svg/big-wave-footer.svg') no-repeat left bottom;

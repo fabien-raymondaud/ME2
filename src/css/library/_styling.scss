@@ -44,7 +44,7 @@ sub {
   top: 0.5ex;
 }
 
-blockquote {
+/*blockquote {
   position: relative;
   padding-left: 3em;
   min-height: 2em;
@@ -70,7 +70,7 @@ blockquote > footer {
   &::before {
     content: "\2014 \0020";
   }
-}
+}*/
 
 q {
   font-style: normal;

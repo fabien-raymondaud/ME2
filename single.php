@@ -35,8 +35,15 @@
 
 				case 'Image fixe' :
 ?>
-					<div class="image-entete"><img src="<?php the_field('image_entete');?>" alt="<?php the_title();?>"></div>
+					<div class="image-entete">
+						<img src="<?php the_field('image_entete');?>" alt="<?php the_title();?>">
+					</div>
 <?php
+					if(get_field('legende_image_entete')!=""){
+?>
+	        			<p class="legende-entete txtright size12 tk-utopia-std-display prs mtn pts"><?php the_field('legende_image_entete');?></p>
+<?php
+					}
 				break;
 
 				case 'Diaporama' :
@@ -48,20 +55,20 @@
 ?>
 		</div>
 
-		<div class="entete-article">
+		<div class="entete-article bordures-single">
 <?php
 		if($chaine_types_editoriaux!=""){
 ?>
-		    <h2 class="uppercase color3 typo2 size14"><?php echo $chaine_types_editoriaux;?></h2>
+		    <h2 class="uppercase color3 typo2 size14 mbn"><?php echo $chaine_types_editoriaux;?></h2>
 <?php
 		}
 ?>
-			<h1 class="size50"><?php the_title();?></h1>
-			<p class="annee-article typo1 size14"><?php the_field('annees_affichees');?></p>
+			<h1 class="size50 mbs mtn"><?php the_title();?></h1>
+			<p class="annee-article typo1 size14 man"><?php the_field('annees_affichees');?></p>
 <?php
 		if($chaine_hashtags!=""){
 ?>
-		    <p class="hashtags size14 typo1"><?php echo $chaine_hashtags;?></p>
+		    <p class="hashtags size14 typo1 man"><?php echo $chaine_hashtags;?></p>
 <?php
 		}
 ?>
@@ -71,19 +78,64 @@
 	    while ( have_rows('page_builder') ) : the_row();
 	        if( get_row_layout() == 'bloc_chapo' ):
 ?>
-	        	<div class="bloc-chapo"><?php the_sub_field('texte_chapo');?></div>
+	        	<div class="bloc-chapo bordures-single bloc-chapo bordures-single size20 typo1 ptl">
+	        		<?php the_sub_field('texte_chapo');?>
+	        		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.32 19.74">
+	        			<g id="Calque_1-2" data-name="Calque 1">
+	        				<polygon class="cls-1" points="25.66 19.74 13.69 6.86 3.42 17.9 0 14.72 13.69 0 25.66 12.88 37.63 0 51.31 14.72 47.89 17.9 37.63 6.86 25.66 19.74"/>
+	        			</g>
+	        		</svg>
+	        	</div>
 <?php
 	        elseif( get_row_layout() == 'bloc_texte_courant' ): 
 ?>
-	        	<div class="bloc-texte-courant"><?php the_sub_field('texte_courant');?></div>
+	        	<div class="bloc-texte-courant bordures-single ptl"><?php the_sub_field('texte_courant');?></div>
 <?php
 	        elseif( get_row_layout() == 'bloc_citation' ): 
 ?>
-	        	<div class="bloc-citation">
+	        	<div class="bloc-citation bordures-single">
 	        		<div class="la-citation">
+	        			<blockquote>
+	        				<?php the_sub_field('texte_citation');?>
+	        			</blockquote>
+<?php
+						if(get_sub_field('legende_citation')!=""){
+?>
+	        				<p class="legende-citation color7 size12 tk-utopia-std-display man"><?php the_sub_field('legende_citation');?></p>
+<?php
+						}
+?>
+					</div>
+	        	</div>
+<?php
+			elseif( get_row_layout() == 'bloc_video' ): 
+?>
+	        	<div class="bloc-video bordures-single">
+	        		<div class="la-video">
 	        			<?php the_sub_field('texte_citation');?>
 	        		</div>
-	        		<p class="legende-citation"><?php the_sub_field('legende_citation');?></p>
+<?php
+					if(get_sub_field('legende_video')!=""){
+?>
+	        			<p class="legende-video"><?php the_sub_field('legende_video');?></p>
+<?php
+					}
+?>
+	        	</div>
+<?php
+			elseif( get_row_layout() == 'bloc_image' ): 
+?>
+	        	<div class="bloc-image bordures-single">
+	        		<div class="l-image">
+	        			<?php the_sub_field('texte_citation');?>
+	        		</div>
+<?php
+					if(get_sub_field('legende_image')!=""){
+?>
+	        			<p class="legende-image"><?php the_sub_field('legende_image');?></p>
+<?php
+					}
+?>
 	        	</div>
 <?php
 	        endif;
