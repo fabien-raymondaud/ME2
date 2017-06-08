@@ -303,6 +303,33 @@
   .size50{
     font-size: 4.5rem;
   }
+
+  .raccourci-installation{
+    height: 44px;
+    width: 44px;
+    border-radius:22px;
+    left: -44px;
+
+    svg{
+      width: 44px;
+      min-width: 44px;
+    }
+
+    .cls-2{
+      fill:$color5;
+    }
+
+    span{
+      color:$color2;
+      margin-left: 8px;
+      padding-right: 25px;
+      font-size: 1.3rem;
+    }
+
+    &:hover, &:focus{
+      width: 203px;
+    }
+  }
 }
 
 
@@ -479,7 +506,7 @@
         text-align: left;
         align-items:flex-start;
         opacity: 1;
-        
+
         .types-editoriaux{
           margin: 0;
         }
@@ -502,6 +529,10 @@
         }
       }
     }
+  }
+
+  .raccourci-installation{
+    display: none;
   }
 }
 

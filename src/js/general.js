@@ -1,4 +1,26 @@
+function positionne_raccourci_ME(winwidth) {
+    if(winwidth >= 768 && winwidth < 1024){
+    	var largeur_raccourci = 44;
+	}
+	else{
+		if(winwidth > 1023){
+			var largeur_raccourci = 54;
+		}
+	}
+
+	if(winwidth >= 768){
+		if($('body').hasClass('home') || $('body').hasClass('single-post')){
+	    	var padding = parseInt($('.nav-footer').css('padding-left'), 10);
+	    	var position_left = (padding - largeur_raccourci)/2;
+	    	$('.raccourci-installation').css('left', position_left+'px');
+	    }
+	}
+
+    return true;             
+}
+
 $(document).ready(function() {
+	
 	$('.back-to-top').on('click', function (e) {
         $('html,body').animate({
             scrollTop: 0
@@ -63,11 +85,12 @@ $(document).ready(function() {
 		$('.flex-control-nav').css('left', decalage+'px');
 	});
 
+	positionne_raccourci_ME(winwidth);
 
-	
 
 	$(window).resize( function() {
 		winwidth = document.body.clientWidth;
+		positionne_raccourci_ME(winwidth);
 		if(winwidth<=620){
 			largeur_nav = winwidth - 60;
 			$('.flexslider-retro .flex-control-paging li').css('width', largeur_nav+'px');

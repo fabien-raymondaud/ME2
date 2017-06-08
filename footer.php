@@ -132,6 +132,24 @@ if(is_home() || is_front_page()){
 				</g>
 			</svg>
 		</div>
+
+		<a href="<?php the_permalink(2); ?>" title="Aller à L'installation" class="raccourci-installation">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.34 54.34">
+				<g id="Calque_1-2" data-name="Calque 1">
+					<rect class="cls-2" x="11.01" y="28.02" width="10.74" height="1.97" transform="translate(-16.47 23.47) rotate(-50.98)"/>
+					<rect class="cls-2" x="17.47" y="28.03" width="1.97" height="5.37" transform="translate(-17.08 26.06) rotate(-51.54)"/>
+					<rect class="cls-2" x="18" y="28" width="10.74" height="1.97" transform="translate(-13.86 28.89) rotate(-50.98)"/>
+					<rect class="cls-2" x="24.46" y="28.01" width="1.97" height="5.37" transform="translate(-14.42 31.52) rotate(-51.54)"/>
+					<rect class="cls-2" x="24.99" y="27.98" width="10.74" height="1.97" transform="translate(-11.25 34.35) rotate(-51.02)"/>
+					<rect class="cls-2" x="31.45" y="27.99" width="1.97" height="5.37" transform="translate(-11.76 36.98) rotate(-51.52)"/>
+					<rect class="cls-2" x="31.83" y="27.84" width="10.74" height="1.97" transform="translate(-8.62 39.55) rotate(-50.95)"/>
+					<rect class="cls-2" x="38.29" y="27.84" width="1.97" height="5.37" transform="translate(-9.06 42.29) rotate(-51.54)"/>
+					<polygon class="cls-2" points="19.25 41.95 13.12 37.68 14.16 36.19 19.24 39.73 24.8 35.76 30.41 39.66 35.97 35.7 42.1 39.97 41.06 41.46 35.98 37.93 30.42 41.89 24.82 37.99 19.25 41.95"/>
+					<path class="cls-2" d="M19.27,20.93a4.41,4.41,0,0,1-3.49-1.87c-.72-.81-1.18-1.27-2.13-1.27h0V16h0a4.41,4.41,0,0,1,3.49,1.87c.72.81,1.18,1.27,2.13,1.27h0c1,0,1.41-.46,2.13-1.27A4.4,4.4,0,0,1,24.89,16h0a4.41,4.41,0,0,1,3.48,1.87c.72.81,1.18,1.27,2.13,1.27h0c1,0,1.41-.46,2.13-1.27a4.41,4.41,0,0,1,3.49-1.88h0a4.41,4.41,0,0,1,3.49,1.87c.72.81,1.18,1.27,2.13,1.27h0v1.82h0A4.42,4.42,0,0,1,38.26,19c-.72-.81-1.18-1.27-2.13-1.27h0c-1,0-1.41.46-2.13,1.27a4.41,4.41,0,0,1-3.49,1.88h0A4.4,4.4,0,0,1,27,19c-.72-.81-1.18-1.27-2.13-1.27h0c-1,0-1.41.46-2.13,1.27a4.41,4.41,0,0,1-3.49,1.88Z"/>
+				</g>
+			</svg>
+			<span class="size16">ME : l'installation!</span>
+		</a>
 	</nav>
 </footer>
 <?php wp_footer(); ?>

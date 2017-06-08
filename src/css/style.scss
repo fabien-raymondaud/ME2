@@ -945,6 +945,7 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 
 		img{
 			min-height: 400px;
+			width: 100%;
 		}
 	}
 
@@ -1398,7 +1399,7 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 
 .nav-partager{
 	position:fixed;
-	bottom: 50px;
+	bottom: 20px;
 	right: 25px;
 	display:flex;
 	z-index:20;
@@ -1414,21 +1415,60 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
     }
 
     ul{
-      display: flex;
-      flex-direction:column;
-      position:relative;
-      z-index: 2;
+		display: flex;
+		flex-direction:column;
+		position:relative;
+		z-index: 2;
 
-      li{
-      	margin-bottom: 0;
-      	line-height: 0;
-        + li{
-          order:-1;
-          margin-bottom: 10px;
-        }
-      }
-    }
-  }
+		li{
+			margin-bottom: 0;
+			line-height: 0;
+			+ li{
+				order:-1;
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+.raccourci-installation{
+	position:fixed;
+	bottom: 20px;
+	display:flex;
+	align-items:center;
+	height: 54px;
+	width: 54px;
+	overflow:hidden;
+	border-radius:27px;
+	background-color:$color2;
+	left: -54px;
+	transition:all 0.3s ease;
+	padding:0;
+
+	svg{
+		width: 54px;
+		min-width: 54px;
+	}
+
+	.cls-2{
+		fill:$color5;
+	}
+
+	span{
+		color:$color2;
+		margin-left: 13px;
+		font-weight: 800;
+		padding-right: 30px;
+	}
+
+	&:hover, &:focus{
+		background-color:$color5;
+		width: 245px;
+		.cls-2{
+			fill:$color2;
+		}
+	}
+}
 
 /* Fin Footer */
 
