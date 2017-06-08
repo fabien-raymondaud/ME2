@@ -12,8 +12,10 @@
 	//Pour l'affichage des thématiques et hashtags de l'article
 	$thematiques = wp_get_post_terms($post->ID, 'thematique');
 	$tableau_hashtags = array();
+	$tableau_pour_liens = array();
 	foreach($thematiques as $thematique){
 		$tableau_hashtags[]='<a href="'.get_term_link($thematique).'" title="Lien vers '.$thematique->name.'">#'.$thematique->name.'</a>';
+		$tableau_pour_liens[]=$thematique->slug;
 	}
 
 	$hashtags = wp_get_post_terms($post->ID);
@@ -142,6 +144,66 @@
 	    endwhile;
 	endif;
 ?>
+		<div class="articles-en-liens bordures-single flex-container-h">
+			<h4 class="size24 man txtcenter ptl pbl">Articles en lien</h4>
+<?php
+			$articles_en_lien = array();
+			if(get_field('articles_en_lien')!=""){
+				$articles_en_lien = get_field('articles_en_lien');
+			}
+			else{
+				$args = array(
+					'post_type' => 'post',
+					'posts_per_page' => 2,
+					'order' => 'ASC',
+					'orderby' => 'rand',
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'thematique',
+							'field'    => 'slug',
+							'terms'    => $tableau_pour_liens
+						)
+					)
+				);
+				$query_articles_lies = new WP_Query( $args );
+
+				if($query_articles_lies->have_posts()) : 
+					while($query_articles_lies->have_posts()) : 
+						$query_articles_lies->the_post();
+						$articles_en_lien[]=$post->ID;
+					endwhile;
+				endif;
+			}
+
+			foreach($articles_en_lien as $article_lie){
+				$thumbnail_desktop_retina_src = wp_get_attachment_image_src(get_post_thumbnail_id($article_lie), 'full', false);
+   				//Pour l'affichage du type éditorial de l'article	    		
+	    		$types_editoriaux = wp_get_post_terms($article_lie, 'type_editorial');
+	    		$tableau_types_editoriaux = array();
+	    		foreach($types_editoriaux as $type_editorial){
+	    			$tableau_types_editoriaux[]=$type_editorial->name;
+	    		}
+	    		$chaine_types_editoriaux = implode(', ', $tableau_types_editoriaux);
+
+?>
+				<div class="article-en-lien" style="background-image:url('<?php echo $thumbnail_desktop_retina_src[0];?>')">
+					<a href="<?php the_permalink($article_lie);?>" title="Aller à <?php echo get_the_title($article_lie);?>" class="color2">
+						<div class="descriptif-article flex-container-v">
+							<h3 class="size24"><?php echo get_the_title($article_lie);?></h3>
+<?php
+							if($chaine_types_editoriaux!=""){
+?>
+    							<p class="types-editoriaux typo2 uppercase size14 mtn"><?php echo $chaine_types_editoriaux;?></p>
+<?php
+							}
+?>
+						</div>
+					</a>
+				</div>
+<?php
+			}
+?>
+		</div>
 	</div>
 <?php endwhile; ?>
 <?php endif; ?>
