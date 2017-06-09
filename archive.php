@@ -23,7 +23,45 @@ if($term->count>1){
 	<p class="nb-articles size18 txtcenter tk-utopia-std-display"><?php echo $term->count.' '.$texte_articles;?></p>
 <?php 
 	if($taxo=="annee"){
-		echo 'slider années';
+?>
+		<div class="dans-le-retro">
+			<span class="nav-left">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.9 25.75">
+					<g id="Calque_1-2" data-name="Calque 1">
+						<polygon class="cls-1" points="2.27 0 0 2.15 11.37 12.88 0 23.61 2.27 25.75 15.9 12.88 15.9 12.88 15.9 12.87 2.27 0"/>
+						<circle class="cls-1" cx="1.89" cy="12.88" r="1.89"/>
+					</g>
+				</svg>
+			</span>
+			<div class="conteneur-liste-annees">
+				<ul class="liste-annees unstyled flex-container-h">
+			    <?php // remontées articles selon année
+			    	$annees = get_terms('annee');
+
+			    	foreach($annees as $annee){
+			    		$classe_annee = "";
+			    		if($term->name == $annee->name){
+			    			$classe_annee = "active";
+			    		}
+			    ?>
+						<li>
+							<a href="<?php echo get_term_link($annee);?>" title="Lien vers <?php echo $annee->name;?>" class="size24 <?php echo $classe_annee;?>"><?php echo $annee->name;?></a>
+						</li>
+			   	<?php
+			   		}
+			    ?>
+			    </ul>
+			</div>
+		    <span class="nav-right">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.9 25.75">
+					<g id="Calque_1-2" data-name="Calque 1">
+						<polygon class="cls-1" points="2.27 0 0 2.15 11.37 12.88 0 23.61 2.27 25.75 15.9 12.88 15.9 12.88 15.9 12.87 2.27 0"/>
+						<circle class="cls-1" cx="1.89" cy="12.88" r="1.89"/>
+					</g>
+				</svg>
+			</span>
+		</div>
+<?php
 	}
 	else{
 		echo 'moteur de recherche + filtres';
