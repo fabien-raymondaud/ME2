@@ -102,7 +102,7 @@ Template Name: Accueil
 							</div>
 			   	<?php
 				   			$args = array(
-								        'posts_per_page' => -1,
+								        'posts_per_page' => 3,
 								        'post_type' => 'post',
 								        'tax_query' => array(
 								            array(
@@ -187,11 +187,14 @@ Template Name: Accueil
 	    		$chaine_types_editoriaux = implode(', ', $tableau_types_editoriaux);
 	   	?>
 				<div class="panneau-article">
+					
 		<?php
 				if($thumbnail_desktop_retina_src[0]!=""){
 		?>
 					<div class="image-article">
-						<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($dernier_article->ID);?>">
+						<a href="<?php the_permalink($dernier_article->ID);?>" title="Aller à <?php echo get_the_title($dernier_article->ID);?>">
+							<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($dernier_article->ID);?>">
+						</a>
 					</div>
 		<?php
 				}
@@ -204,7 +207,8 @@ Template Name: Accueil
 		<?php
 					}
 		?>
-						<h3 class="size24"><?php echo get_the_title($dernier_article->ID);?></h3>
+						<a href="<?php the_permalink($dernier_article->ID);?>" title="Aller à <?php echo get_the_title($dernier_article->ID);?>">
+							<h3 class="size24"><?php echo get_the_title($dernier_article->ID);?></h3>
 		<?php
 						if($chaine_types_editoriaux!=""){
 		?>
@@ -212,9 +216,10 @@ Template Name: Accueil
 		<?php
 						}
 		?>
-						<div class="excerpt-article tk-utopia-std-display">
-							<?php the_field('resume_remontee', $dernier_article->ID);?>
-						</div>
+							<div class="excerpt-article tk-utopia-std-display">
+								<?php the_field('resume_remontee', $dernier_article->ID);?>
+							</div>
+						</a>
 					</div>
 				</div>
 	   	<?php
@@ -250,7 +255,9 @@ Template Name: Accueil
 				if($thumbnail_desktop_retina_src[0]!=""){
 		?>
 					<div class="image-article">
-						<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($dernier_article->ID);?>">
+						<a href="<?php the_permalink($dernier_article->ID);?>" title="Aller à <?php echo get_the_title($dernier_article->ID);?>">
+							<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($dernier_article->ID);?>">
+						</a>
 					</div>
 		<?php
 				}
@@ -262,8 +269,9 @@ Template Name: Accueil
 	    				<p class="hashtags typo1 size14"><?php echo $chaine_hashtags;?></p>
 		<?php
 					}
-		?>
-						<h3 class="size24"><?php echo get_the_title($dernier_article->ID);?></h3>
+		?>	
+						<a href="<?php the_permalink($dernier_article->ID);?>" title="Aller à <?php echo get_the_title($dernier_article->ID);?>">
+							<h3 class="size24"><?php echo get_the_title($dernier_article->ID);?></h3>
 		<?php
 						if($chaine_types_editoriaux!=""){
 		?>
@@ -271,9 +279,10 @@ Template Name: Accueil
 		<?php
 						}
 		?>
-						<div class="excerpt-article tk-utopia-std-display">
-							<?php the_field('resume_remontee', $dernier_article->ID);?>
-						</div>
+							<div class="excerpt-article tk-utopia-std-display">
+								<?php the_field('resume_remontee', $dernier_article->ID);?>
+							</div>
+						</a>
 					</div>
 				</div>
 	   	<?php
