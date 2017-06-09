@@ -3310,6 +3310,82 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 }
 
 /* Fin Single */
+/* Archives */
+.nav-annees {
+  padding: 45px 8.3%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+.nav-annees::after {
+  content: '';
+  display: block;
+  width: 83.4%;
+  height: 1px;
+  background-color: #333;
+  position: absolute;
+  left: 50%;
+  margin-left: -41.7%;
+  bottom: 46px;
+}
+.nav-annees svg {
+  width: 16px;
+}
+.nav-annees > span {
+  cursor: pointer;
+  width: 16px;
+  min-width: 16px;
+  margin-bottom: 9px;
+}
+.nav-annees .nav-left {
+  margin-left: 15px;
+}
+.nav-annees .nav-left svg {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.nav-annees .nav-right {
+  margin-right: 15px;
+}
+.nav-annees a {
+  font-weight: 800;
+  padding-bottom: 8px;
+  display: block;
+  height: auto;
+  width: auto;
+  font-size: 2.3rem;
+  line-height: 1;
+  color: #808080;
+}
+.nav-annees a.active {
+  color: #001FFF;
+  border-bottom: 7px solid #001FFF;
+}
+.nav-annees li {
+  margin: 0 7px;
+  width: 61px;
+  text-align: center;
+}
+.nav-annees ul {
+  width: 10000px;
+}
+.nav-annees .conteneur-liste-annees {
+  width: 69%;
+  overflow: hidden;
+}
+
+/* Fin Archives */
 /* Footer */
 .footer-principal {
   background: #eee url("../../img/css/svg/big-wave-footer.svg") no-repeat left bottom;

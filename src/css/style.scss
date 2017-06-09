@@ -1105,9 +1105,83 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 		}
 	}
 }
-
-
 /* Fin Single */
+
+/* Archives */
+.nav-annees{
+	padding: 45px 8.3%;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	position:relative;
+
+	&::after{
+		content:'';
+		display: block;
+		width: 83.4%;
+		height: 1px;
+		background-color:$color7;
+		position: absolute;
+		left: 50%;
+		margin-left: -41.7%;
+		bottom: 46px;
+	}
+
+	svg{
+		width: 16px;
+	}
+
+	> span{
+		cursor: pointer;
+		width: 16px;
+		min-width: 16px;
+		margin-bottom: 9px;
+	}
+
+	.nav-left{
+		margin-left: 15px;
+		svg{
+			transform: rotate(180deg);
+		}
+	}
+
+	.nav-right{
+		margin-right: 15px;
+	}
+
+	a{
+		font-weight: 800;
+		padding-bottom: 8px;
+		display: block;
+		height: auto;
+		width: auto;
+		font-size: 2.3rem;
+		line-height: 1;
+		color:$color8;
+
+		&.active{
+			color:$color3;
+
+			border-bottom:7px solid $color3;
+		}
+	}
+
+	li{
+		margin: 0 7px;
+		width: 61px;
+		text-align: center;
+	}
+
+	ul{
+		width: 10000px;
+	}
+
+	.conteneur-liste-annees{
+		width: 69%;
+		overflow:hidden;
+	}
+}
+/* Fin Archives */
 
 /* Footer */
 .footer-principal{
@@ -1154,7 +1228,7 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 		position: absolute;
 		top: -72px;
 		text-align: center;
-		border-bottom: 1px solid #808080;
+		border-bottom: 1px solid $color8;
 		left: -12.2%;
 		bottom:inherit;
 		overflow: hidden;
@@ -1222,7 +1296,7 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 				width:auto;
 				font-weight: 800;
 				font-size: 2.3rem;
-				color:#808080;
+				color:$color8;
 				line-height: 1;
 				padding-bottom: 8px;
 				border-bottom:7px solid transparent;

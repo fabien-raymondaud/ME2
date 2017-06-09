@@ -24,7 +24,7 @@ if($term->count>1){
 <?php 
 	if($taxo=="annee"){
 ?>
-		<div class="dans-le-retro">
+		<div class="nav-annees">
 			<span class="nav-left">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.9 25.75">
 					<g id="Calque_1-2" data-name="Calque 1">
@@ -45,7 +45,7 @@ if($term->count>1){
 			    		}
 			    ?>
 						<li>
-							<a href="<?php echo get_term_link($annee);?>" title="Lien vers <?php echo $annee->name;?>" class="size24 <?php echo $classe_annee;?>"><?php echo $annee->name;?></a>
+							<a href="<?php echo get_term_link($annee);?>" title="Lien vers <?php echo $annee->name;?>" class="size24 <?php echo $classe_annee;?>"><span><?php echo $annee->name;?></span></a>
 						</li>
 			   	<?php
 			   		}
