@@ -3348,7 +3348,7 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
   margin-bottom: 9px;
 }
 .nav-annees .nav-left {
-  margin-left: 15px;
+  margin-left: 12px;
 }
 .nav-annees .nav-left svg {
   -webkit-transform: rotate(180deg);
@@ -3356,7 +3356,7 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
           transform: rotate(180deg);
 }
 .nav-annees .nav-right {
-  margin-right: 15px;
+  margin-right: 12px;
 }
 .nav-annees a {
   font-weight: 800;
