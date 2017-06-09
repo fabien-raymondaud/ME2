@@ -3347,6 +3347,10 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
   min-width: 16px;
   margin-bottom: 9px;
 }
+.nav-annees > span.desactive {
+  opacity: 0.4;
+  cursor: default;
+}
 .nav-annees .nav-left {
   margin-left: 12px;
 }

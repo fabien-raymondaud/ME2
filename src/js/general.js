@@ -19,6 +19,67 @@ function positionne_raccourci_ME(winwidth) {
     return true;             
 }
 
+function fonctionnement_nav_annees(winwidth) {
+	$('.nav-annees .nav-left, .nav-annees .nav-right').unbind('click');
+
+    if($('.nav-annees').length){
+		var largeur_nav_annees = $('.conteneur-liste-annees').width();
+		var nb_annees_visibles = Math.round(largeur_nav_annees/75);
+		var li_parent = $('a.active').parent();
+		var index_annee = $('.liste-annees li').index(li_parent) + 1;
+		var longueur_reelle = $('.liste-annees li').length * 75;
+
+		var decalage_max = largeur_nav_annees - longueur_reelle;
+
+		var decalage  = (-75 * (index_annee-nb_annees_visibles+(nb_annees_visibles/2))) + 37 ;
+
+		$('.nav-left, .nav-right').removeClass('desactive');
+
+		if(decalage > 0){
+			decalage = 0;
+			$('.nav-left').addClass('desactive');
+		}
+		else if(decalage<decalage_max){
+			decalage = decalage_max;
+			$('.nav-right').addClass('desactive');
+		}
+
+		$('.liste-annees').css('left', decalage+'px');
+
+		$('.nav-annees .nav-left').click(function(){
+			var position_annees = parseInt($('.liste-annees').css('left'), 10);
+			decalage_nav = position_annees + 75;
+			if(decalage_nav > 0){
+				decalage_nav = 0;
+				$('.nav-left').addClass('desactive');
+			}
+			else{
+				$('.nav-left').removeClass('desactive');
+			}
+
+			$('.liste-annees').css('left', decalage_nav+'px');
+
+		});
+
+		$('.nav-annees .nav-right').click(function(){
+			var position_annees = parseInt($('.liste-annees').css('left'), 10);
+			decalage_nav = position_annees - 75;
+			if(decalage_nav < decalage_max){
+				decalage_nav = decalage_max;
+				$('.nav-right').addClass('desactive');
+			}
+			else{
+				$('.nav-right').removeClass('desactive');
+			}
+
+			$('.liste-annees').css('left', decalage_nav+'px');
+
+		});
+	}
+
+    return true;             
+}
+
 $(document).ready(function() {
 	
 	$('.back-to-top').on('click', function (e) {
@@ -87,21 +148,12 @@ $(document).ready(function() {
 
 	positionne_raccourci_ME(winwidth);
 
-	if($('.nav-annees').length){
-		var largeur_nav_annees = $('.conteneur-liste-annees').width();
-		var nb_annees_visibles = Math.round(largeur_nav_annees/75);
-		var li_parent = $('a.active').parent();
-		var index_annee = $('.liste-annees li').index(li_parent) + 1;
-
-		var decalage  = (-75 * (index_annee-nb_annees_visibles+(nb_annees_visibles/2))) + 37 ;
-
-		$('.liste-annees').css('left', decalage+'px');
-	}
-
+	fonctionnement_nav_annees(winwidth);
 
 	$(window).resize( function() {
 		winwidth = document.body.clientWidth;
 		positionne_raccourci_ME(winwidth);
+		fonctionnement_nav_annees(winwidth);
 		if(winwidth<=620){
 			largeur_nav = winwidth - 60;
 			$('.flexslider-retro .flex-control-paging li').css('width', largeur_nav+'px');

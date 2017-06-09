@@ -1136,6 +1136,10 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 		width: 16px;
 		min-width: 16px;
 		margin-bottom: 9px;
+		&.desactive{
+			opacity:0.4;
+			cursor:default;
+		}
 	}
 
 	.nav-left{
