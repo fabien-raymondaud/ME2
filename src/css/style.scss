@@ -1174,11 +1174,15 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 
 	ul{
 		width: 10000px;
+		position: relative;
+		left: 0;
+		transition : left 0.3s ease;
 	}
 
 	.conteneur-liste-annees{
 		width: 69%;
 		overflow:hidden;
+		position: relative;
 	}
 }
 /* Fin Archives */

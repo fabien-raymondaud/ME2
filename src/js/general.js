@@ -87,6 +87,17 @@ $(document).ready(function() {
 
 	positionne_raccourci_ME(winwidth);
 
+	if($('.nav-annees').length){
+		var largeur_nav_annees = $('.conteneur-liste-annees').width();
+		var nb_annees_visibles = Math.round(largeur_nav_annees/75);
+		var li_parent = $('a.active').parent();
+		var index_annee = $('.liste-annees li').index(li_parent) + 1;
+
+		var decalage  = (-75 * (index_annee-nb_annees_visibles+(nb_annees_visibles/2))) + 37 ;
+
+		$('.liste-annees').css('left', decalage+'px');
+	}
+
 
 	$(window).resize( function() {
 		winwidth = document.body.clientWidth;

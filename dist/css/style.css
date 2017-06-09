@@ -3379,10 +3379,15 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 }
 .nav-annees ul {
   width: 10000px;
+  position: relative;
+  left: 0;
+  -webkit-transition: left 0.3s ease;
+          transition: left 0.3s ease;
 }
 .nav-annees .conteneur-liste-annees {
   width: 69%;
   overflow: hidden;
+  position: relative;
 }
 
 /* Fin Archives */
