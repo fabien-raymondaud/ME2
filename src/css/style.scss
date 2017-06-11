@@ -1329,6 +1329,36 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 }
 /* Fin Archives */
 
+/* Installation */
+.conteneur-video-installation{
+	height:calc(100vh - 83px);
+	width: 100%;
+	position: relative;
+	margin-top: 83px;
+	display: flex;
+	align-items:center;
+	justify-content:center;
+	
+	h1{
+		width: 62.5%;
+		text-align: center;
+	}
+}
+.bgvid{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	background: url(../../img/poster.jpg) 0 0 no-repeat;
+	background-size: cover;
+}
+
+/* Fin installation*/
+
 /* Footer */
 .footer-principal{
 	background:#eee url('../../img/css/svg/big-wave-footer.svg') no-repeat left bottom;
@@ -1566,6 +1596,30 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 
 		.cls-2{
 			fill:$color6;
+		}
+	}
+}
+
+.page-template-template_installation{
+	.nav-footer{
+		.nav-partager{
+			.facebook, .twitter{
+				svg .cls-1{
+					fill:$color5;
+				}
+
+				&:hover, &:focus{
+					svg{
+						.cls-1{
+							fill:$color2;
+						}
+
+						.cls-2{
+							fill:$color5;
+						}
+					}
+				}
+			}
 		}
 	}
 }

@@ -3552,6 +3552,45 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 }
 
 /* Fin Archives */
+/* Installation */
+.conteneur-video-installation {
+  height: calc(100vh - 83px);
+  width: 100%;
+  position: relative;
+  margin-top: 83px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.conteneur-video-installation h1 {
+  width: 62.5%;
+  text-align: center;
+}
+
+.bgvid {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background: url(../../img/poster.jpg) 0 0 no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+}
+
+/* Fin installation*/
 /* Footer */
 .footer-principal {
   background: #eee url("../../img/css/svg/big-wave-footer.svg") no-repeat left bottom;
@@ -3784,6 +3823,16 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 }
 .nav-footer .back-to-top .cls-2 {
   fill: #000;
+}
+
+.page-template-template_installation .nav-footer .nav-partager .facebook svg .cls-1, .page-template-template_installation .nav-footer .nav-partager .twitter svg .cls-1 {
+  fill: #FF6045;
+}
+.page-template-template_installation .nav-footer .nav-partager .facebook:hover svg .cls-1, .page-template-template_installation .nav-footer .nav-partager .facebook:focus svg .cls-1, .page-template-template_installation .nav-footer .nav-partager .twitter:hover svg .cls-1, .page-template-template_installation .nav-footer .nav-partager .twitter:focus svg .cls-1 {
+  fill: #fff;
+}
+.page-template-template_installation .nav-footer .nav-partager .facebook:hover svg .cls-2, .page-template-template_installation .nav-footer .nav-partager .facebook:focus svg .cls-2, .page-template-template_installation .nav-footer .nav-partager .twitter:hover svg .cls-2, .page-template-template_installation .nav-footer .nav-partager .twitter:focus svg .cls-2 {
+  fill: #FF6045;
 }
 
 .cn-bottom .cookie-notice-container {
