@@ -63,6 +63,13 @@
 					</div>
 
 					<div class="diaporama-entete flexslider-diapo">
+						<span class="fermer-diapo">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.48 18.1">
+								<g id="Calque_1-2" data-name="Calque 1">
+									<path class="cls-1" d="M15.24,1.64,1.77,17.75A1,1,0,1,1,.23,16.46L13.71.36a1,1,0,1,1,1.53,1.28Z"/><path class="cls-1" d="M.23,1.64l13.48,16.1a1,1,0,1,0,1.53-1.28L1.77.36A1,1,0,1,0,.23,1.64Z"/>
+								</g>
+							</svg>
+						</span>
 						<ul class="slides unstyled">
 <?php
 						$compteur_diapo = 1;
@@ -73,13 +80,6 @@
 ?>
 								<li>
 									<div class="diapo flex-container-h color2">
-										<span class="fermer-diapo">
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.48 18.1">
-												<g id="Calque_1-2" data-name="Calque 1">
-													<path class="cls-1" d="M15.24,1.64,1.77,17.75A1,1,0,1,1,.23,16.46L13.71.36a1,1,0,1,1,1.53,1.28Z"/><path class="cls-1" d="M.23,1.64l13.48,16.1a1,1,0,1,0,1.53-1.28L1.77.36A1,1,0,1,0,.23,1.64Z"/>
-												</g>
-											</svg>
-										</span>
 										<div class="image-diapo">
 											<img src="<?php the_sub_field('image_diapo_entete');?>" alt="<?php the_sub_field('titre_diapo_entete');?>">
 										</div>

@@ -330,6 +330,16 @@
       width: 203px;
     }
   }
+
+  .diaporama-entete{
+    .texte-diapo{
+      padding: 80px 30px 120px;
+    }
+
+    .flex-direction-nav{
+      left:calc(66.666% + 30px);
+    }
+  }
 }
 
 
@@ -533,6 +543,55 @@
 
   .raccourci-installation{
     display: none;
+  }
+
+  .diaporama-entete{
+    display: block;
+
+    .image-diapo{
+      width: 100%;
+      height: auto;
+      padding: 60px 30px 0;
+    }
+
+    .texte-diapo{
+      width: 100%;
+      background: $color1;
+      padding: 40px 30px 50px;
+
+      h3, h4{
+        font-size:3rem;
+      }
+
+      > div{
+        margin-top: 25px;
+      }
+    }
+
+    .flex-direction-nav{
+      width: 75px;
+      bottom: inherit;
+      top:15px;
+      left:30px;
+      a{
+        background: url('../../img/css/svg/icn-nav-slider-black.svg') 0 0 no-repeat;
+        width: 30px;
+        height: 30px;
+
+        &.flex-next{
+          transform:none;
+        }
+
+        &.flex-prev{
+          transform:rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .fermer-diapo{
+    right: 30px;
+    top: 20px;
   }
 }
 

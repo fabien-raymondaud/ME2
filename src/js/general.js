@@ -116,7 +116,8 @@ $(document).ready(function() {
 	$('.flexslider-diapo').flexslider({
 		animation: "slide",
 		controlNav : false,
-		slideshow : false
+		slideshow : false,
+		smoothHeight :	true
 	});
 
 	var annees = $('.element-annee').toArray();
@@ -154,11 +155,13 @@ $(document).ready(function() {
 
 	$('.lancer-diapo').click(function(){
 		$('.diaporama-entete').addClass('ouvert');
+		$('body').addClass('unscrolled');
 		return false;
 	});
 
 	$('.fermer-diapo').click(function(){
 		$('.diaporama-entete').removeClass('ouvert');
+		$('body').removeClass('unscrolled');
 		return false;
 	});
 

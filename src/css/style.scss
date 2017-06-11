@@ -181,6 +181,11 @@ body{
 	font-family:"Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif !important;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	&.unscrolled{
+		height: 100vh;
+		overflow: hidden;
+	}
 }
 
 /* Header */
@@ -1136,7 +1141,7 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 	.texte-diapo{
 		width: 33.333%;
 		background: $color1;
-		padding: 80px 40px;
+		padding: 80px 40px 120px;
 
 		h3, h4{
 			line-height: 1.15em;
@@ -1144,6 +1149,36 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 
 		> div{
 			margin-top: 25px;
+		}
+	}
+
+	.flex-direction-nav{
+		width: 100px;
+		display: flex;
+		justify-content:space-between;
+		position: absolute;
+		bottom: 60px;
+		left:calc(66.666% + 40px);
+		z-index: 10;
+		a{
+			background: url('../../img/css/svg/icn-nav-diaporama.svg') 0 0 no-repeat;
+			background-size: contain;
+			width: 40px;
+			position: relative;
+			top:inherit;
+			left: inherit;
+			right: inherit;
+			margin: 0;
+			height: 40px;
+			opacity: 1;
+
+			&.flex-prev{
+				transform:none;
+			}
+
+			&.flex-next{
+				transform:rotate(180deg);
+			}
 		}
 	}
 }
