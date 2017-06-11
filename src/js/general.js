@@ -120,6 +120,14 @@ $(document).ready(function() {
 		smoothHeight :	true
 	});
 
+	$('.flexslider-installation').flexslider({
+		animation: "slide",
+		controlNav : false,
+		slideshowSpeed : 15000
+	});
+
+	
+
 	var annees = $('.element-annee').toArray();
 	var compteur_annees = 0;
 

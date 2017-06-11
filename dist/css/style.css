@@ -2417,9 +2417,12 @@ body.unscrolled {
 .header-general h1 {
   margin: 0;
 }
-.header-general h1 img {
+.header-general h1 svg {
   display: block;
   width: 170px;
+}
+.header-general h1 svg .cls-1 {
+  fill: #5551FB;
 }
 .header-general .burger {
   border: none;
@@ -2441,6 +2444,10 @@ body.unscrolled {
 }
 .header-general .burger svg.invisible {
   display: none;
+}
+
+.page-template-template_installation .header-general h1 svg .cls-1 {
+  fill: #FF6045;
 }
 
 .nav-burger {

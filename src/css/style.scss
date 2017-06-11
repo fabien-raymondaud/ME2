@@ -203,9 +203,13 @@ body{
 	h1{
 		margin: 0;
 
-		img{
+		svg{
 			display: block;
 			width: 170px;
+
+			.cls-1{
+				fill:$color1;
+			}
 		}
 	}
 
@@ -231,6 +235,18 @@ body{
 
 			&.invisible{
 				display: none;
+			}
+		}
+	}
+}
+
+.page-template-template_installation{
+	.header-general{
+		h1{
+			svg{
+				.cls-1{
+					fill:$color5;
+				}
 			}
 		}
 	}
