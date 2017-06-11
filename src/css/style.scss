@@ -1105,6 +1105,60 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 		}
 	}
 }
+
+.diaporama-entete{
+	position: fixed;
+	right: -100%;
+	top: 0;
+	transition:right 0.5s ease;
+	z-index: 40;
+	width: 100%;
+	height: 100vh;
+	overflow: scroll;
+
+	&.ouvert{
+		right: 0;
+	}
+
+	.image-diapo{
+		width: 66.666%;
+	}
+
+	.texte-diapo{
+		width: 33.333%;
+		background: $color1;
+	}
+}
+
+.texte-lancement{
+	position: absolute;
+	z-index: 2;
+	display: flex;
+	flex-direction:column;
+	align-items:center;
+
+	svg{
+		width: 55px;
+	}
+
+	.cls-1{
+		fill:$color2;
+	}
+
+	.lire-article{
+		margin-top: 25px;
+		color:$color2;
+		font-family: $typo1;
+		font-size:$size-16;
+		border:1px solid $color2;
+		width: 195px;
+		height: 38px;
+		border-radius: 19px;
+		display: flex;
+		align-items:center;
+		justify-content:center;
+	}
+}
 /* Fin Single */
 
 /* Archives */

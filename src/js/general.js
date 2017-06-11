@@ -113,6 +113,12 @@ $(document).ready(function() {
 		animationLoop : false
 	});
 
+	$('.flexslider-diapo').flexslider({
+		animation: "slide",
+		controlNav : false,
+		slideshow : false
+	});
+
 	var annees = $('.element-annee').toArray();
 	var compteur_annees = 0;
 
@@ -144,6 +150,11 @@ $(document).ready(function() {
 		compteur_click_nav_retro++;
 		decalage = compteur_click_nav_retro * multiplicateur;
 		$('.flex-control-nav').css('left', decalage+'px');
+	});
+
+	$('.lancer-diapo').click(function(){
+		$('.diaporama-entete').addClass('ouvert');
+		return false;
 	});
 
 	positionne_raccourci_ME(winwidth);

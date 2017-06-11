@@ -50,7 +50,59 @@
 
 				case 'Diaporama' :
 ?>
+					<div class="image-entete">
+						<img src="<?php the_field('image_entete');?>" alt="<?php the_title();?>">
+						<div class="texte-lancement">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.72 55.07">
+								<g id="Calque_1-2" data-name="Calque 1">
+									<path class="cls-1" d="M14.09.76a2.6,2.6,0,0,0-3.68,0L.76,10.42a2.6,2.6,0,0,0,0,3.68l9.66,9.66a2.6,2.6,0,0,0,3.68,0l9.66-9.65a2.6,2.6,0,0,0,0-3.68ZM12.26,21.91,2.6,12.25,12.25,2.6h0l9.65,9.66Zm29.37,1.84a2.6,2.6,0,0,0,3.68,0L55,14.09a2.6,2.6,0,0,0,0-3.68L45.3.76a2.6,2.6,0,0,0-3.68,0L32,10.42a2.6,2.6,0,0,0,0,3.68ZM43.46,2.6h0l9.66,9.66-9.66,9.65-9.65-9.66ZM14.09,31.32a2.6,2.6,0,0,0-3.68,0L.76,41a2.6,2.6,0,0,0,0,3.68l9.66,9.66a2.6,2.6,0,0,0,3.68,0l9.66-9.66a2.6,2.6,0,0,0,0-3.68ZM12.26,52.47,2.6,42.81l9.65-9.65h0l9.65,9.66Zm33-21.15a2.6,2.6,0,0,0-3.68,0L32,41a2.6,2.6,0,0,0,0,3.68l9.65,9.66a2.6,2.6,0,0,0,3.68,0L55,44.65A2.6,2.6,0,0,0,55,41ZM43.46,52.47l-9.65-9.65,9.65-9.65h0l9.66,9.66Z"/>
+								</g>
+							</svg>
+							<a href="#" class="lancer-diapo typo1 lire-article">Lancer le diaporama</a>
+						</div>
+					</div>
 
+					<div class="diaporama-entete flexslider-diapo">
+						<ul class="slides unstyled">
+<?php
+						$compteur_diapo = 1;
+						$rows = get_field('diaporama_entete' );
+						$nb_diapo = count($rows);
+						if( have_rows('diaporama_entete') ):
+						    while ( have_rows('diaporama_entete') ) : the_row();
+?>
+								<li>
+									<div class="diapo flex-container-h color2">
+										<span class="fermer-diapo"></span>
+										<div class="image-diapo">
+											<img src="<?php the_sub_field('image_diapo_entete');?>" alt="<?php the_sub_field('titre_diapo_entete');?>">
+										</div>
+										<div class="texte-diapo">
+											<p class="numero-diapo typo1"><?php echo $compteur_diapo." / ".$nb_diapo;?></p>
+											<h3 class="typo2 size36"><?php the_sub_field('titre_diapo_entete');?></h3>
+<?php
+											if(get_sub_field('sous_titre_diapo_entete')!=""){
+?>
+												<h4 class="typo1 size36"><?php the_sub_field('sous_titre_diapo_entete');?></h4>
+<?php
+											}
+
+											if(get_sub_field('texte_diapo_entete')!=""){
+?>
+												<div class="tk-utopia-std-display size16"><?php the_sub_field('texte_diapo_entete');?></div>
+<?php
+											}
+?>
+										</div>
+									</div>
+								</li>
+<?php				
+								$compteur_diapo++;		        
+							endwhile;
+						endif;
+?>
+						</ul>
+					</div>
 <?php
 				break;
 			}
