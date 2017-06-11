@@ -157,6 +157,11 @@ $(document).ready(function() {
 		return false;
 	});
 
+	$('.fermer-diapo').click(function(){
+		$('.diaporama-entete').removeClass('ouvert');
+		return false;
+	});
+
 	positionne_raccourci_ME(winwidth);
 
 	fonctionnement_nav_annees(winwidth);

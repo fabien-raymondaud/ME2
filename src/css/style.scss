@@ -1122,11 +1122,29 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 
 	.image-diapo{
 		width: 66.666%;
+		height: 100vh;
+		background: $color2;
+		display: flex;
+		align-items:center;
+		justify-content:center;
+
+		img{
+			max-height: 100%;
+		}
 	}
 
 	.texte-diapo{
 		width: 33.333%;
 		background: $color1;
+		padding: 80px 40px;
+
+		h3, h4{
+			line-height: 1.15em;
+		}
+
+		> div{
+			margin-top: 25px;
+		}
 	}
 }
 
@@ -1157,6 +1175,21 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 		display: flex;
 		align-items:center;
 		justify-content:center;
+	}
+}
+
+.diapo{
+	position: relative;
+}
+
+.fermer-diapo{
+	position: absolute;
+	z-index: 41;
+	cursor:pointer;
+	right: 55px;
+	top: 30px;
+	svg{
+		width: 15px;
 	}
 }
 /* Fin Single */
