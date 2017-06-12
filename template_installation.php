@@ -14,20 +14,25 @@ Template Name: Installation
 </div>
 
 <div class="contenu-installation">
-	<h3 class="color5 uppercase size14 typo2">Libellé</h3>
-	<h2 class="size50"><?php the_title();?></h2>
+	<h3 class="color5 uppercase size14 typo2 man">Libellé</h3>
+	<h2 class="size50 man"><?php the_title();?></h2>
 
 	<div class="chapo-installation typo1 size20">
 		<?php the_field('chapo_installation');?>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.32 19.74">
+			<g id="Calque_1-2" data-name="Calque 1">
+				<polygon class="cls-1" points="25.66 19.74 13.69 6.86 3.42 17.9 0 14.72 13.69 0 25.66 12.88 37.63 0 51.31 14.72 47.89 17.9 37.63 6.86 25.66 19.74"/>
+			</g>
+		</svg>
 	</div>
 
 	<div class="texte-installation">
 		<?php the_field('texte_courant_installation');?>
 	</div>
 
-	<div class="actions-installation flex-container-h">
+	<div class="actions-installation flex-container-h typo1 size16">
 		<a href="mailto:<?php the_field('contact_installation');?>" class="contact-installation">Nous contacter</a>
-		<a href="mailto:<?php the_field('documentation_installation');?>" class="docu-installation">Télécharger la documentation</a>
+		<a href="<?php the_field('documentation_installation');?>" class="docu-installation">Télécharger la documentation</a>
 	</div>
 </div>
 
@@ -55,6 +60,7 @@ Template Name: Installation
 </div>
 
 <div class="conteneur-flux-rs">
+	<h3 class="size24 txtcenter plm prm">Social wall</h3>
 	<?php echo do_shortcode('[ff id="1"]');?>
 </div>
 <?php endwhile; ?>
