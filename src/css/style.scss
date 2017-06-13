@@ -1468,6 +1468,109 @@ body #ff-stream-1{
 	.ff-stream-wrapper{
 		margin-top: 0;
 	}
+
+	.picture-item__inner{
+		box-shadow: none;
+		background: #f5f5f5;
+	}
+
+	.ff-name{
+		font-weight: 700;
+		color:#4d4d4d !important;
+		font-size: $size-14;
+	}
+
+	.ff-timestamp{
+		display: none;
+	}
+
+	.ff-item{
+		margin-bottom: 20px !important;
+	}
+}
+
+body{
+	.ff-theme-classic{
+		.picture-item__inner{
+			box-shadow: none;
+			background: #f5f5f5;
+			padding: 20px;
+			border-radius: none;
+		}
+
+		&.ff-style-4{
+			.ff-item-meta{
+				padding: 0;
+				margin: 0;
+				border:none;
+				height: 34px;
+			}
+
+			.ff-userpic{
+				height: 34px;
+				width: 34px;
+				margin-right: 13px;
+			}
+
+			.ff-name{
+				margin-right: 0;
+				margin-top: 7px;
+
+				&:hover{
+					text-decoration: none;
+				}
+			}
+
+			.ff-icon-inner{
+				height: 34px;
+			}
+		}
+
+		.ff-item{
+			.ff-img-holder{
+				margin-bottom: 0;
+				margin-top: 20px;
+			}
+		}
+	}
+
+
+	.ff-item-cont{
+		display: flex;
+		flex-direction:column;
+
+		> span{
+			order: 2;
+		}
+
+		.ff-content{
+			order:1;
+			margin-top: 20px;
+			font-family: $typo1;
+			font-size:$size-14;
+			color:#4d4d4d;
+		}
+	}
+
+	.ff-instagram, .ff-twitter, .ff-facebook{
+		.ff-icon-inner{
+			background: #4d4d4d;
+		}
+	}
+
+	.ff-icon{
+		width: 34px;
+		height: 34px;
+	}
+
+	.ff-icon-inner{
+		font-size:$size-18;
+		&::after{
+			width: 34px;
+			height: 34px;
+			line-height: 34px;
+		}
+	}
 }
 /* Fin installation*/
 
