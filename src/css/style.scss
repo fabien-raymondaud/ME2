@@ -365,6 +365,22 @@ body{
 	}
 }
 
+.ouvrir-radio{
+	margin-left: 40px;
+	border:1px solid $color9;
+	color:$color9;
+	border-radius: 13px;
+	height: 26px;
+	padding: 0 20px 3px;
+	align-items:center;
+	transition: all 0.3s ease;
+	background: $color2;
+
+	&:hover, &:focus{
+		color:$color2;
+		background: $color9;
+	}
+}
 /* Fin header */
 
 
@@ -1535,7 +1551,7 @@ body #ff-stream-1{
 
 	.ff-name{
 		font-weight: 700;
-		color:#4d4d4d !important;
+		color:$color9 !important;
 		font-size: $size-14;
 	}
 
@@ -1607,13 +1623,13 @@ body{
 			margin-top: 20px;
 			font-family: $typo1;
 			font-size:$size-14;
-			color:#4d4d4d;
+			color:$color9;
 		}
 	}
 
 	.ff-instagram, .ff-twitter, .ff-facebook{
 		.ff-icon-inner{
-			background: #4d4d4d;
+			background: $color9;
 		}
 	}
 

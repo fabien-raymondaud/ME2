@@ -2548,6 +2548,27 @@ body.unscrolled {
   font-size: 1.3rem;
 }
 
+.ouvrir-radio {
+  margin-left: 40px;
+  border: 1px solid #4d4d4d;
+  color: #4d4d4d;
+  -webkit-border-radius: 13px;
+          border-radius: 13px;
+  height: 26px;
+  padding: 0 20px 3px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+  background: #fff;
+}
+.ouvrir-radio:hover, .ouvrir-radio:focus {
+  color: #fff;
+  background: #4d4d4d;
+}
+
 /* Fin header */
 /* Commun */
 /*
