@@ -7,7 +7,7 @@ Template Name: Installation
 
 <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 <div class="conteneur-video-installation">
-	<video loop poster="http://memoireselectriques.fr/wp-content/uploads/2015/05/accueil-iphone.jpg" class="bgvid">
+	<video autoplay loop poster="http://memoireselectriques.fr/wp-content/uploads/2015/05/accueil-iphone.jpg" class="bgvid">
 		<source src="http://memoireselectriques.fr/wp-content/themes/memoires/img/clip_court.mp4" type="video/mp4">
 	</video>
 	<h1 class="color2 size50">Promesse de l'installation</h1>

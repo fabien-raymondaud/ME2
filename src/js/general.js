@@ -80,8 +80,36 @@ function fonctionnement_nav_annees(winwidth) {
     return true;             
 }
 
+function lanceMasque() {
+	$('.anim-archive .masque-logo').addClass('ouvert');
+	window.setTimeout(fermeMasque, 500);
+}
+
+function fermeMasque() {
+	$('.anim-archive .masque-logo').addClass('ferme');
+}
+
+function lanceSVG() {
+	$('.anim-archive svg').addClass('ouvert');
+	window.setTimeout(fermeSVG, 750);
+}
+
+function fermeSVG() {
+	$('.anim-archive svg').removeClass('ouvert');
+}
+
+function lanceBody() {
+	$('.anim-archive').css('display', 'none');
+	$('body.page-archive').removeClass('unscrolled');
+}
+
 $(document).ready(function() {
-	
+	if($('.anim-archive').length){
+		window.setTimeout(lanceMasque, 1000);
+		window.setTimeout(lanceSVG, 1000);
+		window.setTimeout(lanceBody, 2500);
+	}
+
 	$('.back-to-top').on('click', function (e) {
         $('html,body').animate({
             scrollTop: 0
