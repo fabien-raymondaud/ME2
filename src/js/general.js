@@ -201,6 +201,28 @@ $(document).ready(function() {
 		return false;
 	});
 
+	$('.ouvrir-radio').click(function(){
+		$('.popup-playlist').addClass('ouvert');
+		return false;
+	});
+
+	$('.fermer-radio').click(function(){
+		$('.popup-playlist').removeClass('ouvert');
+		return false;
+	});
+
+	$('.display-all-playlists').click(function(){
+		$('.all-playlists').removeClass('ferme');
+		$('.current-playlist').addClass('ferme');
+		return false;
+	});
+
+	$('.back-radio').click(function(){
+		$('.all-playlists').addClass('ferme');
+		$('.current-playlist').removeClass('ferme');
+		return false;
+	});
+
 	positionne_raccourci_ME(winwidth);
 
 	fonctionnement_nav_annees(winwidth);

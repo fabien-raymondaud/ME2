@@ -68,6 +68,10 @@
 	font-size : $size-36;
 }
 
+.size32{
+	font-size : $size-32;
+}
+
 .size30{
 	font-size : $size-30;
 }
@@ -379,6 +383,35 @@ body{
 	&:hover, &:focus{
 		color:$color2;
 		background: $color9;
+	}
+}
+
+.popup-playlist{
+	position: fixed;
+	height: 100vh;
+	top: 0;
+	right: -100%;
+	width: 100%;
+	border:20px solid $color1;
+	transition:right 0.5s ease;
+	background: $color2;
+	z-index: 60;
+
+	&.ouvert{
+		right: 0;
+	}
+
+	> div{
+		position: relative;
+		right: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		transition:right 0.5s ease;
+
+		&.ferme{
+			right: -100%;
+		}
 	}
 }
 /* Fin header */

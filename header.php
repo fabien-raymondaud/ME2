@@ -92,6 +92,83 @@ else{
 <?php
 	}
 ?>
+
+	<div class="popup-playlist">
+		<div class="current-playlist">
+<?php
+			$args = array(
+				'post_type' => 'cue_playlist',
+				'posts_per_page' => 1,
+				'order' => 'ASC',
+				'orderby' => 'rand'
+			);
+			$query_playlist_active = new WP_Query( $args );
+
+			if($query_playlist_active->have_posts()) : 
+				while($query_playlist_active->have_posts()) : 
+					$query_playlist_active->the_post();
+					$playlist_active=$post->ID;
+					echo do_shortcode('[cue id="'.$playlist_active.'"]');
+				endwhile;
+			endif;
+?>
+			<a href="#" class="display-all-playlists flex-container-h typo1 size16 color2">Toutes les playlists</a>
+		</div>
+
+		<div class="all-playlists ferme">
+			<a href="#" class="back-radio size14 typo1 color4"><< Retour à la radio</a>
+			<ul class="unstyled">
+<?php
+			$args = array(
+				'post_type' => 'cue_playlist',
+				'posts_per_page' => -1,
+				'order' => 'ASC',
+				'orderby' => 'menu_order'
+			);
+			$query_playlists = new WP_Query( $args );
+
+			if($query_playlists->have_posts()) : 
+				while($query_playlists->have_posts()) : 
+					$query_playlists->the_post();
+					$tracks = get_cue_playlist_tracks( $post );
+
+					$chaine_morceaux = "morceau";
+					if(count($tracks)>1){
+						$chaine_morceaux = "morceaux";
+					}
+
+					$classe_liste = "";
+					$chaine_ecouter = "Écouter";
+					if($post->ID==$playlist_active){
+						$classe_liste = "is-playing";
+						$chaine_ecouter = "En écoute";
+					}
+?>
+					<li class="flex-container-h color7 <?php echo $classe_liste;?>">
+						<div class="cartouche-playlist">
+							<h3 class="typo2 size32"><?php the_title();?></h3>
+<?php
+							if(get_field('descriptif_playlist')!=""){
+?>
+								<div class="description-playlist size18 tk-utopia-std-display">
+									<?php the_field('descriptif_playlist');?>
+								</div>
+<?php
+							}
+?>
+							<p class="nb-tracks typo1 size14"><?php echo count($tracks).' '.$chaine_morceaux?></p>
+						</div>
+
+						<a class="lien-playlist flex-container-h typo1 size16 color2" href="#" data-playlist="<?php echo $post->ID;?>"><?php echo $chaine_ecouter;?></a>
+					</li>
+<?php
+				endwhile;
+			endif;
+?>
+			</ul>
+		</div>
+	</div>
+
 	<header class="header-general flex-container-h">
 		<h1>
 			<a href="<?php echo site_url(); ?>">
@@ -111,7 +188,7 @@ else{
 		<div class="recherche">
 			
 		</div>
-		
+
 		<button class="burger">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 18"><g id="Calque_1-2" data-name="Calque 1"><path class="cls-1" d="M18,2H1A1,1,0,0,1,1,0H18a1,1,0,0,1,0,2Z"/><path class="cls-1" d="M18,18H1a1,1,0,0,1,0-2H18a1,1,0,0,1,0,2Z"/><path class="cls-1" d="M22,10H1A1,1,0,0,1,1,8H22a1,1,0,0,1,0,2Z"/></g></svg>
 
