@@ -102,6 +102,7 @@ else{
 			</svg>
 		</span>
 		<div class="current-playlist">
+
 <?php
 			$args = array(
 				'post_type' => 'cue_playlist',
@@ -114,6 +115,9 @@ else{
 			if($query_playlist_active->have_posts()) : 
 				while($query_playlist_active->have_posts()) : 
 					$query_playlist_active->the_post();
+?>
+					<h2 class="man typo2 size24"><?php the_title();?></h2>
+<?php
 					$playlist_active=$post->ID;
 					echo do_shortcode('[cue id="'.$playlist_active.'"]');
 				endwhile;
