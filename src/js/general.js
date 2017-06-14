@@ -203,17 +203,21 @@ $(document).ready(function() {
 
 	$('.ouvrir-radio').click(function(){
 		$('.popup-playlist').addClass('ouvert');
+		$('body').addClass('unscrolled');
 		return false;
 	});
 
 	$('.fermer-radio').click(function(){
 		$('.popup-playlist').removeClass('ouvert');
+		$('body').removeClass('unscrolled');
 		return false;
 	});
 
 	$('.display-all-playlists').click(function(){
 		$('.all-playlists').removeClass('ferme');
 		$('.current-playlist').addClass('ferme');
+
+		//$('.mejs-next button').trigger('click');
 		return false;
 	});
 

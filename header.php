@@ -94,6 +94,13 @@ else{
 ?>
 
 	<div class="popup-playlist">
+		<span class="fermer-radio">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.48 18.1">
+				<g id="Calque_1-2" data-name="Calque 1">
+					<path class="cls-1" d="M15.24,1.64,1.77,17.75A1,1,0,1,1,.23,16.46L13.71.36a1,1,0,1,1,1.53,1.28Z"/><path class="cls-1" d="M.23,1.64l13.48,16.1a1,1,0,1,0,1.53-1.28L1.77.36A1,1,0,1,0,.23,1.64Z"/>
+				</g>
+			</svg>
+		</span>
 		<div class="current-playlist">
 <?php
 			$args = array(
@@ -112,7 +119,7 @@ else{
 				endwhile;
 			endif;
 ?>
-			<a href="#" class="display-all-playlists flex-container-h typo1 size16 color2">Toutes les playlists</a>
+			<a href="#" class="display-all-playlists typo1 size16 color2">Toutes les playlists</a>
 		</div>
 
 		<div class="all-playlists ferme">
@@ -146,7 +153,7 @@ else{
 ?>
 					<li class="flex-container-h color7 <?php echo $classe_liste;?>">
 						<div class="cartouche-playlist">
-							<h3 class="typo2 size32"><?php the_title();?></h3>
+							<h3 class="typo2 size32 man"><?php the_title();?></h3>
 <?php
 							if(get_field('descriptif_playlist')!=""){
 ?>
