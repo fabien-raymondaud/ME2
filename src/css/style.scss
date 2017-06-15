@@ -477,9 +477,64 @@ body{
 		.cue-tracks{
 			column-count:2;
 			max-height: inherit;
+			column-gap:85px;
+			border:none;
+			box-shadow:none;
+		}
+
+		.cue-track{
+			margin-bottom: 12px;
+			border:none;
+
+			.cue-track-details{
+				padding: 0;
+				width: 100%;
+				font-size: $size-16;
+
+				.cue-track-title{
+					font-family: $typo1;
+					color:$color7;
+					font-weight: 400;
+					margin-left: 3px;
+					transition: color 0.3s ease;
+					display: inline;
+				}
+
+				.cue-track-artist{
+					font-family: $typo2;
+					color:$color7;
+					transition: color 0.3s ease;
+					display: inline;
+
+					&::after{
+						content:' - ';
+					}
+				}
+			}
+
+			.cue-track-length{
+				display: none;
+			}
+
+			&.is-current{
+				background:none;
+				.cue-track-details{
+					.cue-track-title, .cue-track-artist{
+						color:$color3;
+					}
+				}
+			}
+
+			&:hover, &:focus{
+				background:none;
+				.cue-track-details{
+					.cue-track-title, .cue-track-artist{
+						color:$color3;
+					}
+				}
+			}
 		}
 	}
-
 }
 
 
@@ -491,6 +546,8 @@ body{
 	border:1px solid $color9;
 	display: inline-block;
 	transition:all 0.3s ease;
+	margin-left: calc(50% + 42px);
+	margin-bottom: 30px;
 
 	&:hover, &:focus{
 		background: $color2;
