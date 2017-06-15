@@ -191,7 +191,16 @@ else{
 			</a>
 		</h1>
 		<div class="player">
-			
+<?php
+			if($query_playlist_active->have_posts()) : 
+				while($query_playlist_active->have_posts()) : 
+					$query_playlist_active->the_post();
+
+					$playlist_active=$post->ID;
+					echo do_shortcode('[cue id="'.$playlist_active.'" show_playlist="0"]');
+				endwhile;
+			endif;
+?>			
 		</div>
 
 		<a href="#" class="ouvrir-radio typo1 size13 flex-container-h">Ouvrir la radio</a>

@@ -242,6 +242,152 @@ body{
 			}
 		}
 	}
+
+	.player{
+		height: 18px;
+		width: 380px;
+		margin-left: 85px;
+
+		.cue-playlist.max-width-380 .cue-skin-default.mejs-container{
+			padding-bottom: 0;
+			background: none;
+			box-shadow: none;
+			height: 18px !important;
+
+			.mejs-layers{
+				padding: 0 85px 0 70px;
+			}
+
+			.mejs-track-artwork{
+				display: none;
+			}
+
+			.mejs-controls{
+				position: absolute;
+				width: 100%;
+				margin: 0;
+				height: 18px;
+				top: 0;
+				left: 0;
+
+				.mejs-next-button, .mejs-previous-button, .mejs-playpause-button{
+					opacity: 1;
+					height: 18px;
+					width: 18px;
+					position: absolute;
+					top: 0;
+					margin: 0;
+					background: none;
+
+					button{
+						display: block;
+						width: 18px;
+						height: 18px;
+						border:none;
+						margin: 0;
+
+						&::before{
+							display: none;
+						}
+					}
+				}
+
+				.mejs-next-button{
+					right: 0;
+					left: calc(100% - 18px);
+					button{
+						background: url('../../img/css/svg/icn-forward.svg') no-repeat;
+						background-size: contain;
+					}
+				}
+
+				.mejs-previous-button{
+					left: 0;
+					button{
+						background: url('../../img/css/svg/icn-rewind.svg') no-repeat;
+						background-size: contain;
+					}
+				}
+
+				.mejs-time{
+					position: absolute;
+					top: 0;
+					right: 35px;
+					font-size: $size-14;
+					font-family: $typo2;
+					width: 50px;
+					text-align: right;
+
+					.mejs-time-separator, .mejs-duration{
+						display: none;
+					}
+
+					span{
+						color:$color7;
+					}
+				}
+
+				.mejs-playpause-button{
+					left: 33px;
+					background: none;
+					border-radius: 0;
+					box-shadow: none;
+
+					&.mejs-play, &.mejs-pause{
+						button{
+							background: url('../../img/css/svg/icn-play.svg') no-repeat;
+							background-size: contain;
+							height: 18px;
+							width: 18px;
+							margin: 0;
+							border:none;
+						}
+					}
+				}
+				
+				.mejs-time-rail, .mejs-volume-button, .mejs-horizontal-volume-slider{
+					display: none;
+				}
+			}
+
+			.mejs-track-details{
+				padding: 0;
+				position: absolute;
+				left: 70px;
+				width: calc(100% - 155px);
+				top: 0;
+				text-align: left;
+
+				.mejs-track-artist{
+					color:$color3;
+					font-size: $size-14;
+					font-family:$typo2;
+					margin: 0;
+					line-height: 1em;
+					display: inline;
+				}
+
+				.mejs-track-title{
+					font-size: $size-14;
+					font-family:$typo1;
+					margin: 0;
+					line-height: 1em;
+					color:$color7;
+					display: inline;
+					margin-left: 3px;
+					&::before{
+						content:' - ';
+					}
+				}
+			}
+
+		}
+
+		.cue-playlist{
+			border-radius: 0;
+			margin: 0;
+		}
+	}
 }
 
 .page-template-template_installation{
