@@ -340,8 +340,22 @@
       left:calc(66.666% + 30px);
     }
   }
-}
 
+  .header-general{
+    .player{
+      margin-left: 40px;
+      width: 245px;
+    }
+
+    .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-track-details .mejs-track-title{
+      display: none !important;
+    }
+
+    .cue-playlist.max-width-300 .cue-skin-default.mejs-container .mejs-track-details{
+      display: block;
+    }
+  }
+}
 
 
 @media screen and (max-width: 820px) {
@@ -434,6 +448,12 @@
 }
 
 @media screen and (max-width: 767px) {
+  .header-general{
+    .player, .ouvrir-radio{
+      display: none;
+    }
+  }
+
   .single-central{
     .media-entete{
       width: 100%;
