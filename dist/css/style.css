@@ -2641,6 +2641,11 @@ body.unscrolled {
   width: 25%;
   height: auto;
   margin-right: 40px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.current-playlist .cue-skin-default.mejs-container .mejs-track-artwork::before {
+  display: none;
 }
 .current-playlist .cue-skin-default.mejs-container .mejs-audiotheme-mark {
   display: none;
@@ -2650,6 +2655,88 @@ body.unscrolled {
   height: auto;
   margin-bottom: 40px;
   border-bottom: 1px solid #ccc;
+  position: relative;
+}
+.current-playlist .cue-skin-default.mejs-container .mejs-inner .mejs-layers {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.current-playlist .cue-skin-default.mejs-container .mejs-controls {
+  position: absolute;
+  bottom: 40px;
+  left: calc(25% + 40px);
+  width: calc(75% - 40px);
+  margin: 0;
+  height: 25px;
+}
+.current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-next-button, .current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-previous-button, .current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-playpause-button {
+  opacity: 1;
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  top: 0;
+  margin: 0;
+}
+.current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-next-button button, .current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-previous-button button, .current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-playpause-button button {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border: none;
+  margin: 0;
+}
+.current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-next-button button::before, .current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-previous-button button::before, .current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-playpause-button button::before {
+  display: none;
+}
+.current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-next-button {
+  right: 0;
+}
+.current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-next-button button {
+  background: url("../../img/css/svg/icn-forward.svg") no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+}
+.current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-previous-button {
+  left: 0;
+}
+.current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-previous-button button {
+  background: url("../../img/css/svg/icn-rewind.svg") no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+}
+.current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-playpause-button {
+  left: 35px;
+  background: none;
+  -webkit-border-radius: 0;
+          border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-playpause-button.mejs-play button, .current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-playpause-button.mejs-pause button {
+  background: url("../../img/css/svg/icn-play.svg") no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  height: 25px;
+  width: 25px;
+  margin: 0;
+  border: none;
+}
+.current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-time-rail {
+  width: calc(100% - 105px) !important;
+  left: 70px;
+  top: 7px;
+  right: inherit;
+  bottom: inherit;
+}
+.current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-time-rail .mejs-time-current {
+  background: #5551FB;
+}
+.current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-time-rail .mejs-time-loaded {
+  background: #e6e6e6;
+}
+.current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-volume-button, .current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-horizontal-volume-slider {
+  display: none;
 }
 .current-playlist .cue-playlist .cue-tracks {
   -webkit-column-count: 2;

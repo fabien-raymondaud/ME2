@@ -459,6 +459,11 @@ body{
 			width: 25%;
 			height: auto;
 			margin-right: 40px;
+			box-shadow: none;
+
+			&::before{
+				display: none;
+			}
 		}
 
 		.mejs-audiotheme-mark{
@@ -470,6 +475,95 @@ body{
 			height: auto;
 			margin-bottom: 40px;
 			border-bottom: 1px solid #ccc;
+			position: relative;
+
+			.mejs-layers{
+				display: flex;
+			}
+		}
+
+		.mejs-controls{
+			position: absolute;
+			bottom: 40px;
+			left: calc(25% + 40px);
+			width: calc(75% - 40px);
+			margin: 0;
+			height: 25px;
+
+			.mejs-next-button, .mejs-previous-button, .mejs-playpause-button{
+				opacity: 1;
+				height: 25px;
+				width: 25px;
+				position: absolute;
+				top: 0;
+				margin: 0;
+
+				button{
+					display: block;
+					width: 25px;
+					height: 25px;
+					border:none;
+					margin: 0;
+
+					&::before{
+						display: none;
+					}
+				}
+			}
+
+			.mejs-next-button{
+				right: 0;
+				button{
+					background: url('../../img/css/svg/icn-forward.svg') no-repeat;
+					background-size: contain;
+				}
+			}
+
+			.mejs-previous-button{
+				left: 0;
+				button{
+					background: url('../../img/css/svg/icn-rewind.svg') no-repeat;
+					background-size: contain;
+				}
+			}
+
+			.mejs-playpause-button{
+				left: 35px;
+				background: none;
+				border-radius: 0;
+				box-shadow: none;
+
+				&.mejs-play, &.mejs-pause{
+					button{
+						background: url('../../img/css/svg/icn-play.svg') no-repeat;
+						background-size: contain;
+						height: 25px;
+						width: 25px;
+						margin: 0;
+						border:none;
+					}
+				}
+			}
+
+			.mejs-time-rail{
+				width: calc(100% - 105px) !important;
+				left: 70px;
+				top: 7px;
+				right: inherit;
+				bottom:inherit;
+
+				.mejs-time-current{
+					background: $color1;
+				}
+
+				.mejs-time-loaded{
+					background: #e6e6e6;
+				}
+			}
+			
+			.mejs-volume-button, .mejs-horizontal-volume-slider{
+				display: none;
+			}
 		}
 	}
 
@@ -535,6 +629,8 @@ body{
 			}
 		}
 	}
+
+
 }
 
 

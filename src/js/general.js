@@ -103,6 +103,11 @@ function lanceBody() {
 	$('body.page-archive').removeClass('unscrolled');
 }
 
+function fermeRadio() {
+	$('.all-playlists').addClass('ferme');
+	$('.current-playlist').removeClass('ferme');
+}
+
 $(document).ready(function() {
 	if($('.anim-archive').length){
 		window.setTimeout(lanceMasque, 1000);
@@ -210,6 +215,9 @@ $(document).ready(function() {
 	$('.fermer-radio').click(function(){
 		$('.popup-playlist').removeClass('ouvert');
 		$('body').removeClass('unscrolled');
+
+		window.setTimeout(fermeRadio, 300);
+
 		return false;
 	});
 
@@ -233,6 +241,14 @@ $(document).ready(function() {
 
 	$(window).resize( function() {
 		winwidth = document.body.clientWidth;
+		
+		if(winwidth<=767){
+			$('.popup-playlist').removeClass('ouvert');
+			$('body').removeClass('unscrolled');
+
+			window.setTimeout(fermeRadio, 300);
+		}
+
 		positionne_raccourci_ME(winwidth);
 		fonctionnement_nav_annees(winwidth);
 		if(winwidth<=620){
