@@ -25,7 +25,34 @@ if ( ! function_exists( 'memoires_setup' ) ){
 
 if( ! function_exists ('my_register_post_types')) {
 	function my_register_post_types() {
-			
+		$labels = array(
+			'name'               => __( 'Brèves installation'),
+			'singular_name'      => __( 'Brève installation'),
+			'menu_name'          => __( 'Brèves installation'),
+			'name_admin_bar'     => __( 'Brève installation'),
+			'add_new'            => __( 'Ajouter une nouvelle brève installation'),
+			'add_new_item'       => __( 'Ajouter une nouvelle brève installation'),
+			'new_item'           => __( 'Nouvelle brève installation'),
+			'edit_item'          => __( 'Modifier une brève installation'),
+			'view_item'          => __( 'Voir une brève installation'),
+			'all_items'          => __( 'Toutes les brèves installation'),
+			'search_items'       => __( 'Chercher une brève installation'),
+			'parent_item_colon'  => __( 'Parent de la brève installation:'),
+			'not_found'          => __( 'Aucune brève installation trouvée.'),
+			'not_found_in_trash' => __( 'Aucune brève installation trouvée dans la corbeille.')
+		);
+		$args = array(
+			'labels' => $labels,
+			'public' => true,
+			'show_ui' => true,
+			'show_in_nav_menus'=> false,
+			'capability_type' => 'post',
+			'rewrite' => array("slug" => "breve_installation"),
+			'hierarchical' => false,
+			'query_var' => false,
+			'supports' => array('title'),
+		);
+		register_post_type( 'breve_installation', $args );
 	}
 }
 

@@ -8,7 +8,7 @@ Template Name: Installation
 <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 <div class="conteneur-video-installation">
 	<video autoplay loop poster="http://memoireselectriques.fr/wp-content/uploads/2015/05/accueil-iphone.jpg" class="bgvid">
-		<source src="http://memoireselectriques.fr/wp-content/themes/memoires/img/clip_court.mp4" type="video/mp4">
+		<!--<source src="<?php the_field('video_installation'); ;?>" type="video/mp4">-->
 	</video>
 	<h1 class="color2 size50">Promesse de l'installation</h1>
 </div>
@@ -57,6 +57,53 @@ Template Name: Installation
 	endif;
 ?>
 	</ul>
+</div>
+
+<div class="actus-installation flex-container-h">
+	<div class="conteneur-actus">
+		<div class="avec-overflow">
+			<h3 class="typo2 uppercase size14 color7 man"><?php the_field('libelle_bloc_actu');?></h3>
+			<h2 class="size50 color7 man"><?php the_field('titre_bloc_actu');?></h2>
+<?php
+			$args = array(
+					'post_type' => 'breve_installation',
+					'posts_per_page' => 3,
+					'order' => 'ASC',
+					'orderby' => 'menu_order'
+				);
+				$query_breves_installation = new WP_Query( $args );
+
+				if($query_breves_installation->have_posts()) : 
+					while($query_breves_installation->have_posts()) : 
+						$query_breves_installation->the_post();
+?>
+						<div class="conteneur-breve">
+							<h3 class="size20 color2 man"><?php the_title();?></h3>
+							<p class="date-breve color2 typo1 size14 man"><?php echo mysql2date('j/m/Y', get_field('date_breve'));?></p>
+							<div class="texte-breve size18 color2 tk-utopia-std-display">
+								<?php the_field('texte_breve');?>
+							</div>
+<?php
+							if(get_field('lien_breve')!=""){
+								$texte_lien = "Lire la suite";
+								if(get_field('texte_lien_breve')!=""){
+									$texte_lien = get_field('texte_lien_breve');
+								}
+?>
+								<a href="<?php the_field('lien_breve');?>" target="_blank" class="typo1 size16 color2"><?php echo $texte_lien;?></a>
+<?php
+							}
+?>
+						</div>
+<?php
+					endwhile;
+					wp_reset_postdata();
+				endif;
+?>			
+		</div>
+	</div>
+
+	<div class="conteneur-image-actus" style="background-image:url('<?php echo get_field('image_bloc_actu');?>');"></div>
 </div>
 
 <div class="conteneur-flux-rs">

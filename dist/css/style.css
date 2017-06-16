@@ -2583,6 +2583,9 @@ body.unscrolled {
 .page-template-template_installation .header-general h1 svg .cls-1 {
   fill: #FF6045;
 }
+.page-template-template_installation .header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-track-details .mejs-track-artist {
+  color: #FF6045;
+}
 
 .nav-burger {
   position: fixed;
@@ -4201,6 +4204,65 @@ body.page-archive.unscrolled > header, body.page-archive.unscrolled > footer, bo
 }
 .slider-installation .image-unique img {
   height: 100%;
+}
+
+.actus-installation {
+  height: 685px;
+}
+.actus-installation > div {
+  width: 50%;
+  height: 685px;
+}
+.actus-installation .conteneur-actus {
+  background: #FF6045;
+  padding: 75px 4.166% 0px 8.333%;
+}
+.actus-installation .conteneur-image-actus {
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: center;
+}
+.actus-installation .avec-overflow {
+  height: 100%;
+  overflow: scroll;
+  padding-right: 10.91%;
+}
+.actus-installation .avec-overflow > h2 {
+  line-height: 1.15em;
+}
+.actus-installation .avec-overflow > h3 {
+  font-weight: 400;
+}
+.actus-installation .conteneur-breve {
+  padding: 28px 0;
+}
+.actus-installation .conteneur-breve + .conteneur-breve {
+  border-top: 1px solid #fff;
+}
+.actus-installation .conteneur-breve h3 {
+  line-height: 1.15em;
+}
+.actus-installation .conteneur-breve > a {
+  height: 36px;
+  -webkit-border-radius: 18px;
+          border-radius: 18px;
+  padding: 3px 25px 0;
+  border: 1px solid #fff;
+  display: inline-block;
+  margin-top: 22px;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+  background: #FF6045;
+}
+.actus-installation .conteneur-breve > a:hover, .actus-installation .conteneur-breve > a:focus {
+  background: #fff;
+  color: #FF6045;
+}
+.actus-installation .conteneur-breve .texte-breve {
+  margin-top: 3px;
+}
+.actus-installation .conteneur-breve .texte-breve p {
+  line-height: 1.35em;
 }
 
 .conteneur-flux-rs > h3 {

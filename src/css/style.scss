@@ -399,6 +399,16 @@ body{
 				}
 			}
 		}
+
+		.player{
+			.cue-playlist.max-width-380 .cue-skin-default.mejs-container{
+				.mejs-track-details{
+					.mejs-track-artist{
+						color:$color5;
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -2009,6 +2019,74 @@ body.page-archive{
 	.image-unique{
 		img{
 			height: 100%;
+		}
+	}
+}
+
+.actus-installation{
+	height: 685px;
+
+	> div{
+		width: 50%;
+		height: 685px;
+	}
+
+	.conteneur-actus{
+		background:$color5;
+		padding: 75px 4.166% 0px 8.333%;
+	}
+
+	.conteneur-image-actus{
+		background-size:cover;
+		background-position:center;
+	}
+
+	.avec-overflow{
+		height: 100%;
+		overflow:scroll;
+		padding-right: 10.91%;
+
+		> h2{
+			line-height: 1.15em;
+		}
+
+		> h3{
+			font-weight: 400;
+		}
+	}
+
+	.conteneur-breve{
+		padding: 28px 0;
+
+		+ .conteneur-breve{
+			border-top:1px solid $color2;
+		}
+
+		h3{
+			line-height: 1.15em;
+		}
+
+		> a{
+			height: 36px;
+			border-radius:18px;
+			padding: 3px 25px 0;
+			border:1px solid $color2;
+			display: inline-block;
+			margin-top: 22px;
+			transition: all 0.3s ease;
+			background:$color5;
+
+			&:hover, &:focus{
+				background:$color2;
+				color:$color5;
+			}
+		}
+
+		.texte-breve{
+			margin-top: 3px;
+			p{
+				line-height: 1.35em;
+			}
 		}
 	}
 }
