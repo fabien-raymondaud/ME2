@@ -492,8 +492,6 @@
   }
 
   .bloc-texte-courant{
-    padding-top: 35px;
-
     h2{
       font-size: $size-24;
     }
@@ -501,6 +499,10 @@
     h3{
       font-size: $size-18;
     }
+  }
+
+  .bloc-texte-courant, .bloc-video, .bloc-image{
+    padding-top: 35px;
   }
 
   .la-citation{

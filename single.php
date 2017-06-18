@@ -1,6 +1,7 @@
 <?php get_header();?>
 <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 <?php
+	$avecblocvideo=false;
 	//Pour l'affichage du type éditorial de l'article	    		
 	$types_editoriaux = wp_get_post_terms($post->ID, 'type_editorial');
 	$tableau_types_editoriaux = array();
@@ -169,10 +170,18 @@
 	        	</div>
 <?php
 			elseif( get_row_layout() == 'bloc_video' ): 
+				$avecblocvideo = true;
 ?>
 	        	<div class="bloc-video bordures-single">
 	        		<div class="la-video">
-	        			<?php the_sub_field('texte_citation');?>
+	        			<video class="video-js" controls preload="auto" width="100%" poster="<?php the_sub_field('poster_video');?>" data-setup="{'aspectRatio':'683:375'}">
+							<source src="<?php the_sub_field('source_video');?>" type='video/mp4'>
+							<p class="vjs-no-js">
+							  Pour visualiser la vidéo correctement merci de vous équiper d'un. navigateur qui
+							  <a href="http://videojs.com/html5-video-support/" target="_blank">supporte les vidéos HTML5</a>
+							</p>
+						</video>
+	        			
 	        		</div>
 <?php
 					if(get_sub_field('legende_video')!=""){

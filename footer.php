@@ -152,6 +152,14 @@ if(is_home() || is_front_page()){
 		</a>
 	</nav>
 </footer>
+<?php 
+if($avecblocvideo){
+?>
+<link href="http://vjs.zencdn.net/6.1.0/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/6.1.0/video.js"></script>
+<?php
+}
+?>
 <?php wp_footer(); ?>
 </body>
 </html>

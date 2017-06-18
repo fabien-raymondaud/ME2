@@ -1590,11 +1590,18 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 		margin-top: 7px;
 	}
 }
+
 .bloc-video, .bloc-image{
 	padding-top: 70px;
 
 	> p{
 		margin-top: 12px;
+	}
+}
+
+.bloc-video{
+	video{
+		display: block;
 	}
 }
 

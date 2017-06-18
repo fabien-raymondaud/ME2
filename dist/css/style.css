@@ -3744,6 +3744,10 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
   margin-top: 12px;
 }
 
+.bloc-video video {
+  display: block;
+}
+
 .articles-en-liens {
   padding-top: 95px;
   padding-bottom: 95px;
@@ -5200,14 +5204,15 @@ body .ff-icon-inner::after {
     line-height: 1.35em;
   }
 
-  .bloc-texte-courant {
-    padding-top: 35px;
-  }
   .bloc-texte-courant h2 {
     font-size: 2.4rem;
   }
   .bloc-texte-courant h3 {
     font-size: 1.8rem;
+  }
+
+  .bloc-texte-courant, .bloc-video, .bloc-image {
+    padding-top: 35px;
   }
 
   .la-citation {
