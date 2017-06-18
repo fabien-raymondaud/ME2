@@ -177,7 +177,7 @@
 <?php
 					if(get_sub_field('legende_video')!=""){
 ?>
-	        			<p class="legende-video"><?php the_sub_field('legende_video');?></p>
+	        			<p class="legende-video size12 tk-utopia-std-display man"><?php the_sub_field('legende_video');?></p>
 <?php
 					}
 ?>
@@ -187,12 +187,12 @@
 ?>
 	        	<div class="bloc-image bordures-single">
 	        		<div class="l-image">
-	        			<?php the_sub_field('texte_citation');?>
+	        			<img src="<?php the_sub_field('source_image');?>" alt="<?php the_sub_field('legende_image');?>">
 	        		</div>
 <?php
 					if(get_sub_field('legende_image')!=""){
 ?>
-	        			<p class="legende-image"><?php the_sub_field('legende_image');?></p>
+	        			<p class="legende-image size12 tk-utopia-std-display man"><?php the_sub_field('legende_image');?></p>
 <?php
 					}
 ?>

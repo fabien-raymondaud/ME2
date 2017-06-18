@@ -3737,6 +3737,13 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
   margin-top: 7px;
 }
 
+.bloc-video, .bloc-image {
+  padding-top: 70px;
+}
+.bloc-video > p, .bloc-image > p {
+  margin-top: 12px;
+}
+
 .articles-en-liens {
   padding-top: 95px;
   padding-bottom: 95px;
