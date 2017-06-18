@@ -1488,6 +1488,12 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 			height: 100%;
 		}
 	}
+
+	.video-entete{
+		video{
+			display: block;
+		}
+	}
 }
 
 .bordures-single{

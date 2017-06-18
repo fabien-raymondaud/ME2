@@ -31,8 +31,19 @@
 <?php
 			switch(get_field('type_dentête')){
 				case 'Vidéo' :
+					$avecblocvideo = true;
+					$poster_bloc = get_field('poster_video_entete');
+					$poster_src = wp_get_attachment_image_src($poster_bloc, 'image-slider-a-la-une', false);
 ?>
-
+					<div class="video-entete">
+	        			<video class="video-js" controls preload="auto" width="100%" poster="<?php echo $poster_src[0];?>" data-setup="{'aspectRatio':'896:400'}">
+							<source src="<?php the_field('video_entete');?>" type='video/mp4'>
+							<p class="vjs-no-js">
+							  Pour visualiser la vidéo correctement merci de vous équiper d'un. navigateur qui
+							  <a href="http://videojs.com/html5-video-support/" target="_blank">supporte les vidéos HTML5</a>
+							</p>
+						</video>
+	        		</div>
 <?php
 				break;
 
@@ -171,10 +182,12 @@
 <?php
 			elseif( get_row_layout() == 'bloc_video' ): 
 				$avecblocvideo = true;
+				$poster_bloc = get_sub_field('poster_video');
+				$poster_src = wp_get_attachment_image_src($poster_bloc, 'image-poster-video', false);
 ?>
 	        	<div class="bloc-video bordures-single">
 	        		<div class="la-video">
-	        			<video class="video-js" controls preload="auto" width="100%" poster="<?php the_sub_field('poster_video');?>" data-setup="{'aspectRatio':'683:375'}">
+	        			<video class="video-js" controls preload="auto" width="100%" poster="<?php echo $poster_src[0];?>" data-setup="{'aspectRatio':'683:375'}">
 							<source src="<?php the_sub_field('source_video');?>" type='video/mp4'>
 							<p class="vjs-no-js">
 							  Pour visualiser la vidéo correctement merci de vous équiper d'un. navigateur qui

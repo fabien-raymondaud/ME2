@@ -3651,6 +3651,9 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
   top: 0;
   height: 100%;
 }
+.single-central .video-entete video {
+  display: block;
+}
 
 .bordures-single {
   width: 87.5%;
