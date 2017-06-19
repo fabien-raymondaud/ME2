@@ -149,7 +149,27 @@ add_action( 'wp_ajax_load_slider_articles', 'load_slider_articles' );
 add_action( 'wp_ajax_nopriv_load_slider_articles', 'load_slider_articles' );
 
 function load_slider_articles() {
-	echo "slider articles mobile";
+?>
+	<div class="flexslider-articles-mobile">
+		<ul class="slides">
+<?php
+			$args = array(
+			        'posts_per_page' => 5,
+			        'post_type' => 'post',
+			        'orderby' => 'menu_order',
+			        'order' => 'DESC',
+			        'offset' => 1
+			    );
+
+			$liste_derniers_articles = get_posts($args);
+
+			foreach ($liste_derniers_articles as $dernier_article){
+				include(locate_template('article-remontee-home-slider.php'));
+			}
+?>
+		</ul>
+	</div>
+<?php
 	die();
 }
 /* /Load slider articles home */

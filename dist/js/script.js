@@ -22,6 +22,14 @@ $(document).ready(function() {
 	    },
 	    function(response){
 	    	$('.derniers-articles').append(response);
+
+	    	if($('.flexslider-articles-mobile').length){
+	    		$('.flexslider-articles-mobile').flexslider({
+					animation: "slide",
+					controlNav : false,
+					slideshow : false
+				});
+	    	}
 	    }
 	);
 	/* /AJAX Articles home */
@@ -41,6 +49,8 @@ $(document).ready(function() {
 			deja_grand=false;
 			change_reso = true;
 			action_articles = 'load_slider_articles';
+
+
 		}
 
 		if(change_reso){
@@ -52,6 +62,14 @@ $(document).ready(function() {
 			    function(response){
 			    	$('.derniers-articles').html("");
 			    	$('.derniers-articles').append(response);
+
+			    	if($('.flexslider-articles-mobile').length){
+			    		$('.flexslider-articles-mobile').flexslider({
+							animation: "slide",
+							controlNav : false,
+							slideshow : false
+						});
+			    	}
 			    }
 			);
 		}
