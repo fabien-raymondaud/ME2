@@ -134,4 +134,69 @@ function wpc_show_admin_bar() {
 	return false;
 }
 add_filter('show_admin_bar' , 'wpc_show_admin_bar');
+
+
+
+function add_js_scripts() {
+	wp_enqueue_script( 'script', get_template_directory_uri().'/dist/js/script.js', array('jquery'), '1.0', true );
+	wp_localize_script('script', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
+}
+add_action('wp_enqueue_scripts', 'add_js_scripts');
+
+
+/* Load slider articles home */
+add_action( 'wp_ajax_load_slider_articles', 'load_slider_articles' );
+add_action( 'wp_ajax_nopriv_load_slider_articles', 'load_slider_articles' );
+
+function load_slider_articles() {
+	echo "slider articles mobile";
+	die();
+}
+/* /Load slider articles home */
+
+/* Load liste articles home */
+add_action( 'wp_ajax_load_liste_articles', 'load_liste_articles' );
+add_action( 'wp_ajax_nopriv_load_liste_articles', 'load_liste_articles' );
+
+function load_liste_articles() {
+?>
+	<div class="dernier-article flex-container-h">
+	    <?php
+   			$args = array(
+				        'posts_per_page' => 1,
+				        'post_type' => 'post',
+				        'orderby' => 'menu_order',
+				        'order' => 'DESC'
+				    );
+
+   			$liste_derniers_articles = get_posts($args);
+
+   			foreach ($liste_derniers_articles as $dernier_article){
+	    		include(locate_template('article-remontee-home.php'));
+	   		}
+	    ?>
+	    	<h3 class="uppercase size16"><span>Les derniers articles</span></h3>
+	    </div>
+
+	    <div class="autres-articles flex-container-h">
+		<?php
+   			$args = array(
+				        'posts_per_page' => 4,
+				        'post_type' => 'post',
+				        'orderby' => 'menu_order',
+				        'order' => 'DESC',
+				        'offset' => 1
+				    );
+
+   			$liste_derniers_articles = get_posts($args);
+
+   			foreach ($liste_derniers_articles as $dernier_article){
+	    		include(locate_template('article-remontee-home.php'));
+	   		}
+	    ?>
+	    </div>
+<?php
+	die();
+}
+/* /Load liste articles home */
 ?>
