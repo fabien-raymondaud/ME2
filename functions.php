@@ -24,6 +24,32 @@ if ( ! function_exists( 'memoires_setup' ) ){
 	}
 }
 
+function remove_menu_pages() {
+	remove_menu_page('edit-comments.php');
+}
+add_action( 'admin_menu', 'remove_menu_pages' );
+
+
+
+function my_remove_meta_boxes() {
+	remove_meta_box( 'categorydiv', 'post', 'side' );
+	remove_meta_box( 'slugdiv', 'post', 'normal' );
+	remove_meta_box( 'trackbacksdiv', 'post', 'normal' );
+	remove_meta_box( 'commentstatusdiv', 'post', 'normal' );
+	remove_meta_box( 'commentsdiv', 'post', 'advanced' );
+	remove_meta_box( 'authordiv', 'post', 'normal' );
+	remove_meta_box( 'revisionsdiv', 'post', 'advanced' );
+}
+add_action( 'admin_menu', 'my_remove_meta_boxes' );
+
+add_filter( 'sanitize_file_name', 'remove_accents' );
+
+function add_mime_types( $mimes ){
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'add_mime_types' );
+
 if( ! function_exists ('my_register_post_types')) {
 	function my_register_post_types() {
 		$labels = array(
