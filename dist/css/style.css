@@ -3948,6 +3948,91 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
   top: 45px;
 }
 
+.bloc-video .video-container, .video-entete .video-container {
+  position: relative;
+  padding-bottom: 54.9%;
+  /* 375:683 */
+  padding-top: 25px;
+  height: 0;
+}
+.bloc-video .video-container iframe, .video-entete .video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.bloc-video .poster, .video-entete .poster {
+  width: 100%;
+  padding-bottom: 54.9%;
+  /* 375:683 */
+  padding-top: 25px;
+  position: absolute;
+  height: 0;
+  z-index: 1;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: center;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+}
+.bloc-video .poster.ferme, .video-entete .poster.ferme {
+  z-index: -1;
+}
+.bloc-video .poster > div, .video-entete .poster > div {
+  width: 195px;
+  height: 123px;
+  position: absolute;
+  left: 50%;
+  margin-left: -98px;
+  top: 50%;
+  margin-top: -61px;
+}
+.bloc-video .poster > div span, .video-entete .poster > div span {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 36px;
+  border: 1px solid #fff;
+  -webkit-border-radius: 18px;
+          border-radius: 18px;
+}
+.bloc-video .poster svg, .video-entete .poster svg {
+  width: 66px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: 65px;
+}
+.bloc-video .poster svg .cls-1, .video-entete .poster svg .cls-1 {
+  opacity: 0.3;
+}
+.bloc-video .poster svg .cls-2, .video-entete .poster svg .cls-2 {
+  fill: #fff;
+}
+
+.bloc-video .la-video {
+  position: relative;
+}
+
+.video-entete {
+  position: relative;
+}
+.video-entete .video-container, .video-entete .poster {
+  padding-bottom: 44.64%
+  /* 400:896 */
+}
+
 /* Fin Single */
 /* Archives */
 .nav-annees {
@@ -4757,6 +4842,7 @@ body .ff-icon-inner::after {
   -webkit-transition: all 0.3s ease;
           transition: all 0.3s ease;
   padding: 0;
+  z-index: 5;
 }
 .raccourci-installation svg {
   width: 54px;

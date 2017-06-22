@@ -1773,6 +1773,90 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 	right: 57px;
 	top: 45px;
 }
+
+
+
+.bloc-video, .video-entete{
+	.video-container {
+		position: relative;
+		padding-bottom: 54.9%; /* 375:683 */
+		padding-top: 25px;
+		height: 0;
+	}
+
+	.video-container iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.poster{
+		width: 100%;
+		padding-bottom: 54.9%; /* 375:683 */
+		padding-top: 25px;
+		position: absolute;
+		height: 0;
+		z-index: 1;
+		background-size: cover;
+		background-position: center;
+		left: 0;
+		top: 0;
+		cursor:pointer;
+
+		&.ferme{
+			z-index: -1;
+		}
+
+		> div{
+			width: 195px;
+			height: 123px;
+			position: absolute;
+			left: 50%;
+			margin-left: -98px;
+			top:50%;
+			margin-top: -61px;
+
+			span{
+				display: flex;
+				width: 100%;
+				justify-content: center;
+				align-items: center;
+				height: 36px;
+				border: 1px solid #fff;
+				border-radius: 18px;
+			}
+		}
+
+		svg{
+			width: 66px;
+			margin-bottom: 20px;
+			display: block;
+			margin-left: 65px;
+			.cls-1{
+				opacity: 0.3;
+			}
+
+			.cls-2{
+				fill:$color2;
+			}
+		}
+	}
+}
+
+.bloc-video{
+	.la-video{
+		position: relative;
+	}
+}
+
+.video-entete{
+	position: relative;
+	.video-container, .poster{
+		padding-bottom: 44.64%; /* 400:896 */
+	}
+}
 /* Fin Single */
 
 /* Archives */
@@ -2591,6 +2675,7 @@ body{
 	left: -54px;
 	transition:all 0.3s ease;
 	padding:0;
+	z-index: 5;
 
 	svg{
 		width: 54px;

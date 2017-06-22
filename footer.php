@@ -157,6 +157,8 @@ if($avecblocvideo){
 ?>
 <link href="http://vjs.zencdn.net/6.1.0/video-js.css" rel="stylesheet">
 <script src="http://vjs.zencdn.net/6.1.0/video.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/2.3.2/Youtube.min.js"></script>
+<!--<script src="<?php bloginfo( 'template_url' ); ?>/dist/js/Youtube.min.js"></script>-->
 <?php
 }
 ?>

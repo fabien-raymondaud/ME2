@@ -109,6 +109,7 @@ function fermeRadio() {
 }
 
 $(document).ready(function() {
+
 	if($('.anim-archive').length){
 		window.setTimeout(lanceMasque, 1000);
 		window.setTimeout(lanceSVG, 1000);
@@ -235,13 +236,20 @@ $(document).ready(function() {
 		return false;
 	});
 
+	$('.poster').click(function(){
+		$(this).addClass('ferme');
+		var element_video = $(this).siblings('.video-container').find('iframe');
+		$(element_video)[0].src += "&autoplay=1";
+		return false;
+	});
+
 	positionne_raccourci_ME(winwidth);
 
 	fonctionnement_nav_annees(winwidth);
 
 	$(window).resize( function() {
 		winwidth = document.body.clientWidth;
-		
+
 		if(winwidth<=767){
 			$('.popup-playlist').removeClass('ouvert');
 			$('body').removeClass('unscrolled');

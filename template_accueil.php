@@ -12,7 +12,7 @@ Template Name: Accueil
 		    <?php // remontées articles à la une
 		    	$a_la_une = get_field('articles_a_la_une');
 		    	foreach($a_la_une as $article_une){
-		    		$thumbnail_desktop_retina_src = wp_get_attachment_image_src(get_post_thumbnail_id($article_une->ID), 'image-slider-a-la-une', false);
+		    		$thumbnail_desktop_retina_src = wp_get_attachment_image_src(get_field('image_mise_en_avant_slider', $article_une->ID), 'image-slider-a-la-une', false);
 					
 					//Pour l'affichage du type éditorial de l'article	    		
 		    		$types_editoriaux = wp_get_post_terms($article_une->ID, 'type_editorial');
