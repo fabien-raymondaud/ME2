@@ -10,7 +10,7 @@ if($term->count>1){
 }
 ?>
 
-<div class="header-cat txtcenter" style="margin-top:83px;">
+<div class="header-cat txtcenter">
 	<h1 class="txtcenter size30">
 <?php 
 	if($taxo=="thematique"){
