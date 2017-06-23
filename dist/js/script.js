@@ -21,7 +21,7 @@ $(document).ready(function() {
 	        'action': action_articles
 	    },
 	    function(response){
-	    	$('.derniers-articles').append(response);
+	    	$('body.home .derniers-articles').append(response);
 
 	    	if($('.flexslider-articles-mobile').length){
 	    		$('.flexslider-articles-mobile').flexslider({
@@ -60,8 +60,8 @@ $(document).ready(function() {
 			        'action': action_articles
 			    },
 			    function(response){
-			    	$('.derniers-articles').html("");
-			    	$('.derniers-articles').append(response);
+			    	$('body.home .derniers-articles').html("");
+			    	$('body.home .derniers-articles').append(response);
 
 			    	if($('.flexslider-articles-mobile').length){
 			    		$('.flexslider-articles-mobile').flexslider({

@@ -1182,6 +1182,16 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 	}
 }
 
+.page-template-default{
+	.bordures-single:last-child{
+		padding-bottom: 50px;
+	}
+
+	.single-central{
+		margin-top: 83px;
+	}
+}
+
 /* Fin Commun */
 
 /* Home */
@@ -1523,6 +1533,8 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 	h1{
 		line-height: 1;
 		font-weight: 800;
+		margin-bottom: 0;
+		padding-bottom: 10px;
 	}
 }
 

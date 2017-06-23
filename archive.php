@@ -1,5 +1,6 @@
 <?php get_header();?>
 <?php
+wp_reset_postdata();
 $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 $taxo =  get_query_var( 'taxonomy' );
 
@@ -69,6 +70,7 @@ if($term->count>1){
 ?>
 </div>
 <?php
+wp_reset_postdata();
 $args = array(
     'posts_per_page' => 1,
     'post_type' => 'post',
@@ -82,6 +84,7 @@ $args = array(
         )
     )
 );
+
 
 $liste_derniers_articles = get_posts($args);
 
@@ -139,6 +142,8 @@ if($liste_derniers_articles!=""){
     	</div>
 <?php
 }
+
+wp_reset_postdata();
 $args = array(
     'posts_per_page' => 4,
     'post_type' => 'post',
@@ -214,11 +219,8 @@ if($liste_derniers_articles!=""){
 	</div>
 <?php
 }
-?>
 
-
-
-<?php
+wp_reset_postdata();
 $args = array(
     'posts_per_page' => 1,
     'post_type' => 'post',
@@ -234,15 +236,15 @@ $args = array(
     )
 );
 
-$liste_derniers_articles = get_posts($args);
+$liste_derniers_articles2 = get_posts($args);
 
-if($liste_derniers_articles!=""){
+if($liste_derniers_articles2!=""){
 ?>
 	<div class="derniers-articles flex-container-h derniers-articles-bis">
 		<div class="dernier-article flex-container-h">
 <?php
 }			
-			foreach ($liste_derniers_articles as $dernier_article){
+			foreach ($liste_derniers_articles2 as $dernier_article){
 				$thumbnail_desktop_retina_src = wp_get_attachment_image_src(get_post_thumbnail_id($dernier_article->ID), 'full', false);
 				//Pour l'affichage du type éditorial de l'article	    		
     			$types_editoriaux = wp_get_post_terms($dernier_article->ID, 'type_editorial');
@@ -285,11 +287,13 @@ if($liste_derniers_articles!=""){
 				</div>
 <?php
    			}
-if($liste_derniers_articles!=""){	
+if($liste_derniers_articles2!=""){	
 ?>
     	</div>
 <?php
 }
+
+wp_reset_postdata();
 $args = array(
     'posts_per_page' => 4,
     'post_type' => 'post',
@@ -305,14 +309,14 @@ $args = array(
     )
 );
 
-$liste_derniers_articles_bis = get_posts($args);
+$liste_derniers_articles_bis2 = get_posts($args);
 
-if($liste_derniers_articles_bis!=""){
+if($liste_derniers_articles_bis2!=""){
 ?>
 		<div class="autres-articles flex-container-h">
 <?php
 }
-			foreach ($liste_derniers_articles_bis as $dernier_article){
+			foreach ($liste_derniers_articles_bis2 as $dernier_article){
 				$thumbnail_desktop_retina_src = wp_get_attachment_image_src(get_post_thumbnail_id($dernier_article->ID), 'full', false);
 				//Pour l'affichage du type éditorial de l'article	    		
     			$types_editoriaux = wp_get_post_terms($dernier_article->ID, 'type_editorial');
@@ -355,12 +359,12 @@ if($liste_derniers_articles_bis!=""){
 				</div>
    	<?php
    			}
-if($liste_derniers_articles_bis!=""){
+if($liste_derniers_articles_bis2!=""){
 ?>
     	</div>
 <?php
 }
-if($liste_derniers_articles!=""){
+if($liste_derniers_articles2!=""){
 ?>
 	</div>
 <?php
