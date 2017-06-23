@@ -5,6 +5,7 @@
 	$compteur_video = 0;
 ?>
 	<div class="single-central">
+		<?php get_search_form(); ?>
 		<div class="entete-article bordures-single">
 			<h1 class="size50 mbs mtn"><?php the_title();?></h1>
 		</div>

@@ -48,6 +48,7 @@
 </head>
 
 <?php
+
 if(is_archive()){
 ?>
 	<body class="page-archive unscrolled">
@@ -174,6 +175,7 @@ else{
 					</li>
 <?php
 				endwhile;
+
 			endif;
 ?>
 			</ul>
