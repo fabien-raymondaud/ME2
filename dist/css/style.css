@@ -3622,6 +3622,9 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 .derniers-articles .autres-articles .image-article {
   margin-bottom: 25px;
 }
+.derniers-articles .autres-articles .types-editoriaux {
+  color: #001FFF;
+}
 
 /* Fin Home */
 /* Single */
@@ -5417,6 +5420,10 @@ body .ff-icon-inner::after {
   .fermer-diapo {
     right: 30px;
     top: 20px;
+  }
+
+  .derniers-articles .autres-articles .types-editoriaux {
+    color: #fff;
   }
 }
 @media screen and (max-width: 728px) {

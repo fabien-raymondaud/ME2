@@ -615,6 +615,14 @@
     right: 30px;
     top: 20px;
   }
+
+  .derniers-articles{
+    .autres-articles{
+      .types-editoriaux{
+        color:$color2;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 728px) {

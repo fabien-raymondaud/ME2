@@ -109,7 +109,9 @@ if($liste_derniers_articles!=""){
 				if($thumbnail_desktop_retina_src[0]!=""){
 ?>
 					<div class="image-article">
-						<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($dernier_article->ID);?>">
+						<a href="<?php the_permalink($dernier_article->ID);?>" title="Aller à <?php echo get_the_title($dernier_article->ID);?>">
+							<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($dernier_article->ID);?>">
+						</a>
 					</div>
 <?php
 				}
@@ -122,17 +124,20 @@ if($liste_derniers_articles!=""){
 <?php
 					}
 ?>
-						<h3 class="size24"><?php echo get_the_title($dernier_article->ID);?></h3>
+						<a href="<?php the_permalink($dernier_article->ID);?>" title="Aller à <?php echo get_the_title($dernier_article->ID);?>">
+
+							<h3 class="size24"><?php echo get_the_title($dernier_article->ID);?></h3>
 <?php
-					if($chaine_types_editoriaux!=""){
+						if($chaine_types_editoriaux!=""){
 ?>
-    					<p class="types-editoriaux size14 uppercase typo2"><?php echo $chaine_types_editoriaux;?></p>
+    						<p class="types-editoriaux size14 uppercase typo2"><?php echo $chaine_types_editoriaux;?></p>
 <?php
-					}
+						}
 ?>
-						<div class="excerpt-article tk-utopia-std-display">
-							<?php the_field('resume_remontee', $dernier_article->ID);?>
-						</div>
+							<div class="excerpt-article tk-utopia-std-display">
+								<?php the_field('resume_remontee', $dernier_article->ID);?>
+							</div>
+						</a>
 					</div>
 				</div>
 <?php
@@ -181,7 +186,10 @@ if($liste_derniers_articles_bis!=""){
 				if($thumbnail_desktop_retina_src[0]!=""){
 ?>
 					<div class="image-article">
-						<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($dernier_article->ID);?>">
+						<a href="<?php the_permalink($dernier_article->ID);?>" title="Aller à <?php echo get_the_title($dernier_article->ID);?>">
+
+							<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($dernier_article->ID);?>">
+						</a>
 					</div>
 <?php
 				}
@@ -194,17 +202,20 @@ if($liste_derniers_articles_bis!=""){
 <?php
 					}
 ?>
-						<h3 class="size24"><?php echo get_the_title($dernier_article->ID);?></h3>
+						<a href="<?php the_permalink($dernier_article->ID);?>" title="Aller à <?php echo get_the_title($dernier_article->ID);?>">
+
+							<h3 class="size24"><?php echo get_the_title($dernier_article->ID);?></h3>
 <?php
-					if($chaine_types_editoriaux!=""){
+						if($chaine_types_editoriaux!=""){
 ?>
-    					<p class="types-editoriaux size14 uppercase typo2 color3"><?php echo $chaine_types_editoriaux;?></p>
+    						<p class="types-editoriaux size14 uppercase typo2 color3"><?php echo $chaine_types_editoriaux;?></p>
 <?php
-					}
+						}
 ?>
-						<div class="excerpt-article tk-utopia-std-display">
-							<?php the_field('resume_remontee', $dernier_article->ID);?>
-						</div>
+							<div class="excerpt-article tk-utopia-std-display">
+								<?php the_field('resume_remontee', $dernier_article->ID);?>
+							</div>
+						</a>
 					</div>
 				</div>
    	<?php
@@ -259,7 +270,10 @@ if($liste_derniers_articles2!=""){
 				if($thumbnail_desktop_retina_src[0]!=""){
 ?>
 					<div class="image-article">
-						<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($dernier_article->ID);?>">
+						<a href="<?php the_permalink($dernier_article->ID);?>" title="Aller à <?php echo get_the_title($dernier_article->ID);?>">
+
+							<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($dernier_article->ID);?>">
+						</a>
 					</div>
 <?php
 				}
@@ -272,17 +286,20 @@ if($liste_derniers_articles2!=""){
 <?php
 					}
 ?>
-						<h3 class="size24"><?php echo get_the_title($dernier_article->ID);?></h3>
+						<a href="<?php the_permalink($dernier_article->ID);?>" title="Aller à <?php echo get_the_title($dernier_article->ID);?>">
+
+							<h3 class="size24"><?php echo get_the_title($dernier_article->ID);?></h3>
 <?php
-					if($chaine_types_editoriaux!=""){
+						if($chaine_types_editoriaux!=""){
 ?>
-    					<p class="types-editoriaux size14 uppercase typo2"><?php echo $chaine_types_editoriaux;?></p>
+    						<p class="types-editoriaux size14 uppercase typo2"><?php echo $chaine_types_editoriaux;?></p>
 <?php
-					}
+						}
 ?>
-						<div class="excerpt-article tk-utopia-std-display">
-							<?php the_field('resume_remontee', $dernier_article->ID);?>
-						</div>
+							<div class="excerpt-article tk-utopia-std-display">
+								<?php the_field('resume_remontee', $dernier_article->ID);?>
+							</div>
+						</a>
 					</div>
 				</div>
 <?php
@@ -331,7 +348,10 @@ if($liste_derniers_articles_bis2!=""){
 				if($thumbnail_desktop_retina_src[0]!=""){
 ?>
 					<div class="image-article">
-						<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($dernier_article->ID);?>">
+						<a href="<?php the_permalink($dernier_article->ID);?>" title="Aller à <?php echo get_the_title($dernier_article->ID);?>">
+
+							<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php echo get_the_title($dernier_article->ID);?>">
+						</a>
 					</div>
 <?php
 				}
@@ -344,17 +364,20 @@ if($liste_derniers_articles_bis2!=""){
 <?php
 					}
 ?>
-						<h3 class="size24"><?php echo get_the_title($dernier_article->ID);?></h3>
+						<a href="<?php the_permalink($dernier_article->ID);?>" title="Aller à <?php echo get_the_title($dernier_article->ID);?>">
+
+							<h3 class="size24"><?php echo get_the_title($dernier_article->ID);?></h3>
 <?php
-					if($chaine_types_editoriaux!=""){
+						if($chaine_types_editoriaux!=""){
 ?>
-    					<p class="types-editoriaux size14 uppercase typo2 color3"><?php echo $chaine_types_editoriaux;?></p>
+    						<p class="types-editoriaux size14 uppercase typo2 color3"><?php echo $chaine_types_editoriaux;?></p>
 <?php
-					}
+						}
 ?>
-						<div class="excerpt-article tk-utopia-std-display">
-							<?php the_field('resume_remontee', $dernier_article->ID);?>
-						</div>
+							<div class="excerpt-article tk-utopia-std-display">
+								<?php the_field('resume_remontee', $dernier_article->ID);?>
+							</div>
+						</a>
 					</div>
 				</div>
    	<?php

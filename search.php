@@ -41,7 +41,9 @@ if($nb_resultats>1){
 				if($thumbnail_desktop_retina_src[0]!=""){
 ?>
 					<div class="image-article">
-						<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php the_title();?>">
+						<a href="<?php the_permalink();?>" title="Aller à <?php the_title();?>">
+							<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php the_title();?>">
+						</a>
 					</div>
 <?php
 				}
@@ -54,17 +56,19 @@ if($nb_resultats>1){
 <?php
 					}
 ?>
-						<h3 class="size24"><?php the_title();?></h3>
+						<a href="<?php the_permalink();?>" title="Aller à <?php the_title();?>">
+							<h3 class="size24"><?php the_title();?></h3>
 <?php
-					if($chaine_types_editoriaux!=""){
+						if($chaine_types_editoriaux!=""){
 ?>
-    					<p class="types-editoriaux size14 uppercase typo2"><?php echo $chaine_types_editoriaux;?></p>
+    						<p class="types-editoriaux size14 uppercase typo2"><?php echo $chaine_types_editoriaux;?></p>
 <?php
-					}
+						}
 ?>
-						<div class="excerpt-article tk-utopia-std-display">
-							<?php the_field('resume_remontee');?>
-						</div>
+							<div class="excerpt-article tk-utopia-std-display">
+								<?php the_field('resume_remontee');?>
+							</div>
+						</a>
 					</div>
 				</div>
     	</div>
@@ -91,7 +95,9 @@ if($nb_resultats>1){
 			if($thumbnail_desktop_retina_src[0]!=""){
 ?>
 				<div class="image-article">
-					<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php the_title();?>">
+					<a href="<?php the_permalink();?>" title="Aller à <?php the_title();?>">
+						<img src="<?php echo $thumbnail_desktop_retina_src[0];?>" alt="<?php the_title();?>">
+					</a>
 				</div>
 <?php
 			}
@@ -104,17 +110,19 @@ if($nb_resultats>1){
 <?php
 				}
 ?>
-					<h3 class="size24"><?php the_title();?></h3>
+					<a href="<?php the_permalink();?>" title="Aller à <?php the_title();?>">
+						<h3 class="size24"><?php the_title();?></h3>
 <?php
-				if($chaine_types_editoriaux!=""){
+					if($chaine_types_editoriaux!=""){
 ?>
-    				<p class="types-editoriaux size14 uppercase typo2 color3"><?php echo $chaine_types_editoriaux;?></p>
+    					<p class="types-editoriaux size14 uppercase typo2 color3"><?php echo $chaine_types_editoriaux;?></p>
 <?php
-				}
+					}
 ?>
-					<div class="excerpt-article tk-utopia-std-display">
-						<?php the_field('resume_remontee');?>
-					</div>
+						<div class="excerpt-article tk-utopia-std-display">
+							<?php the_field('resume_remontee');?>
+						</div>
+					</a>
 				</div>
 			</div>
 <?php
