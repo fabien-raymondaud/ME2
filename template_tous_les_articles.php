@@ -4,6 +4,8 @@ Template Name: Tous les articles
 */
 ?>
 <?php get_header();?>
+<?php wp_reset_postdata(); ?>
+
 
 <div class="header-cat txtcenter">
 	<h1 class="txtcenter size30">Tous les articles</h1>

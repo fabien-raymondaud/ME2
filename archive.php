@@ -1,4 +1,6 @@
 <?php get_header();?>
+<?php wp_reset_postdata(); ?>
+
 <?php
 $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 $taxo =  get_query_var( 'taxonomy' );
