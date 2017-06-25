@@ -68,16 +68,16 @@ if(is_home() || is_front_page()){
 		<div class="colonne-1">
 			<ul class="nav-1 unstyled">
 				<li class="entree-principale"><a href="<?php echo site_url(); ?>">Accueil</a></li>
-				<li class="entree-principale"><a href="">Tous les articles</a></li>
-				<li class="entree-secondaire typo1"><a href="">Rapido</a></li>
-				<li class="entree-secondaire typo1"><a href="">Portrait</a></li>
-				<li class="entree-secondaire typo1"><a href="">Reportages</a></li>
-				<li class="entree-secondaire typo1"><a href="">Épopées</a></li>
-				<li class="entree-secondaire typo1"><a href="">L'humeur de ...</a></li>
+				<li class="entree-principale"><a href="<?php the_permalink(383);?>">Tous les articles</a></li>
+				<li class="entree-secondaire typo1"><a href="<?php echo get_term_link(42); ?>">Rapido</a></li>
+				<li class="entree-secondaire typo1"><a href="<?php echo get_term_link(6); ?>">Portrait</a></li>
+				<li class="entree-secondaire typo1"><a href="<?php echo get_term_link(48); ?>">Reportages</a></li>
+				<li class="entree-secondaire typo1"><a href="<?php echo get_term_link(2); ?>">Épopées</a></li>
+				<li class="entree-secondaire typo1"><a href="<?php echo get_term_link(70); ?>">L'humeur de ...</a></li>
 			</ul>
 			<ul class="nav-2 unstyled">
-				<li class="entree-principale"><a href="">Dans le rétro</a></li>
-				<li class="entree-principale"><a href="">Les playlists</a></li>
+				<li class="entree-principale"><a href="#">Dans le rétro</a></li>
+				<li class="entree-principale"><a href="#">Les playlists</a></li>
 			</ul>
 			<ul class="nav-installation unstyled">
 				<li class="entree-principale"><a href="<?php the_permalink(2);?>">L'installation</a></li>

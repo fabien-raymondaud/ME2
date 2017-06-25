@@ -1,6 +1,5 @@
 <?php get_header();?>
 <?php
-wp_reset_postdata();
 $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 $taxo =  get_query_var( 'taxonomy' );
 
@@ -70,7 +69,6 @@ if($term->count>1){
 ?>
 </div>
 <?php
-wp_reset_postdata();
 $args = array(
     'posts_per_page' => 1,
     'post_type' => 'post',
@@ -148,7 +146,6 @@ if($liste_derniers_articles!=""){
 <?php
 }
 
-wp_reset_postdata();
 $args = array(
     'posts_per_page' => 4,
     'post_type' => 'post',
@@ -231,7 +228,6 @@ if($liste_derniers_articles!=""){
 <?php
 }
 
-wp_reset_postdata();
 $args = array(
     'posts_per_page' => 1,
     'post_type' => 'post',
@@ -310,7 +306,6 @@ if($liste_derniers_articles2!=""){
 <?php
 }
 
-wp_reset_postdata();
 $args = array(
     'posts_per_page' => 4,
     'post_type' => 'post',
