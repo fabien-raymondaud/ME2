@@ -9,6 +9,21 @@ foreach($types_editoriaux as $type_editorial){
 }
 $chaine_types_editoriaux = implode(', ', $tableau_types_editoriaux);
 
+//Pour l'affichage des thématiques et hashtags de l'article
+$thematiques = wp_get_post_terms($dernier_article->ID, 'thematique');
+$tableau_hashtags = array();
+foreach($thematiques as $thematique){
+	$tableau_hashtags[]='<a href="'.get_term_link($thematique).'" title="Lien vers '.$thematique->name.'">#'.$thematique->name.'</a>';
+}
+
+$hashtags = wp_get_post_terms($dernier_article->ID);
+foreach($hashtags as $hashtag){
+	$tableau_hashtags[]='<a href="'.get_term_link($hashtag).'" title="Lien vers '.$hashtag->name.'">#'.$hashtag->name.'</a>';
+}
+
+$chaine_hashtags = implode(' ', $tableau_hashtags);
+
+
 ?>
 <li class="panneau-article">
 					

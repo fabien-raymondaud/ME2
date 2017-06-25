@@ -4051,6 +4051,44 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 
 /* Fin Single */
 /* Archives */
+body.page-archive .header-general {
+  border-bottom: 1px solid #ccc;
+}
+body.page-archive .derniers-articles .autres-articles {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-right: 8.3%;
+}
+body.page-archive .derniers-articles .dernier-article {
+  width: 45.5%;
+  padding-right: 8.3%;
+}
+body.page-archive .derniers-articles.derniers-articles-bis .autres-articles {
+  padding-left: 8.3%;
+  padding-right: 0;
+}
+body.page-archive .derniers-articles.derniers-articles-bis .dernier-article {
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+      -ms-flex-order: 1;
+          order: 1;
+  padding-left: 8.3%;
+  padding-right: 0;
+}
+body.page-archive .derniers-articles.derniers-articles-bis .dernier-article .panneau-article .descriptif-article {
+  padding: 35px 21% 55px 40px;
+}
+body.page-archive .derniers-articles.derniers-articles-bis .dernier-article .panneau-article > div {
+  padding-right: 21%;
+  padding-left: 0;
+}
+
+.header-cat {
+  padding-top: 30px;
+}
+
 .nav-annees {
   padding: 45px 8.3%;
   display: -webkit-box;

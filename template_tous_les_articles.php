@@ -38,6 +38,20 @@ if($liste_derniers_articles!=""){
 	    			$tableau_types_editoriaux[]=$type_editorial->name;
 	    		}
 	    		$chaine_types_editoriaux = implode(', ', $tableau_types_editoriaux);
+
+	    		//Pour l'affichage des thématiques et hashtags de l'article
+				$thematiques = wp_get_post_terms($dernier_article->ID, 'thematique');
+				$tableau_hashtags = array();
+				foreach($thematiques as $thematique){
+					$tableau_hashtags[]='<a href="'.get_term_link($thematique).'" title="Lien vers '.$thematique->name.'">#'.$thematique->name.'</a>';
+				}
+
+				$hashtags = wp_get_post_terms($dernier_article->ID);
+				foreach($hashtags as $hashtag){
+					$tableau_hashtags[]='<a href="'.get_term_link($hashtag).'" title="Lien vers '.$hashtag->name.'">#'.$hashtag->name.'</a>';
+				}
+
+				$chaine_hashtags = implode(' ', $tableau_hashtags);
 ?>
 				<div class="panneau-article">
 <?php
@@ -107,6 +121,20 @@ if($liste_derniers_articles_bis!=""){
     				$tableau_types_editoriaux[]=$type_editorial->name;
 	    		}
 	    		$chaine_types_editoriaux = implode(', ', $tableau_types_editoriaux);
+
+	    		//Pour l'affichage des thématiques et hashtags de l'article
+				$thematiques = wp_get_post_terms($dernier_article->ID, 'thematique');
+				$tableau_hashtags = array();
+				foreach($thematiques as $thematique){
+					$tableau_hashtags[]='<a href="'.get_term_link($thematique).'" title="Lien vers '.$thematique->name.'">#'.$thematique->name.'</a>';
+				}
+
+				$hashtags = wp_get_post_terms($dernier_article->ID);
+				foreach($hashtags as $hashtag){
+					$tableau_hashtags[]='<a href="'.get_term_link($hashtag).'" title="Lien vers '.$hashtag->name.'">#'.$hashtag->name.'</a>';
+				}
+
+				$chaine_hashtags = implode(' ', $tableau_hashtags);
 ?>
 				<div class="panneau-article">
 <?php
@@ -183,6 +211,20 @@ if($liste_derniers_articles2!=""){
 	    			$tableau_types_editoriaux[]=$type_editorial->name;
 	    		}
 	    		$chaine_types_editoriaux = implode(', ', $tableau_types_editoriaux);
+
+	    		//Pour l'affichage des thématiques et hashtags de l'article
+				$thematiques = wp_get_post_terms($dernier_article->ID, 'thematique');
+				$tableau_hashtags = array();
+				foreach($thematiques as $thematique){
+					$tableau_hashtags[]='<a href="'.get_term_link($thematique).'" title="Lien vers '.$thematique->name.'">#'.$thematique->name.'</a>';
+				}
+
+				$hashtags = wp_get_post_terms($dernier_article->ID);
+				foreach($hashtags as $hashtag){
+					$tableau_hashtags[]='<a href="'.get_term_link($hashtag).'" title="Lien vers '.$hashtag->name.'">#'.$hashtag->name.'</a>';
+				}
+
+				$chaine_hashtags = implode(' ', $tableau_hashtags);
 ?>
 				<div class="panneau-article">
 <?php
@@ -253,6 +295,20 @@ if($liste_derniers_articles_bis2!=""){
     				$tableau_types_editoriaux[]=$type_editorial->name;
 	    		}
 	    		$chaine_types_editoriaux = implode(', ', $tableau_types_editoriaux);
+
+	    		//Pour l'affichage des thématiques et hashtags de l'article
+				$thematiques = wp_get_post_terms($dernier_article->ID, 'thematique');
+				$tableau_hashtags = array();
+				foreach($thematiques as $thematique){
+					$tableau_hashtags[]='<a href="'.get_term_link($thematique).'" title="Lien vers '.$thematique->name.'">#'.$thematique->name.'</a>';
+				}
+
+				$hashtags = wp_get_post_terms($dernier_article->ID);
+				foreach($hashtags as $hashtag){
+					$tableau_hashtags[]='<a href="'.get_term_link($hashtag).'" title="Lien vers '.$hashtag->name.'">#'.$hashtag->name.'</a>';
+				}
+
+				$chaine_hashtags = implode(' ', $tableau_hashtags);
 ?>
 				<div class="panneau-article">
 <?php
