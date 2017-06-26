@@ -449,4 +449,35 @@ if($liste_derniers_articles2!=""){
 }
 ?>
 </div>
+
+<?php
+	$query_count = new WP_Query( array( 'post_type' => 'post', 'posts_per_page'=>-1, 
+		'tax_query' => array(
+			'relation' => 'OR',
+			array('taxonomy' => 'post_tag', 'field' => 'name', 'terms' => $term->name),
+			array('taxonomy' => 'thematique', 'field' => 'name', 'terms' => $term->name),
+			array('taxonomy' => 'annee', 'field' => 'name', 'terms' => $term->name),
+			array('taxonomy' => 'type_editorial', 'field' => 'name', 'terms' => $term->name),
+		)
+	));
+	
+	$compteur_posts = 0;
+	if ( $query_count->have_posts() ){
+		while ( $query_count->have_posts() ) : $query_count->the_post();
+			$compteur_posts++;
+		endwhile;
+		wp_reset_postdata();
+	}
+?>
+<input type="hidden" name="compteur-posts" id="compteur-posts" value="<?php echo $compteur_posts; ?>"/>
+
+<?php 
+	if($compteur_posts>10){
+?>
+		<div class="afficher-plus mtl mbm txtcenter">
+			<a href="#" class="color2 size16 typo1 afficher-plus-articles" data-cat="<?php echo $term->slug;?>" data-ordre="">Charger plus d’articles</a>
+    	</div>
+<?php
+	}
+?>
 <?php get_footer();?>

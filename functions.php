@@ -252,15 +252,32 @@ add_action( 'wp_ajax_nopriv_load_more_articles', 'load_more_articles' );
 
 function load_more_articles(){
 	$offset = $_POST['offset'];
+	$order = $_POST['ordre'];
+	$thematique = $_POST['thematique'];
+	
+	$args=array();
+
+	$args['post_type']='post';
+	$args['orderby']='menu_order';
+	$args['order']=$order;
+	$args['offset']=$offset;
+	$args['posts_per_page']=1;
+	$args['suppress_filters']=true;
+	$args['post_status']='publish';
+
+	$ajax_query = new WP_Query($args);
+
+	if($thematique!="Tous"){
+		$args['tax_query']=array(
+			'relation' => 'OR',
+			array('taxonomy' => 'post_tag', 'field' => 'name', 'terms' => $thematique),
+			array('taxonomy' => 'thematique', 'field' => 'name', 'terms' => $thematique),
+			array('taxonomy' => 'annee', 'field' => 'name', 'terms' => $thematique),
+			array('taxonomy' => 'type_editorial', 'field' => 'name', 'terms' => $thematique),
+		);
+	}
 
 	//Premier bloc
-	$args = array(
-	    'posts_per_page' => 1,
-	    'post_type' => 'post',
-	    'orderby' => 'menu_order',
-	    'order' => 'DESC',
-	    'offset' => $offset
-	);
 
 	$liste_derniers_articles = get_posts($args);
 
@@ -280,13 +297,9 @@ function load_more_articles(){
     	</div>
 <?php
 	}
-	$args = array(
-	    'posts_per_page' => 4,
-	    'post_type' => 'post',
-	    'orderby' => 'menu_order',
-	    'order' => 'DESC',
-	    'offset' => $offset + 1
-	);
+
+	$args['offset']=$offset + 1;
+	$args['posts_per_page']=4;
 
 	$liste_derniers_articles_bis = get_posts($args);
 
@@ -311,13 +324,8 @@ function load_more_articles(){
 
 
 	//Deuxième bloc
-	$args = array(
-	    'posts_per_page' => 1,
-	    'post_type' => 'post',
-	    'orderby' => 'menu_order',
-	    'order' => 'DESC',
-	    'offset' => $offset + 5
-	);
+	$args['offset']=$offset + 5;
+	$args['posts_per_page']=1;
 
 	$liste_derniers_articles = get_posts($args);
 	if(count($liste_derniers_articles)>0){
@@ -336,13 +344,9 @@ function load_more_articles(){
     	</div>
 <?php
 	}
-	$args = array(
-	    'posts_per_page' => 4,
-	    'post_type' => 'post',
-	    'orderby' => 'menu_order',
-	    'order' => 'DESC',
-	    'offset' => $offset + 6
-	);
+	
+	$args['offset']=$offset + 6;
+	$args['posts_per_page']=4;
 
 	$liste_derniers_articles_bis = get_posts($args);
 

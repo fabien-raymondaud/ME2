@@ -36,17 +36,26 @@ $(document).ready(function() {
 
 	/* AJAX Liste archives */
 	var filtre_thematique = "Tous";
-	var filtre_ordre = "Tous";
-	var recherche = "";
+	var filtre_ordre = "DESC";
 	var offsetArticles = 10; 
 
 	/* Load more */
 	$('.afficher-plus-articles').click(function(){
+		if($(this).data('cat')!=""){
+			filtre_thematique = $(this).data('cat');
+		}
+
+		if($(this).data('ordre')!=""){
+			filtre_ordre = $(this).data('ordre');
+		}
+
 		jQuery.post(
 		    ajaxurl,
 		    {
 		        'action': 'load_more_articles',
-		        'offset': offsetArticles
+		        'offset': offsetArticles,
+		        'thematique': filtre_thematique,
+		        'ordre': filtre_ordre
 		    },
 		    function(response){
 		    	offsetArticles = offsetArticles + 10;

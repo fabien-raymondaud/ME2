@@ -373,7 +373,7 @@ if($liste_derniers_articles2!=""){
 	if($compteur_posts>10){
 ?>
 		<div class="afficher-plus mtl mbm txtcenter">
-			<a href="#" class="color2 size16 typo1 afficher-plus-articles">Charger plus d’articles</a>
+			<a href="#" class="color2 size16 typo1 afficher-plus-articles" data-cat="" data-ordre="">Charger plus d’articles</a>
     	</div>
 <?php
 	}
