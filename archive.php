@@ -70,6 +70,8 @@ if($term->count>1){
 	}
 ?>
 </div>
+
+<div class="conteneur-liste-articles">
 <?php
 $args = array(
     'posts_per_page' => 1,
@@ -446,4 +448,5 @@ if($liste_derniers_articles2!=""){
 <?php
 }
 ?>
+</div>
 <?php get_footer();?>

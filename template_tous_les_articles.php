@@ -12,6 +12,8 @@ Template Name: Tous les articles
 	<p class="nb-articles size18 txtcenter tk-utopia-std-display"><?php echo wp_count_posts('post')->publish.' articles';?></p>
 </div>
 
+<div class="conteneur-liste-articles">
+
 <?php
 $args = array(
     'posts_per_page' => 1,
@@ -359,5 +361,21 @@ if($liste_derniers_articles2!=""){
 	</div>
 <?php
 }
+?>
+</div>
+
+<?php 
+	$compteur_posts = wp_count_posts('post')->publish;
+?>
+<input type="hidden" name="compteur-posts" id="compteur-posts" value="<?php echo $compteur_posts; ?>"/>
+
+<?php 
+	if($compteur_posts>10){
+?>
+		<div class="afficher-plus mtl mbm txtcenter">
+			<a href="#" class="color2 size16 typo1 afficher-plus-articles">Charger plus d’articles</a>
+    	</div>
+<?php
+	}
 ?>
 <?php get_footer();?>

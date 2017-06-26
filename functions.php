@@ -207,42 +207,165 @@ add_action( 'wp_ajax_nopriv_load_liste_articles', 'load_liste_articles' );
 function load_liste_articles() {
 ?>
 	<div class="dernier-article flex-container-h">
-	    <?php
-   			$args = array(
-				        'posts_per_page' => 1,
-				        'post_type' => 'post',
-				        'orderby' => 'menu_order',
-				        'order' => 'DESC'
-				    );
+    <?php
+			$args = array(
+			        'posts_per_page' => 1,
+			        'post_type' => 'post',
+			        'orderby' => 'menu_order',
+			        'order' => 'DESC'
+			    );
 
-   			$liste_derniers_articles = get_posts($args);
+			$liste_derniers_articles = get_posts($args);
 
-   			foreach ($liste_derniers_articles as $dernier_article){
-	    		include(locate_template('article-remontee-home.php'));
-	   		}
-	    ?>
-	    	<h3 class="uppercase size16"><span>Les derniers articles</span></h3>
-	    </div>
+			foreach ($liste_derniers_articles as $dernier_article){
+    		include(locate_template('article-remontee-home.php'));
+   		}
+    ?>
+    	<h3 class="uppercase size16"><span>Les derniers articles</span></h3>
+    </div>
 
-	    <div class="autres-articles flex-container-h">
-		<?php
-   			$args = array(
-				        'posts_per_page' => 4,
-				        'post_type' => 'post',
-				        'orderby' => 'menu_order',
-				        'order' => 'DESC',
-				        'offset' => 1
-				    );
+    <div class="autres-articles flex-container-h">
+	<?php
+			$args = array(
+			        'posts_per_page' => 4,
+			        'post_type' => 'post',
+			        'orderby' => 'menu_order',
+			        'order' => 'DESC',
+			        'offset' => 1
+			    );
 
-   			$liste_derniers_articles = get_posts($args);
+			$liste_derniers_articles = get_posts($args);
 
-   			foreach ($liste_derniers_articles as $dernier_article){
-	    		include(locate_template('article-remontee-home.php'));
-	   		}
-	    ?>
-	    </div>
+			foreach ($liste_derniers_articles as $dernier_article){
+    		include(locate_template('article-remontee-home.php'));
+   		}
+    ?>
+    </div>
 <?php
 	die();
 }
 /* /Load liste articles home */
+
+/* Load more articles archive */
+add_action( 'wp_ajax_load_more_articles', 'load_more_articles' );
+add_action( 'wp_ajax_nopriv_load_more_articles', 'load_more_articles' );
+
+function load_more_articles(){
+	$offset = $_POST['offset'];
+
+	//Premier bloc
+	$args = array(
+	    'posts_per_page' => 1,
+	    'post_type' => 'post',
+	    'orderby' => 'menu_order',
+	    'order' => 'DESC',
+	    'offset' => $offset
+	);
+
+	$liste_derniers_articles = get_posts($args);
+
+	if(count($liste_derniers_articles)>0){
+?>
+	<div class="derniers-articles flex-container-h">
+		<div class="dernier-article flex-container-h">
+	    <?php
+	}
+			foreach ($liste_derniers_articles as $dernier_article){
+				include(locate_template('article-remontee-home.php'));
+			}
+	    ?>
+<?php
+	if(count($liste_derniers_articles)>0){	
+?>
+    	</div>
+<?php
+	}
+	$args = array(
+	    'posts_per_page' => 4,
+	    'post_type' => 'post',
+	    'orderby' => 'menu_order',
+	    'order' => 'DESC',
+	    'offset' => $offset + 1
+	);
+
+	$liste_derniers_articles_bis = get_posts($args);
+
+	if(count($liste_derniers_articles_bis)>0){
+?>
+	    <div class="autres-articles flex-container-h">
+<?php
+	}
+			foreach ($liste_derniers_articles_bis as $dernier_article){
+				include(locate_template('article-remontee-home.php'));
+			}
+	if(count($liste_derniers_articles_bis)>0){
+?>
+    	</div>
+<?php
+	}
+	if(count($liste_derniers_articles)>0){
+?>
+	</div>
+<?php
+	}
+
+
+	//Deuxième bloc
+	$args = array(
+	    'posts_per_page' => 1,
+	    'post_type' => 'post',
+	    'orderby' => 'menu_order',
+	    'order' => 'DESC',
+	    'offset' => $offset + 5
+	);
+
+	$liste_derniers_articles = get_posts($args);
+	if(count($liste_derniers_articles)>0){
+?>
+	<div class="derniers-articles flex-container-h derniers-articles-bis">
+		<div class="dernier-article flex-container-h">
+	    <?php
+	}
+			foreach ($liste_derniers_articles as $dernier_article){
+				include(locate_template('article-remontee-home.php'));
+			}
+	    ?>
+<?php
+	if(count($liste_derniers_articles)>0){	
+?>
+    	</div>
+<?php
+	}
+	$args = array(
+	    'posts_per_page' => 4,
+	    'post_type' => 'post',
+	    'orderby' => 'menu_order',
+	    'order' => 'DESC',
+	    'offset' => $offset + 6
+	);
+
+	$liste_derniers_articles_bis = get_posts($args);
+
+	if(count($liste_derniers_articles_bis)>0){
+?>
+	    <div class="autres-articles flex-container-h">
+<?php
+	}
+			foreach ($liste_derniers_articles_bis as $dernier_article){
+				include(locate_template('article-remontee-home.php'));
+			}
+	if(count($liste_derniers_articles_bis)>0){
+?>
+    	</div>
+<?php
+	}
+	if(count($liste_derniers_articles)>0){
+?>
+	</div>
+<?php
+	}
+
+	die();
+}
+/* /Load more articles archive */
 ?>

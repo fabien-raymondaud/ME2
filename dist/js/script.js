@@ -34,6 +34,34 @@ $(document).ready(function() {
 	);
 	/* /AJAX Articles home */
 
+	/* AJAX Liste archives */
+	var filtre_thematique = "Tous";
+	var filtre_ordre = "Tous";
+	var recherche = "";
+	var offsetArticles = 10; 
+
+	/* Load more */
+	$('.afficher-plus-articles').click(function(){
+		jQuery.post(
+		    ajaxurl,
+		    {
+		        'action': 'load_more_articles',
+		        'offset': offsetArticles
+		    },
+		    function(response){
+		    	offsetArticles = offsetArticles + 10;
+		    	$('.conteneur-liste-articles').append(response);
+		    	
+		    	if(offsetArticles>=$('#compteur-posts').val()){
+		    		$('.afficher-plus-articles').css('display','none');
+		    	}
+		    }
+		);
+
+		return false;
+	});
+	/* /Load more */
+
 	$(window).resize( function() {
 		winwidth = document.body.clientWidth;
 		change_reso = false;

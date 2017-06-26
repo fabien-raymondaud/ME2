@@ -4229,6 +4229,22 @@ body.page-archive.unscrolled > header, body.page-archive.unscrolled > footer, bo
   opacity: 0;
 }
 
+.afficher-plus-articles {
+  height: 34px;
+  display: inline-block;
+  -webkit-border-radius: 17px;
+          border-radius: 17px;
+  padding: 3px 10px;
+  background: #001FFF;
+  border: 1px solid #001FFF;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+}
+.afficher-plus-articles:hover, .afficher-plus-articles:focus {
+  background: #fff;
+  color: #001FFF;
+}
+
 /* Fin Archives */
 /* Installation */
 .conteneur-video-installation {
