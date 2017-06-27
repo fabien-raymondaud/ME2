@@ -5581,6 +5581,54 @@ body .ff-icon-inner::after {
   body.page-archive .derniers-articles.derniers-articles-bis .autres-articles {
     padding-left: 0;
   }
+
+  .flexslider-articles-mobile {
+    background: #333;
+    width: 100%;
+    position: relative;
+  }
+  .flexslider-articles-mobile .flex-viewport {
+    width: 100%;
+    margin: auto;
+    max-width: 282px;
+  }
+  .flexslider-articles-mobile .slides > li > div a {
+    color: #fff;
+  }
+  .flexslider-articles-mobile .slides > li h3 {
+    margin: 25px 0 5px;
+    line-height: 1.15em;
+  }
+  .flexslider-articles-mobile .slides > li p.hashtags {
+    margin-top: 25px;
+  }
+  .flexslider-articles-mobile .slides > li .descriptif-article {
+    padding-bottom: 130px;
+  }
+  .flexslider-articles-mobile .flex-direction-nav a {
+    height: 35px;
+    width: 35px;
+    top: inherit;
+    bottom: 40px;
+    background: url("../../img/css/svg/icn-nav-diaporama.svg") no-repeat;
+    opacity: 1;
+  }
+  .flexslider-articles-mobile .flex-direction-nav a.flex-prev {
+    margin-left: -44px;
+    left: 50%;
+    right: inherit;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+  }
+  .flexslider-articles-mobile .flex-direction-nav a.flex-next {
+    margin-right: -44px;
+    right: 50%;
+    left: inherit;
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
 }
 @media screen and (max-width: 728px) {
   .super-conteneur-dossiers-thematiques {
