@@ -760,70 +760,7 @@
       }
     }
   }
-}
 
-@media screen and (max-width: 728px) {
-  .super-conteneur-dossiers-thematiques{
-    padding: 30px 30px 55px;
-    .conteneur-dossiers{
-      padding: 55px 35px 120px;
-      display: block;
-      text-align: center;
-
-      h3{
-        padding-top: 0;
-        margin-bottom: 20px;
-        span{
-          transform:none;
-        }
-      }
-    }
-
-    .dossiers-thematiques{
-      width: 100%;
-    }
-
-    .flexslider-dossier{
-      li{
-        display: block !important;
-
-        > div{
-          height: auto;
-          width: 100%;
-          margin-bottom: 0;
-
-          &.secondaire{
-            display: none;
-          }
-        }
-
-        .principal{
-          .descriptif-thematique{
-            .tous-articles{
-              margin: 45px auto 0;
-            }
-          }
-
-          h2{
-            font-size:2.4rem;
-          }
-        }
-      }
-    }
-  }
-
-  .flexslider-dossier{
-    .flex-direction-nav{
-      width: 86px;
-      top:inherit;
-      right:50%;
-      margin-right: -43px;
-      bottom:-80px;
-    }
-  }
-}
-
-@media screen and (max-width: 620px) {
   .conteneur-a-la-une{
     h3{
       display: none;
@@ -922,7 +859,7 @@
       top: -58px;
 
       .flex-control-nav{
-        width: 20000px;
+        width: 50000px;
         padding-left: 0;
       }
     }
@@ -981,6 +918,20 @@
     }
   }
 
+  body.home{
+    .panneau-annee{      
+      .descriptif-annee{
+        padding: 0 30px;
+      }
+
+      .image-annee{
+        + .descriptif-annee{
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+
   .cn-bottom .cookie-notice-container{
     padding: 20px 30px 25px;
     display: block;
@@ -989,6 +940,73 @@
   #cookie-notice .button{
     margin: 20px auto 0 !important;
   }
+
+  .super-conteneur-dossiers-thematiques{
+    padding: 30px 30px 55px;
+    .conteneur-dossiers{
+      padding: 55px 35px 120px;
+      display: block;
+      text-align: center;
+
+      h3{
+        padding-top: 0;
+        margin-bottom: 20px;
+        span{
+          transform:none;
+        }
+      }
+    }
+
+    .dossiers-thematiques{
+      width: 100%;
+    }
+
+    .flexslider-dossier{
+      li{
+        display: block !important;
+
+        > div{
+          height: auto;
+          width: 100%;
+          margin-bottom: 0;
+
+          &.secondaire{
+            display: none;
+          }
+        }
+
+        .principal{
+          .descriptif-thematique{
+            .tous-articles{
+              margin: 45px auto 0;
+            }
+          }
+
+          h2{
+            font-size:2.4rem;
+          }
+        }
+      }
+    }
+  }
+
+  .flexslider-dossier{
+    .flex-direction-nav{
+      width: 86px;
+      top:inherit;
+      right:50%;
+      margin-right: -43px;
+      bottom:-80px;
+    }
+  }
+}
+
+@media screen and (max-width: 728px) {
+  
+}
+
+@media screen and (max-width: 620px) {
+  
 }
 
 @media screen and (max-width: 480px) {

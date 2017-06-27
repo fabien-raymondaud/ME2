@@ -176,7 +176,7 @@ $(document).ready(function() {
 	var decalage = 0;
 	var largeur_nav = 0;
 	
-	if(winwidth<=620){
+	if(winwidth<=767){
 		largeur_nav = winwidth - 60;
 		multiplicateur = largeur_nav;
 		$('.flexslider-retro .flex-control-paging li').css('width', largeur_nav+'px');
@@ -259,7 +259,7 @@ $(document).ready(function() {
 
 		positionne_raccourci_ME(winwidth);
 		fonctionnement_nav_annees(winwidth);
-		if(winwidth<=620){
+		if(winwidth<=767){
 			largeur_nav = winwidth - 60;
 			$('.flexslider-retro .flex-control-paging li').css('width', largeur_nav+'px');
 			multiplicateur = largeur_nav;

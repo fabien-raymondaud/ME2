@@ -5629,55 +5629,7 @@ body .ff-icon-inner::after {
         -ms-transform: rotate(180deg);
             transform: rotate(180deg);
   }
-}
-@media screen and (max-width: 728px) {
-  .super-conteneur-dossiers-thematiques {
-    padding: 30px 30px 55px;
-  }
-  .super-conteneur-dossiers-thematiques .conteneur-dossiers {
-    padding: 55px 35px 120px;
-    display: block;
-    text-align: center;
-  }
-  .super-conteneur-dossiers-thematiques .conteneur-dossiers h3 {
-    padding-top: 0;
-    margin-bottom: 20px;
-  }
-  .super-conteneur-dossiers-thematiques .conteneur-dossiers h3 span {
-    -webkit-transform: none;
-        -ms-transform: none;
-            transform: none;
-  }
-  .super-conteneur-dossiers-thematiques .dossiers-thematiques {
-    width: 100%;
-  }
-  .super-conteneur-dossiers-thematiques .flexslider-dossier li {
-    display: block !important;
-  }
-  .super-conteneur-dossiers-thematiques .flexslider-dossier li > div {
-    height: auto;
-    width: 100%;
-    margin-bottom: 0;
-  }
-  .super-conteneur-dossiers-thematiques .flexslider-dossier li > div.secondaire {
-    display: none;
-  }
-  .super-conteneur-dossiers-thematiques .flexslider-dossier li .principal .descriptif-thematique .tous-articles {
-    margin: 45px auto 0;
-  }
-  .super-conteneur-dossiers-thematiques .flexslider-dossier li .principal h2 {
-    font-size: 2.4rem;
-  }
 
-  .flexslider-dossier .flex-direction-nav {
-    width: 86px;
-    top: inherit;
-    right: 50%;
-    margin-right: -43px;
-    bottom: -80px;
-  }
-}
-@media screen and (max-width: 620px) {
   .conteneur-a-la-une h3 {
     display: none;
   }
@@ -5770,7 +5722,7 @@ body .ff-icon-inner::after {
     top: -58px;
   }
   .flexslider-retro .conteneur-nav-retro .flex-control-nav {
-    width: 20000px;
+    width: 50000px;
     padding-left: 0;
   }
   .flexslider-retro .flex-control-paging li {
@@ -5817,6 +5769,13 @@ body .ff-icon-inner::after {
     padding-left: 0;
   }
 
+  body.home .panneau-annee .descriptif-annee {
+    padding: 0 30px;
+  }
+  body.home .panneau-annee .image-annee + .descriptif-annee {
+    padding-left: 30px;
+  }
+
   .cn-bottom .cookie-notice-container {
     padding: 20px 30px 25px;
     display: block;
@@ -5824,6 +5783,52 @@ body .ff-icon-inner::after {
 
   #cookie-notice .button {
     margin: 20px auto 0 !important;
+  }
+
+  .super-conteneur-dossiers-thematiques {
+    padding: 30px 30px 55px;
+  }
+  .super-conteneur-dossiers-thematiques .conteneur-dossiers {
+    padding: 55px 35px 120px;
+    display: block;
+    text-align: center;
+  }
+  .super-conteneur-dossiers-thematiques .conteneur-dossiers h3 {
+    padding-top: 0;
+    margin-bottom: 20px;
+  }
+  .super-conteneur-dossiers-thematiques .conteneur-dossiers h3 span {
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+  }
+  .super-conteneur-dossiers-thematiques .dossiers-thematiques {
+    width: 100%;
+  }
+  .super-conteneur-dossiers-thematiques .flexslider-dossier li {
+    display: block !important;
+  }
+  .super-conteneur-dossiers-thematiques .flexslider-dossier li > div {
+    height: auto;
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .super-conteneur-dossiers-thematiques .flexslider-dossier li > div.secondaire {
+    display: none;
+  }
+  .super-conteneur-dossiers-thematiques .flexslider-dossier li .principal .descriptif-thematique .tous-articles {
+    margin: 45px auto 0;
+  }
+  .super-conteneur-dossiers-thematiques .flexslider-dossier li .principal h2 {
+    font-size: 2.4rem;
+  }
+
+  .flexslider-dossier .flex-direction-nav {
+    width: 86px;
+    top: inherit;
+    right: 50%;
+    margin-right: -43px;
+    bottom: -80px;
   }
 }
 @media screen and (max-width: 480px) {
