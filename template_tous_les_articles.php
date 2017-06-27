@@ -84,10 +84,14 @@ if($liste_derniers_articles!=""){
     						<p class="types-editoriaux size14 uppercase typo2"><?php echo $chaine_types_editoriaux;?></p>
 <?php
 						}
+						if(get_field('resume_remontee', $dernier_article->ID)!=""){
 ?>
 							<div class="excerpt-article tk-utopia-std-display">
 								<?php the_field('resume_remontee', $dernier_article->ID);?>
 							</div>
+<?php
+						}
+?>
 						</a>
 					</div>
 				</div>
@@ -168,10 +172,15 @@ if($liste_derniers_articles_bis!=""){
     						<p class="types-editoriaux size14 uppercase typo2 color3"><?php echo $chaine_types_editoriaux;?></p>
 <?php
 						}
+
+						if(get_field('resume_remontee', $dernier_article->ID)!=""){
 ?>
 							<div class="excerpt-article tk-utopia-std-display">
 								<?php the_field('resume_remontee', $dernier_article->ID);?>
 							</div>
+<?php
+						}
+?>
 						</a>
 					</div>
 				</div>
@@ -258,10 +267,15 @@ if($liste_derniers_articles2!=""){
     						<p class="types-editoriaux size14 uppercase typo2"><?php echo $chaine_types_editoriaux;?></p>
 <?php
 						}
+
+						if(get_field('resume_remontee', $dernier_article->ID)!=""){
 ?>
 							<div class="excerpt-article tk-utopia-std-display">
 								<?php the_field('resume_remontee', $dernier_article->ID);?>
 							</div>
+<?php
+						}
+?>
 						</a>
 					</div>
 				</div>
@@ -342,10 +356,15 @@ if($liste_derniers_articles_bis2!=""){
     						<p class="types-editoriaux size14 uppercase typo2 color3"><?php echo $chaine_types_editoriaux;?></p>
 <?php
 						}
+
+						if(get_field('resume_remontee', $dernier_article->ID)!=""){
 ?>
 							<div class="excerpt-article tk-utopia-std-display">
 								<?php the_field('resume_remontee', $dernier_article->ID);?>
 							</div>
+<?php
+						}
+?>
 						</a>
 					</div>
 				</div>

@@ -53,10 +53,16 @@ if($thumbnail_desktop_retina_src[0]!=""){
 			<p class="types-editoriaux size14 uppercase typo2"><?php echo $chaine_types_editoriaux;?></p>
 <?php
 		}
+
+		if(get_field('resume_remontee', $dernier_article->ID)!=""){
 ?>
 			<div class="excerpt-article tk-utopia-std-display">
 				<?php the_field('resume_remontee', $dernier_article->ID);?>
 			</div>
+<?php
+		}
+?>
+
 		</a>
 	</div>
 </div>
