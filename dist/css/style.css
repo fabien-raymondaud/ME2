@@ -4228,6 +4228,27 @@ body.page-archive > header, body.page-archive > footer, body.page-archive > div:
 body.page-archive.unscrolled > header, body.page-archive.unscrolled > footer, body.page-archive.unscrolled > div:not(.anim-archive) {
   opacity: 0;
 }
+body.page-archive .footer-principal {
+  background: url("../../img/css/svg/bg-footer-archive.svg") left bottom/cover no-repeat #fff;
+  margin-bottom: 100px;
+  position: relative;
+}
+body.page-archive .footer-principal::after {
+  position: absolute;
+  height: 100px;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  content: '';
+  background: #5551FB;
+}
+body.page-archive .nav-footer {
+  padding: 190px 8.333% 0;
+}
+body.page-archive .nav-footer .back-to-top {
+  bottom: -70px;
+  z-index: 1;
+}
 
 .afficher-plus-articles {
   height: 34px;
@@ -4247,6 +4268,31 @@ body.page-archive.unscrolled > header, body.page-archive.unscrolled > footer, bo
 
 /* Fin Archives */
 /* Installation */
+body.page-template-template_installation .footer-principal {
+  background: url("../../img/css/svg/bg-footer-installation.svg") left bottom/cover no-repeat #fff;
+  margin-bottom: 100px;
+  position: relative;
+}
+body.page-template-template_installation .footer-principal::after {
+  position: absolute;
+  height: 100px;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  content: '';
+  background: #FF6045;
+}
+body.page-template-template_installation .nav-footer {
+  padding: 190px 8.333% 0;
+}
+body.page-template-template_installation .nav-footer .back-to-top {
+  bottom: -70px;
+  z-index: 1;
+}
+body.page-template-template_installation .nav-footer .nav-installation a {
+  color: #fff;
+}
+
 .conteneur-video-installation {
   height: calc(100vh - 83px);
   width: 100%;
@@ -5259,6 +5305,10 @@ body .ff-icon-inner::after {
   }
   .header-general .cue-playlist.max-width-300 .cue-skin-default.mejs-container .mejs-track-details {
     display: block;
+  }
+
+  body.page-archive .nav-footer {
+    padding: 50px 8.333% 0;
   }
 }
 @media screen and (max-width: 820px) {

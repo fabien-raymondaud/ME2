@@ -2067,6 +2067,30 @@ body.page-archive{
 			opacity: 0;
 		}
 	}
+
+	.footer-principal{
+		background:url('../../img/css/svg/bg-footer-archive.svg') left bottom/cover no-repeat $color2;
+		margin-bottom: 100px;
+		position: relative;
+		&::after{
+			position: absolute;
+			height: 100px;
+			bottom: -100px;
+			left: 0;
+			width: 100%;
+			content:'';
+			background: $color1;
+		}
+	}
+
+	.nav-footer{
+		padding:190px 8.333% 0;
+
+		.back-to-top{
+			bottom: -70px;
+			z-index: 1;
+		}
+	}
 }
 
 .afficher-plus-articles{
@@ -2086,6 +2110,38 @@ body.page-archive{
 /* Fin Archives */
 
 /* Installation */
+body.page-template-template_installation{
+	.footer-principal{
+		background:url('../../img/css/svg/bg-footer-installation.svg') left bottom/cover no-repeat $color2;
+		margin-bottom: 100px;
+		position: relative;
+		&::after{
+			position: absolute;
+			height: 100px;
+			bottom: -100px;
+			left: 0;
+			width: 100%;
+			content:'';
+			background: $color5;
+		}
+	}
+
+	.nav-footer{
+		padding:190px 8.333% 0;
+
+		.back-to-top{
+			bottom: -70px;
+			z-index: 1;
+		}
+
+		.nav-installation{
+			a{
+				color:$color2;
+			}
+		}
+	}
+}
+
 .conteneur-video-installation{
 	height:calc(100vh - 83px);
 	width: 100%;
