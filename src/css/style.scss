@@ -2140,6 +2140,43 @@ body.page-template-template_installation{
 			}
 		}
 	}
+
+	.popup-playlist{
+		border-color:$color5;
+	}
+
+	.current-playlist{
+		.cue-playlist{
+			.cue-track{
+				&:focus, &:hover, &.is-current{
+					.cue-track-details{
+						.cue-track-artist, .cue-track-title{
+							color:$color5;
+						}
+					}
+				}  
+			}
+		}
+
+		.cue-skin-default.mejs-container .mejs-track-details .mejs-track-artist{
+			color:$color5;
+		}
+	}
+
+	.all-playlists > ul > li.is-playing{
+		h3{
+			color:$color5;
+		}
+
+		.lien-playlist{
+			color:$color5;
+			border-color:$color5;
+			&:focus, &:hover{
+				color:$color5;
+				border-color:$color5;
+			}
+		}
+	}
 }
 
 .conteneur-video-installation{

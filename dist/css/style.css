@@ -4292,6 +4292,26 @@ body.page-template-template_installation .nav-footer .back-to-top {
 body.page-template-template_installation .nav-footer .nav-installation a {
   color: #fff;
 }
+body.page-template-template_installation .popup-playlist {
+  border-color: #FF6045;
+}
+body.page-template-template_installation .current-playlist .cue-playlist .cue-track:focus .cue-track-details .cue-track-artist, body.page-template-template_installation .current-playlist .cue-playlist .cue-track:focus .cue-track-details .cue-track-title, body.page-template-template_installation .current-playlist .cue-playlist .cue-track:hover .cue-track-details .cue-track-artist, body.page-template-template_installation .current-playlist .cue-playlist .cue-track:hover .cue-track-details .cue-track-title, body.page-template-template_installation .current-playlist .cue-playlist .cue-track.is-current .cue-track-details .cue-track-artist, body.page-template-template_installation .current-playlist .cue-playlist .cue-track.is-current .cue-track-details .cue-track-title {
+  color: #FF6045;
+}
+body.page-template-template_installation .current-playlist .cue-skin-default.mejs-container .mejs-track-details .mejs-track-artist {
+  color: #FF6045;
+}
+body.page-template-template_installation .all-playlists > ul > li.is-playing h3 {
+  color: #FF6045;
+}
+body.page-template-template_installation .all-playlists > ul > li.is-playing .lien-playlist {
+  color: #FF6045;
+  border-color: #FF6045;
+}
+body.page-template-template_installation .all-playlists > ul > li.is-playing .lien-playlist:focus, body.page-template-template_installation .all-playlists > ul > li.is-playing .lien-playlist:hover {
+  color: #FF6045;
+  border-color: #FF6045;
+}
 
 .conteneur-video-installation {
   height: calc(100vh - 83px);

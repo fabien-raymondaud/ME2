@@ -101,6 +101,12 @@ $(document).ready(function() {
 
 	/* Chargement playlist */
 	$('.lien-playlist').click(function(){
+		$('.all-playlists > ul > li').removeClass('is-playing');
+		$(this).parent().addClass('is-playing');
+
+		$('.lien-playlist').html('Écouter');
+		$(this).html('En écoute');
+		
 		jQuery.post(
 		    ajaxurl,
 		    {
@@ -109,6 +115,12 @@ $(document).ready(function() {
 		        
 		    },
 		    function(response){
+		    	$('.all-playlists').addClass('ferme');
+				$('.current-playlist').removeClass('ferme');
+
+				
+
+
 		    	$('.current-playlist').html("");
 		    	$('.current-playlist').append(response);
 		    	$('audio').mediaelementplayer();

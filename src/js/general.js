@@ -222,7 +222,7 @@ $(document).ready(function() {
 		return false;
 	});
 
-	$('.display-all-playlists').click(function(){
+	$('body').on('click', '.display-all-playlists', function() {
 		$('.all-playlists').removeClass('ferme');
 		$('.current-playlist').addClass('ferme');
 
