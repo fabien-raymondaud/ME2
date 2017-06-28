@@ -99,6 +99,27 @@ $(document).ready(function() {
 	});
 	/* /Load more */
 
+	/* Chargement playlist */
+	$('.lien-playlist').click(function(){
+		jQuery.post(
+		    ajaxurl,
+		    {
+		        'action': 'load_playlist',
+		        'playlist': $(this).data('playlist')
+		        
+		    },
+		    function(response){
+		    	$('.current-playlist').html("");
+		    	$('.current-playlist').append(response);
+		    	$('audio').mediaelementplayer();
+		    }
+		);
+
+		return false;
+	});
+
+	/* /Chargement playlist */
+
 	$(window).resize( function() {
 		winwidth = document.body.clientWidth;
 		change_reso = false;

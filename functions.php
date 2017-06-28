@@ -429,4 +429,22 @@ function load_petit_slider() {
 	die();
 }
 /* /Load slider installation */
+
+/* Load playlist */
+add_action( 'wp_ajax_load_playlist', 'load_playlist' );
+add_action( 'wp_ajax_nopriv_load_playlist', 'load_playlist' );
+
+function load_playlist() {
+	$playlist = $_POST['playlist'];
+?>
+	<h2 class="man typo2 size24"><?php echo get_the_title($playlist);?></h2>
+
+<?php
+	cue_playlist( $playlist );
+?>
+    <a href="#" class="display-all-playlists typo1 size16 color2">Toutes les playlists</a>
+<?php
+	die();
+}
+/* /Load playlist */
 ?>
