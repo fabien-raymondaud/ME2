@@ -36,27 +36,28 @@ Template Name: Installation
 	</div>
 </div>
 
-<div class="slider-installation flexslider-installation">
-	<ul class="slides">
-<?php
-	if( have_rows('slide_installation') ):
-	    while ( have_rows('slide_installation') ) : the_row();
-?>
-			<li class="flex-container-h">
-				<div class="image-unique <?php the_sub_field('disposition_slide');?>">
-					<img src="<?php the_sub_field('image1_slide_installation')?>" alt="Installation">
-				</div>
+<div class="conteneur-slider-installation">
+	<div class="slider-installation flexslider-installation">
+		<ul class="slides">
+	<?php
+		if( have_rows('slide_installation') ):
+		    while ( have_rows('slide_installation') ) : the_row();
+	?>
+				<li class="flex-container-h">
+					<div class="image-unique dispo-<?php the_sub_field('disposition_slide');?>" style="background-image:url('<?php echo get_sub_field('image1_slide_installation')?>');">
+					</div>
 
-				<div class="image-double flex-container-v">
-					<img src="<?php the_sub_field('image2_slide_installation')?>" alt="Installation">
-					<img src="<?php the_sub_field('image3_slide_installation')?>" alt="Installation">
-				</div>
-			</li>
-<?php				
-		endwhile;
-	endif;
-?>
-	</ul>
+					<div class="image-double flex-container-v">
+						<div style="background-image:url('<?php echo get_sub_field('image2_slide_installation')?>');"></div>
+						<div style="background-image:url('<?php echo get_sub_field('image3_slide_installation')?>');"></div>
+					</div>
+				</li>
+	<?php				
+			endwhile;
+		endif;
+	?>
+		</ul>
+	</div>
 </div>
 
 <div class="actus-installation flex-container-h">

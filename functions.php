@@ -372,4 +372,61 @@ function load_more_articles(){
 	die();
 }
 /* /Load more articles archive */
+
+
+/* Load slider installation */
+add_action( 'wp_ajax_load_gros_slider', 'load_gros_slider' );
+add_action( 'wp_ajax_nopriv_load_gros_slider', 'load_gros_slider' );
+
+function load_gros_slider() {
+?>
+	<div class="slider-installation flexslider-installation">
+		<ul class="slides">
+	<?php
+		if( have_rows('slide_installation', 2) ):
+		    while ( have_rows('slide_installation', 2) ) : the_row();
+	?>
+				<li class="flex-container-h">
+					<div class="image-unique dispo-<?php the_sub_field('disposition_slide', 2);?>" style="background-image:url('<?php echo get_sub_field('image1_slide_installation', 2)?>');">
+					</div>
+
+					<div class="image-double flex-container-v">
+						<div style="background-image:url('<?php echo get_sub_field('image2_slide_installation', 2)?>');"></div>
+						<div style="background-image:url('<?php echo get_sub_field('image3_slide_installation', 2)?>');"></div>
+					</div>
+				</li>
+	<?php				
+			endwhile;
+		endif;
+	?>
+		</ul>
+	</div>
+<?php
+	die();
+}
+
+add_action( 'wp_ajax_load_petit_slider', 'load_petit_slider' );
+add_action( 'wp_ajax_nopriv_load_petit_slider', 'load_petit_slider' );
+
+function load_petit_slider() {
+?>
+	<div class="slider-installation flexslider-installation">
+		<ul class="slides">
+	<?php
+		if( have_rows('slide_installation', 2) ):
+		    while ( have_rows('slide_installation', 2) ) : the_row();
+	?>
+				<li class="slide-installation-mobile" style="background-image:url('<?php echo get_sub_field('image1_slide_installation', 2)?>');"></li>
+				<li class="slide-installation-mobile" style="background-image:url('<?php echo get_sub_field('image2_slide_installation', 2)?>');"></li>
+				<li class="slide-installation-mobile" style="background-image:url('<?php echo get_sub_field('image3_slide_installation', 2)?>');"></li>
+	<?php				
+			endwhile;
+		endif;
+	?>
+		</ul>
+	</div>
+<?php
+	die();
+}
+/* /Load slider installation */
 ?>

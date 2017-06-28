@@ -2243,25 +2243,49 @@ body.page-template-template_installation{
 }
 
 .slider-installation{
+	position:relative;
+
 	.slides{
 		li{
 			display: flex !important;
 			> div{
 				width: 50%;
+				height: 685px;
 			}
 		}
 	}
 
+	.image-double > div, .image-unique{
+		background-size:cover;
+		background-position:center;
+		background-repeat:no-repeat;
+	}
+
 	.image-double{
-		img{
+		> div{
 			height: 50%;
-			width: 100%;
 		}
 	}
 
-	.image-unique{
-		img{
-			height: 100%;
+	.image-unique.dispo-2-1{
+		order:1;
+	}
+
+	.flex-direction-nav a{
+		opacity: 1;
+		width: 40px;
+		height: 40px;
+		margin-top: -20px;
+		background: url('../../img/css/svg/icn-nav-diaporama.svg') no-repeat;
+
+		&.flex-prev{
+			left: 40px;
+			transform:none;
+		}
+
+		&.flex-next{
+			right: 40px;
+			transform:rotate(180deg);
 		}
 	}
 }
@@ -2282,6 +2306,7 @@ body.page-template-template_installation{
 	.conteneur-image-actus{
 		background-size:cover;
 		background-position:center;
+		min-height: 100%;
 	}
 
 	.avec-overflow{

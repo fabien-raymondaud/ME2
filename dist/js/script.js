@@ -34,6 +34,34 @@ $(document).ready(function() {
 	);
 	/* /AJAX Articles home */
 
+	/* AJAX Slider Installation */
+	action_installation = 'load_petit_slider'
+	if(winwidth > 767){
+		action_installation = 'load_gros_slider';
+	}
+	
+	if($('.flexslider-installation').length){
+		jQuery.post(
+		    ajaxurl,
+		    {
+		        'action': action_installation
+		    },
+		    function(response){
+		    	$('.conteneur-slider-installation').html("");
+		    	$('.conteneur-slider-installation').append(response);
+
+		    	if($('.flexslider-installation').length){
+		    		$('.flexslider-installation').flexslider({
+						animation: "slide",
+						controlNav : false,
+						slideshowSpeed : 15000
+					});
+		    	}
+		    }
+		);
+	}
+
+
 	/* AJAX Liste archives */
 	var filtre_thematique = "Tous";
 	var filtre_ordre = "DESC";
@@ -79,6 +107,7 @@ $(document).ready(function() {
 			deja_petit=false;
 			change_reso = true;
 			action_articles = 'load_liste_articles';
+			action_installation = 'load_gros_slider';
 		}
 
 		if(winwidth<768 && !deja_petit){
@@ -86,8 +115,7 @@ $(document).ready(function() {
 			deja_grand=false;
 			change_reso = true;
 			action_articles = 'load_slider_articles';
-
-
+			action_installation = 'load_petit_slider';
 		}
 
 		if(change_reso){
@@ -105,6 +133,25 @@ $(document).ready(function() {
 							animation: "slide",
 							controlNav : false,
 							slideshow : false
+						});
+			    	}
+			    }
+			);
+
+			jQuery.post(
+			    ajaxurl,
+			    {
+			        'action': action_installation
+			    },
+			    function(response){
+			    	$('.conteneur-slider-installation').html("");
+			    	$('.conteneur-slider-installation').append(response);
+
+			    	if($('.flexslider-installation').length){
+			    		$('.flexslider-installation').flexslider({
+							animation: "slide",
+							controlNav : false,
+							slideshowSpeed : 15000
 						});
 			    	}
 			    }

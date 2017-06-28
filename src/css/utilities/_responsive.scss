@@ -362,6 +362,21 @@
       padding:50px 8.333% 0;
     }
   }
+
+  .slider-installation{
+    height:calc(100vh - 83px);
+
+    .flex-viewport, .slides, .slides > li, .slides > li > div{
+      height: 100%;
+    }
+  }
+
+  .actus-installation{
+    height:calc(100vh - 83px);
+    > div{
+      height: 100%;
+    }
+  }
 }
 
 
@@ -998,6 +1013,92 @@
       margin-right: -43px;
       bottom:-80px;
     }
+  }
+
+  .conteneur-video-installation{
+    height: 400px;
+
+    h1{
+      font-size: 3rem;
+      line-height:1.15em;
+    }
+  }
+
+  .contenu-installation{
+    padding: 55px 8.333% 40px;
+
+    &::before{
+      display: none;
+    }
+  }
+
+  .actions-installation{
+    margin-top: 10px;
+    a{
+      margin: 30px 45px 0 0;
+      padding: 0 20px 3px;
+      + a{
+        margin: 30px 0 0;
+      }
+    }
+  }
+
+  .slider-installation{
+    height:400px;
+
+    .slides > li{
+      background-size:cover;
+      background-repeat:no-repeat;
+      background-position:center;
+    }
+
+    .flex-direction-nav{
+      a{
+        width: 34px;
+        height: 34px;
+        margin-top: 0;
+        top:inherit;
+        bottom: 30px;
+
+        &.flex-next{
+          left: inherit;
+          right: 50%;
+          margin-right: -42px;
+        }
+
+        &.flex-prev{
+          left: 50%;
+          margin-left: -42px;
+        }
+      }
+    }
+  }
+
+
+  .actus-installation{
+    height:auto;
+
+    .conteneur-actus{
+      padding:45px 8.333% 45px 8.333%;
+    }
+
+    > div{
+      width: 100%;
+    }
+
+    .conteneur-image-actus{
+      display: none;
+    }
+
+    .avec-overflow{
+      padding-right: 0;
+
+      > h2{
+        font-size: 3rem;
+        font-weight: 800;
+      }
+    }
+
   }
 }
 
