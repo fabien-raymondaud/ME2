@@ -2543,6 +2543,11 @@ body.unscrolled {
   margin: 0;
   border: none;
 }
+.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-playpause-button.mejs-pause button {
+  background: url("../../img/css/svg/icn-pause.svg") no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+}
 .header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-time-rail, .header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-volume-button, .header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-horizontal-volume-slider {
   display: none;
 }
@@ -2854,6 +2859,11 @@ body.unscrolled {
   width: 25px;
   margin: 0;
   border: none;
+}
+.current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-playpause-button.mejs-pause button {
+  background: url("../../img/css/svg/icn-pause.svg") no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
 }
 .current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-time-rail {
   width: calc(100% - 105px) !important;
@@ -4300,6 +4310,9 @@ body.page-template-template_installation .current-playlist .cue-playlist .cue-tr
 }
 body.page-template-template_installation .current-playlist .cue-skin-default.mejs-container .mejs-track-details .mejs-track-artist {
   color: #FF6045;
+}
+body.page-template-template_installation .current-playlist .cue-skin-default.mejs-container .mejs-controls .mejs-time-rail .mejs-time-current {
+  background: #FF6045;
 }
 body.page-template-template_installation .all-playlists > ul > li.is-playing h3 {
   color: #FF6045;

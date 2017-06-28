@@ -343,6 +343,13 @@ body{
 							border:none;
 						}
 					}
+
+					&.mejs-pause{
+						button{
+							background: url('../../img/css/svg/icn-pause.svg') no-repeat;
+							background-size: contain;
+						}
+					}
 				}
 				
 				.mejs-time-rail, .mejs-volume-button, .mejs-horizontal-volume-slider{
@@ -697,6 +704,13 @@ body{
 						width: 25px;
 						margin: 0;
 						border:none;
+					}
+				}
+
+				&.mejs-pause{
+					button{
+						background: url('../../img/css/svg/icn-pause.svg') no-repeat;
+						background-size: contain;
 					}
 				}
 			}
@@ -2158,8 +2172,14 @@ body.page-template-template_installation{
 			}
 		}
 
-		.cue-skin-default.mejs-container .mejs-track-details .mejs-track-artist{
-			color:$color5;
+		.cue-skin-default.mejs-container{
+			.mejs-track-details .mejs-track-artist{
+				color:$color5;
+			}
+
+			.mejs-controls .mejs-time-rail .mejs-time-current{
+				background: $color5;
+			}
 		}
 	}
 
