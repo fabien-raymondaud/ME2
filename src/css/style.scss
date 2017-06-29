@@ -1135,6 +1135,21 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 
 .header-cat{
 	margin-top: 83px;
+
+	.filtres{
+		margin-top: 35px;
+		margin-bottom: 45px;
+		padding: 0 8.333%;
+		justify-content:space-between;
+
+		select{
+			width: 44.75%;
+		}
+	}
+}
+
+.invisible{
+	display: none;
 }
 
 /* Fin Commun */
@@ -1866,11 +1881,99 @@ body.page-archive{
 
 		}
 	} 
-
 }
 
 .header-cat{
 	padding-top: 30px;
+
+	.select-hidden {
+		display: none;
+		visibility: hidden;
+		padding-right: 10px;
+	}
+
+	.select {
+		cursor: pointer;
+		display: inline-block;
+		position: relative;
+		font-size: $size-16;
+		font-family: $typo1;
+		color: $color7;
+		width: 44.75%;
+		height: 50px;
+		text-align: left;
+	}
+
+	.select-styled {
+		position: absolute; 
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: $color2;
+		padding: 11px 15px;
+		transition: all 0.3s ease;
+		border:1px solid #ccc;
+
+		&:after {
+			content:"";
+			width: 0;
+			height: 0;
+			border: 7px solid transparent;
+			border-color: $color2 transparent transparent transparent;
+			position: absolute;
+			top: 16px;
+			right: 10px;
+		}
+
+		&:hover {
+			background-color: $color2;
+		}
+
+		&:active, &.active {
+			background-color: $color2;
+
+			&:after {
+				top: 9px;
+				border-color: transparent transparent #ccc transparent;
+			}
+		}
+	}
+
+	.select-options {
+		display: none; 
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 999;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		background-color: $color2;
+		box-shadow:0px 0px 10px #ccc;
+
+		li {
+			margin: 0;
+			padding: 12px 0;
+			text-indent: 15px;
+			border-top: 1px solid #ccc;
+			transition: all 0.3s ease;
+
+			&:first-child{
+				border-top: none;
+			}
+
+			&:hover {
+				color: $color7;
+				background: $color2;
+			}
+
+			&[rel="hide"] {
+				display: none;
+			}
+		}
+	}
 }
 
 .nav-annees{

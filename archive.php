@@ -72,7 +72,30 @@ if($term->count>1){
 <?php
 	}
 	else{
-		echo 'moteur de recherche + filtres';
+?>
+		<div class="flex-container-h filtres filtres-categorie">
+			<span class="invisible filtre-categorie" data-filtre-categorie="<?php echo $term->term_id; ?>"></span>
+			<select name="select_categorie" class="select_categorie">
+				<option selected="selected" value="-1">Toutes les catégories</option>
+<?php
+				$terms = get_terms( array(
+				    'taxonomy' => 'thematique'
+				));
+				foreach($terms as $term){
+?>
+					<option value="<?php echo $term->term_id?>"><?php echo $term->name?></option>
+<?php
+				}
+?>
+			</select>
+
+			<select name="select_categorie" class="select_categorie">
+				<option selected="selected" value="1">Date de publication croissante</option>
+				<option value="2">Date de publication décroissante</option>
+				<option value="3">Libellé de tri</option>
+			</select>
+		</div>
+<?php
 	}
 ?>
 </div>
