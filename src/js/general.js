@@ -311,7 +311,10 @@ $(document).ready(function() {
 				        'identifiant': identifiant_lecture_continue
 				    },
 				    function(response){
+				    	$('.hashs').removeClass('actif');
 				    	$('.single-central').append(response);
+				    	history.replaceState('changement URL', $('.hashs.actif').data('new-title'), $('.hashs.actif').data('new-url'));
+
 				    	autorise_chargement = true;
 
 				    	$('.flexslider-diapo').flexslider({

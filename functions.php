@@ -483,6 +483,7 @@ function load_next_article() {
 	$chaine_hashtags = implode(' ', $tableau_hashtags);
 
 ?>
+		<span class="hashs invisible actif" data-new-url="<?php the_permalink($identifiant);?>" data-new-title="<?php echo get_the_title($identifiant);?>"></span>
 		<div class="media-entete media-entete-suite">
 <?php
 			switch(get_field('type_dentête', $identifiant)){
