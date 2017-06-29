@@ -297,16 +297,22 @@ $(document).ready(function() {
 	});
 
 	if($('body.single').length){
+		autorise_chargement = true;
 		$(window).scroll(function(){
-			if( $(document).height() < ($(window).scrollTop() + $(window).height() + 400)){
+			if( $(document).height() < ($(window).scrollTop() + $(window).height() + 400) && autorise_chargement && $('.id-lecture-continue.actif').length){
+				autorise_chargement = false;
+				var identifiant_lecture_continue = $('.id-lecture-continue.actif').data('id-lecture-continue');
+
+				$('.id-lecture-continue.actif').removeClass('actif').next('.id-lecture-continue').addClass('actif');
 				jQuery.post(
 				    ajaxurl,
 				    {
 				        'action': 'load_next_article',
-				        'identifiant': $('.id-lecture-continue.actif').data('id-lecture-continue')
+				        'identifiant': identifiant_lecture_continue
 				    },
 				    function(response){
 				    	$('.single-central').append(response);
+				    	autorise_chargement = true;
 				    }
 				);
 			}
