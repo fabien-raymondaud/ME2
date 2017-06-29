@@ -296,9 +296,12 @@ $(document).ready(function() {
 		return false;
 	});
 
+
 	if($('body.single').length){
 		autorise_chargement = true;
+		var currentHash = $('.hashs.actif').data('new-url');
 		$(window).scroll(function(){
+
 			if( $(document).height() < ($(window).scrollTop() + $(window).height() + 400) && autorise_chargement && $('.id-lecture-continue.actif').length){
 				autorise_chargement = false;
 				var identifiant_lecture_continue = $('.id-lecture-continue.actif').data('id-lecture-continue');
@@ -313,7 +316,6 @@ $(document).ready(function() {
 				    function(response){
 				    	$('.hashs').removeClass('actif');
 				    	$('.single-central').append(response);
-				    	history.replaceState('changement URL', $('.hashs.actif').data('new-title'), $('.hashs.actif').data('new-url'));
 
 				    	autorise_chargement = true;
 
@@ -326,6 +328,17 @@ $(document).ready(function() {
 				    }
 				);
 			}
+			
+	        $('.hashs').each(function () {
+	            var top = window.pageYOffset;
+	            var distance = top - $(this).offset().top;
+	            var hash = $(this).data('new-url');
+	            
+	            if (distance < 100 && distance > -100 && currentHash != hash) {
+	                history.replaceState('changement URL', $(this).data('new-title'), $(this).data('new-url'));
+	                currentHash = hash;
+	            }
+	        });
 		});
 	}
 	

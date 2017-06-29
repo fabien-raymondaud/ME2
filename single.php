@@ -29,6 +29,7 @@
 	$chaine_hashtags = implode(' ', $tableau_hashtags);
 
 ?>
+	<span class="hashs invisible actif" data-new-url="<?php the_permalink($post->ID);?>" data-new-title="<?php echo get_the_title($post->ID);?>"></span>
 	<div class="single-central">
 		<div class="media-entete">
 <?php
