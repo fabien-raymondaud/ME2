@@ -5,6 +5,12 @@
 $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 $taxo =  get_query_var( 'taxonomy' );
 
+if($taxo==""){
+	$tag = get_queried_object();
+	$term = get_term_by( 'slug', $tag->slug, 'post_tag' );
+	$taxo = 'post_tag';
+}
+
 $texte_articles = "article";
 if($term->count>1){
 	$texte_articles = "articles";
@@ -14,7 +20,7 @@ if($term->count>1){
 <div class="header-cat txtcenter">
 	<h1 class="txtcenter size30">
 <?php 
-	if($taxo=="thematique"){
+	if($taxo=="thematique" || $taxo=="post_tag"){
 		echo '"'.$term->name.'"';
 	}
 	else{
