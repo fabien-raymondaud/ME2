@@ -296,6 +296,24 @@ $(document).ready(function() {
 		return false;
 	});
 
+	if($('body.single').length){
+		$(window).scroll(function(){
+			if( $(document).height() < ($(window).scrollTop() + $(window).height() + 400)){
+				jQuery.post(
+				    ajaxurl,
+				    {
+				        'action': 'load_next_article',
+				        'identifiant': $('.id-lecture-continue.actif').data('id-lecture-continue')
+				    },
+				    function(response){
+				    	$('.single-central').append(response);
+				    }
+				);
+			}
+		});
+	}
+	
+
 	$(window).resize( function() {
 		winwidth = document.body.clientWidth;
 

@@ -1,6 +1,7 @@
 <?php get_header();?>
 <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 <?php
+	$sauv_id = $post->ID;
 	$avecblocvideo=false;
 	$compteur_video = 0;
 	//Pour l'affichage du type éditorial de l'article	    		
@@ -26,6 +27,7 @@
 	}
 
 	$chaine_hashtags = implode(' ', $tableau_hashtags);
+
 ?>
 	<div class="single-central">
 		<div class="media-entete">
@@ -306,6 +308,29 @@
 ?>
 		</div>
 	</div>
+<?php
+	$args = array(
+        'posts_per_page' => -1,
+        'post_type' => 'post',
+        'order' => 'DESC',
+		'orderby' => 'menu_order',
+        'exclude' => array($sauv_id)
+    );
+	$liste_articles_lecture_continue = get_posts($args);
+
+	$compteur_liste = 1;
+	foreach ($liste_articles_lecture_continue as $article_lecture_continue){
+		$est_actif = "";
+		if($compteur_liste==1){
+			$est_actif = "actif";
+		}
+		$compteur_liste++;
+?>
+		<span class="invisible id-lecture-continue <?php echo $est_actif;?>" data-id-lecture-continue="<?php echo $article_lecture_continue->ID;?>"></span>
+<?php
+	}
+?>
+
 <?php endwhile; ?>
 <?php endif; ?>
 <?php get_footer();?>

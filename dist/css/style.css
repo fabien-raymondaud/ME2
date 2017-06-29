@@ -3586,6 +3586,9 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
   margin-top: 83px;
   width: 87.5%;
 }
+.single-central .media-entete.media-entete-suite {
+  margin-top: 0;
+}
 .single-central .image-entete {
   display: -webkit-box;
   display: -webkit-flex;

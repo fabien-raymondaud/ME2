@@ -1420,6 +1420,10 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 		overflow: hidden;
 		margin-top: 83px;
 		width: 87.5%;
+
+		&.media-entete-suite{
+			margin-top: 0;
+		}
 	}
 
 	.image-entete{
