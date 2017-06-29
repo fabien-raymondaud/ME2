@@ -218,14 +218,14 @@ $(document).ready(function() {
 		$('.flex-control-nav').css('left', decalage+'px');
 	});
 
-	$('.lancer-diapo').click(function(){
-		$('.diaporama-entete').addClass('ouvert');
+	$('body').on('click', '.lancer-diapo', function(){
+		$(this).parent().parent().next('.diaporama-entete').addClass('ouvert');
 		$('body').addClass('unscrolled');
 		return false;
 	});
 
-	$('.fermer-diapo').click(function(){
-		$('.diaporama-entete').removeClass('ouvert');
+	$('body').on('click', '.fermer-diapo', function(){
+		$(this).parent().removeClass('ouvert');
 		$('body').removeClass('unscrolled');
 		return false;
 	});
@@ -313,6 +313,13 @@ $(document).ready(function() {
 				    function(response){
 				    	$('.single-central').append(response);
 				    	autorise_chargement = true;
+
+				    	$('.flexslider-diapo').flexslider({
+							animation: "slide",
+							controlNav : false,
+							slideshow : false,
+							smoothHeight :	true
+						});
 				    }
 				);
 			}
