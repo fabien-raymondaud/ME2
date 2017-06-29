@@ -80,6 +80,29 @@ function fonctionnement_nav_annees(winwidth) {
     return true;             
 }
 
+function maj_player() {
+    $('.player .timing').html($('.current-playlist .mejs-currenttime').html());
+    $('.player .groupe').html($('.current-playlist .mejs-track-artist').html());
+    $('.player .titre').html($('.current-playlist .mejs-track-title').html());
+
+    if($('.current-playlist .mejs-playpause-button').hasClass('mejs-play')){
+    	$('.player .play-pause').removeClass('pause');
+    }
+    else{
+    	$('.player .play-pause').addClass('pause');
+    }
+}
+
+function remplis_player(winwidth) {
+
+	if(winwidth>767){
+		var myVar;
+		myVar = setInterval(maj_player, 1000);
+	}
+	
+	return true;
+}
+
 function lanceMasque() {
 	$('.anim-archive .masque-logo').addClass('ouvert');
 	window.setTimeout(fermeMasque, 500);
@@ -246,6 +269,32 @@ $(document).ready(function() {
 	positionne_raccourci_ME(winwidth);
 
 	fonctionnement_nav_annees(winwidth);
+
+	remplis_player(winwidth);
+
+	$('body').on('click', '.current-playlist .mejs-playpause-button button', function(){
+		$('.player .play-pause').toggleClass('pause');
+	});
+
+	$('body').on('click', '.current-playlist .mejs-previous-button, .current-playlist .mejs-next-button', function(){
+		$('.player .play-pause').addClass('pause');
+	});
+
+	$('.player .play-pause').click(function(){
+		$(this).toggleClass('pause');
+		$('.current-playlist .mejs-playpause-button button').trigger('click');
+		return false;
+	});
+
+	$('.player .next').click(function(){
+		$('.current-playlist .mejs-next button').trigger('click');
+		return false;
+	});
+
+	$('.player .rewind').click(function(){
+		$('.current-playlist .mejs-previous button').trigger('click');
+		return false;
+	});
 
 	$(window).resize( function() {
 		winwidth = document.body.clientWidth;

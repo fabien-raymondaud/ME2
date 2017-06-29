@@ -2453,113 +2453,50 @@ body.unscrolled {
   height: 18px;
   width: 380px;
   margin-left: 85px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
 }
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container {
-  padding-bottom: 0;
-  background: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  height: 18px !important;
-}
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-layers {
-  padding: 0 85px 0 70px;
-}
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-track-artwork {
-  display: none;
-}
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls {
-  position: absolute;
-  width: 100%;
-  margin: 0;
-  height: 18px;
-  top: 0;
-  left: 0;
-}
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-next-button, .header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-previous-button, .header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-playpause-button {
-  opacity: 1;
-  height: 18px;
-  width: 18px;
-  position: absolute;
-  top: 0;
-  margin: 0;
-  background: none;
-}
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-next-button button, .header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-previous-button button, .header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-playpause-button button {
+.header-general .player .rewind, .header-general .player .play-pause, .header-general .player .next {
   display: block;
   width: 18px;
   height: 18px;
-  border: none;
-  margin: 0;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
 }
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-next-button button::before, .header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-previous-button button::before, .header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-playpause-button button::before {
-  display: none;
-}
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-next-button {
+.header-general .player .next {
   right: 0;
   left: calc(100% - 18px);
-}
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-next-button button {
   background: url("../../img/css/svg/icn-forward.svg") no-repeat;
   -webkit-background-size: contain;
           background-size: contain;
 }
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-previous-button {
+.header-general .player .rewind {
   left: 0;
-}
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-previous-button button {
   background: url("../../img/css/svg/icn-rewind.svg") no-repeat;
   -webkit-background-size: contain;
           background-size: contain;
 }
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-time {
-  position: absolute;
-  top: 0;
-  right: 35px;
-  font-size: 1.4rem;
-  font-family: "sofia_probold", "Montserrat", Helvetica, Arial, sans-serif !important;
-  width: 50px;
-  text-align: right;
-}
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-time .mejs-time-separator, .header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-time .mejs-duration {
-  display: none;
-}
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-time span {
-  color: #333;
-}
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-playpause-button {
+.header-general .player .play-pause {
   left: 33px;
-  background: none;
-  -webkit-border-radius: 0;
-          border-radius: 0;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-playpause-button.mejs-play button, .header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-playpause-button.mejs-pause button {
   background: url("../../img/css/svg/icn-play.svg") no-repeat;
   -webkit-background-size: contain;
           background-size: contain;
-  height: 18px;
-  width: 18px;
-  margin: 0;
-  border: none;
 }
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-playpause-button.mejs-pause button {
-  background: url("../../img/css/svg/icn-pause.svg") no-repeat;
-  -webkit-background-size: contain;
-          background-size: contain;
+.header-general .player .play-pause.pause {
+  background-image: url("../../img/css/svg/icn-pause.svg");
 }
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-time-rail, .header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-volume-button, .header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-controls .mejs-horizontal-volume-slider {
-  display: none;
-}
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-track-details {
-  padding: 0;
+.header-general .player .infos-player {
   position: absolute;
   left: 70px;
   width: calc(100% - 155px);
   top: 0;
-  text-align: left;
+  line-height: 1.15em;
 }
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-track-details .mejs-track-artist {
+.header-general .player .infos-player .groupe {
   color: #001FFF;
   font-size: 1.4rem;
   font-family: "sofia_probold", "Montserrat", Helvetica, Arial, sans-serif !important;
@@ -2567,7 +2504,7 @@ body.unscrolled {
   line-height: 1em;
   display: inline;
 }
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-track-details .mejs-track-title {
+.header-general .player .infos-player .titre {
   font-size: 1.4rem;
   font-family: "sofia_pro_regular", "Montserrat", Helvetica, Arial, sans-serif !important;
   margin: 0;
@@ -2576,19 +2513,25 @@ body.unscrolled {
   display: inline;
   margin-left: 3px;
 }
-.header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-track-details .mejs-track-title::before {
+.header-general .player .infos-player .titre::before {
   content: ' - ';
 }
-.header-general .player .cue-playlist {
-  -webkit-border-radius: 0;
-          border-radius: 0;
-  margin: 0;
+.header-general .player .timing {
+  position: absolute;
+  top: 0;
+  right: 35px;
+  font-size: 1.4rem;
+  font-family: "sofia_probold", "Montserrat", Helvetica, Arial, sans-serif !important;
+  width: 50px;
+  text-align: right;
+  color: #333;
+  line-height: 1.15em;
 }
 
 .page-template-template_installation .header-general h1 svg .cls-1 {
   fill: #FF6045;
 }
-.page-template-template_installation .header-general .player .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-track-details .mejs-track-artist {
+.page-template-template_installation .header-general .player .infos-player .groupe {
   color: #FF6045;
 }
 
