@@ -78,20 +78,20 @@ if($term->count>1){
 			<select name="select_categorie" class="select_categorie">
 				<option selected="selected" value="-1">Toutes les catégories</option>
 <?php
-				$terms = get_terms( array(
+				$termsFiltre = get_terms( array(
 				    'taxonomy' => 'type_editorial'
 				));
-				foreach($terms as $term){
+				foreach($termsFiltre as $termFiltre){
 ?>
-					<option value="<?php echo $term->term_id?>"><?php echo $term->name?></option>
+					<option value="<?php echo $termFiltre->term_id?>"><?php echo $termFiltre->name?></option>
 <?php
 				}
 ?>
 			</select>
 
 			<select name="select_categorie" class="select_categorie">
-				<option selected="selected" value="ASC">Date de publication croissante</option>
-				<option value="DESC">Date de publication décroissante</option>
+				<option selected="selected" value="ASC">Du plus récent au plus ancien</option>
+				<option value="DESC">Du plus ancien au plus récent</option>
 			</select>
 		</div>
 <?php

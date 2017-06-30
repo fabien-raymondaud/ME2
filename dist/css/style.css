@@ -3353,7 +3353,7 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 .header-cat .filtres {
   margin-top: 35px;
   margin-bottom: 45px;
-  padding: 0 8.333%;
+  padding: 0 8.333% 0 7.7%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
@@ -4125,25 +4125,25 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 
 /* Fin Single */
 /* Archives */
-body.page-archive .header-general {
+body.page-archive .header-general, body.search-results .header-general {
   border-bottom: 1px solid #ccc;
 }
-body.page-archive .derniers-articles .autres-articles {
+body.page-archive .derniers-articles .autres-articles, body.search-results .derniers-articles .autres-articles {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
   padding-right: 8.3%;
 }
-body.page-archive .derniers-articles .dernier-article {
+body.page-archive .derniers-articles .dernier-article, body.search-results .derniers-articles .dernier-article {
   width: 45.5%;
   padding-right: 8.3%;
 }
-body.page-archive .derniers-articles.derniers-articles-bis .autres-articles {
+body.page-archive .derniers-articles.derniers-articles-bis .autres-articles, body.search-results .derniers-articles.derniers-articles-bis .autres-articles {
   padding-left: 8.3%;
   padding-right: 0;
 }
-body.page-archive .derniers-articles.derniers-articles-bis .dernier-article {
+body.page-archive .derniers-articles.derniers-articles-bis .dernier-article, body.search-results .derniers-articles.derniers-articles-bis .dernier-article {
   -webkit-box-ordinal-group: 2;
   -webkit-order: 1;
       -ms-flex-order: 1;
@@ -4151,10 +4151,10 @@ body.page-archive .derniers-articles.derniers-articles-bis .dernier-article {
   padding-left: 8.3%;
   padding-right: 0;
 }
-body.page-archive .derniers-articles.derniers-articles-bis .dernier-article .panneau-article .descriptif-article {
+body.page-archive .derniers-articles.derniers-articles-bis .dernier-article .panneau-article .descriptif-article, body.search-results .derniers-articles.derniers-articles-bis .dernier-article .panneau-article .descriptif-article {
   padding: 35px 21% 55px 40px;
 }
-body.page-archive .derniers-articles.derniers-articles-bis .dernier-article .panneau-article > div {
+body.page-archive .derniers-articles.derniers-articles-bis .dernier-article .panneau-article > div, body.search-results .derniers-articles.derniers-articles-bis .dernier-article .panneau-article > div {
   padding-right: 21%;
   padding-left: 0;
 }

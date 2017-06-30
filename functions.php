@@ -254,7 +254,8 @@ add_action( 'wp_ajax_nopriv_load_more_articles', 'load_more_articles' );
 function load_more_articles(){
 	$offset = $_POST['offset'];
 	$order = $_POST['ordre'];
-	$thematique = $_POST['thematique'];
+	$type = $_POST['type'];
+	$recherche = $_POST['recherche'];
 	
 	$args=array();
 
@@ -263,19 +264,31 @@ function load_more_articles(){
 	$args['order']=$order;
 	$args['offset']=$offset;
 	$args['posts_per_page']=1;
-	$args['suppress_filters']=true;
 	$args['post_status']='publish';
 
 	$ajax_query = new WP_Query($args);
 
-	if($thematique!="Tous"){
-		$args['tax_query']=array(
-			'relation' => 'OR',
-			array('taxonomy' => 'post_tag', 'field' => 'name', 'terms' => $thematique),
-			array('taxonomy' => 'thematique', 'field' => 'name', 'terms' => $thematique),
-			array('taxonomy' => 'annee', 'field' => 'name', 'terms' => $thematique),
-			array('taxonomy' => 'type_editorial', 'field' => 'name', 'terms' => $thematique),
-		);
+	if($type!=-1 || $recherche!=""){
+		if($type!=-1){
+			if($recherche!=""){
+				$args['tax_query']=array(
+					array('taxonomy' => 'thematique', 'field' => 'name', 'terms' => $recherche),
+					array('taxonomy' => 'type_editorial', 'field' => 'term_id', 'terms' => $type)
+				);
+			}
+			else{
+				$args['tax_query']=array(
+					array('taxonomy' => 'type_editorial', 'field' => 'term_id', 'terms' => $type)
+				);
+			}
+		}
+		else{
+			if($recherche!=""){
+				$args['tax_query']=array(
+					array('taxonomy' => 'thematique', 'field' => 'name', 'terms' => $recherche)
+				);
+			}
+		}
 	}
 
 	//Premier bloc
@@ -373,6 +386,146 @@ function load_more_articles(){
 	die();
 }
 /* /Load more articles archive */
+
+/* Filtre articles archive */
+add_action( 'wp_ajax_filtre_articles', 'filtre_articles' );
+add_action( 'wp_ajax_nopriv_filtre_articles', 'filtre_articles' );
+
+function filtre_articles(){
+	$offset = $_POST['offset'];
+	$order = $_POST['ordre'];
+	$type = $_POST['type'];
+	$recherche = $_POST['recherche'];
+	
+	$args=array();
+
+	$args['post_type']='post';
+	$args['orderby']='menu_order';
+	$args['order']=$order;
+	$args['offset']=$offset;
+	$args['posts_per_page']=1;
+	$args['post_status']='publish';
+
+	$ajax_query = new WP_Query($args);
+
+	if($type!=-1 || $recherche!=""){
+		if($type!=-1){
+			if($recherche!=""){
+				$args['tax_query']=array(
+					array('taxonomy' => 'thematique', 'field' => 'name', 'terms' => $recherche),
+					array('taxonomy' => 'type_editorial', 'field' => 'term_id', 'terms' => $type)
+				);
+			}
+			else{
+				$args['tax_query']=array(
+					array('taxonomy' => 'type_editorial', 'field' => 'term_id', 'terms' => $type)
+				);
+			}
+		}
+		else{
+			if($recherche!=""){
+				$args['tax_query']=array(
+					array('taxonomy' => 'thematique', 'field' => 'name', 'terms' => $recherche)
+				);
+			}
+		}
+	}
+	
+	//Premier bloc
+
+	$liste_derniers_articles = get_posts($args);
+
+	if(count($liste_derniers_articles)>0){
+?>
+	<div class="derniers-articles flex-container-h">
+		<div class="dernier-article flex-container-h">
+	    <?php
+	}
+			foreach ($liste_derniers_articles as $dernier_article){
+				include(locate_template('article-remontee-home.php'));
+			}
+	    ?>
+<?php
+	if(count($liste_derniers_articles)>0){	
+?>
+    	</div>
+<?php
+	}
+
+	$args['offset']=$offset + 1;
+	$args['posts_per_page']=4;
+
+	$liste_derniers_articles_bis = get_posts($args);
+
+	if(count($liste_derniers_articles_bis)>0){
+?>
+	    <div class="autres-articles flex-container-h">
+<?php
+	}
+			foreach ($liste_derniers_articles_bis as $dernier_article){
+				include(locate_template('article-remontee-home.php'));
+			}
+	if(count($liste_derniers_articles_bis)>0){
+?>
+    	</div>
+<?php
+	}
+	if(count($liste_derniers_articles)>0){
+?>
+	</div>
+<?php
+	}
+
+
+	//Deuxième bloc
+	$args['offset']=$offset + 5;
+	$args['posts_per_page']=1;
+
+	$liste_derniers_articles = get_posts($args);
+	if(count($liste_derniers_articles)>0){
+?>
+	<div class="derniers-articles flex-container-h derniers-articles-bis">
+		<div class="dernier-article flex-container-h">
+	    <?php
+	}
+			foreach ($liste_derniers_articles as $dernier_article){
+				include(locate_template('article-remontee-home.php'));
+			}
+	    ?>
+<?php
+	if(count($liste_derniers_articles)>0){	
+?>
+    	</div>
+<?php
+	}
+	
+	$args['offset']=$offset + 6;
+	$args['posts_per_page']=4;
+
+	$liste_derniers_articles_bis = get_posts($args);
+
+	if(count($liste_derniers_articles_bis)>0){
+?>
+	    <div class="autres-articles flex-container-h">
+<?php
+	}
+			foreach ($liste_derniers_articles_bis as $dernier_article){
+				include(locate_template('article-remontee-home.php'));
+			}
+	if(count($liste_derniers_articles_bis)>0){
+?>
+    	</div>
+<?php
+	}
+	if(count($liste_derniers_articles)>0){
+?>
+	</div>
+<?php
+	}
+
+	die();
+}
+/* /Filtre articles archive */
 
 
 /* Load slider installation */

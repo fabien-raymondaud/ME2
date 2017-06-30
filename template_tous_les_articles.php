@@ -10,6 +10,28 @@ Template Name: Tous les articles
 <div class="header-cat txtcenter">
 	<h1 class="txtcenter size30">Tous les articles</h1>
 	<p class="nb-articles size18 txtcenter tk-utopia-std-display"><?php echo wp_count_posts('post')->publish.' articles';?></p>
+
+	<div class="flex-container-h filtres filtres-categorie">
+		<span class="invisible filtre-categorie" data-filtre-categorie="<?php echo $term->term_id; ?>"></span>
+		<select name="select_categorie" class="select_categorie">
+			<option selected="selected" value="-1">Toutes les catégories</option>
+<?php
+			$termsFiltre = get_terms( array(
+			    'taxonomy' => 'type_editorial'
+			));
+			foreach($termsFiltre as $termFiltre){
+?>
+				<option value="<?php echo $termFiltre->term_id?>"><?php echo $termFiltre->name?></option>
+<?php
+			}
+?>
+		</select>
+
+		<select name="select_categorie" class="select_categorie">
+			<option selected="selected" value="ASC">Du plus récent au plus ancien</option>
+			<option value="DESC">Du plus ancien au plus récent</option>
+		</select>
+	</div>
 </div>
 
 <div class="conteneur-liste-articles">
@@ -19,7 +41,7 @@ $args = array(
     'posts_per_page' => 1,
     'post_type' => 'post',
     'orderby' => 'menu_order',
-    'order' => 'DESC'
+    'order' => 'ASC'
 );
 
 
@@ -107,7 +129,7 @@ $args = array(
     'posts_per_page' => 4,
     'post_type' => 'post',
     'orderby' => 'menu_order',
-    'order' => 'DESC',
+    'order' => 'ASC',
     'offset' => 1
 );
 
@@ -201,7 +223,7 @@ $args = array(
     'posts_per_page' => 1,
     'post_type' => 'post',
     'orderby' => 'menu_order',
-    'order' => 'DESC',
+    'order' => 'ASC',
     'offset' => 5
 );
 
@@ -291,7 +313,7 @@ $args = array(
     'posts_per_page' => 4,
     'post_type' => 'post',
     'orderby' => 'menu_order',
-    'order' => 'DESC',
+    'order' => 'ASC',
     'offset' => 6
 );
 

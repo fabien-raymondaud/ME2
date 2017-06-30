@@ -1248,7 +1248,7 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 	.filtres{
 		margin-top: 35px;
 		margin-bottom: 45px;
-		padding: 0 8.333%;
+		padding: 0 8.333% 0 7.7%;
 		justify-content:space-between;
 
 		select{
@@ -1949,47 +1949,49 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 /* Fin Single */
 
 /* Archives */
-body.page-archive{
-	.header-general{
-		border-bottom: 1px solid #ccc;
-	}
-
-	.derniers-articles{
-		.autres-articles{
-			flex:1;
-			padding-right: 8.3%;
+body{
+	&.page-archive, &.search-results{
+		.header-general{
+			border-bottom: 1px solid #ccc;
 		}
 
-		.dernier-article{
-			width: 45.5%;
-			padding-right: 8.3%;
-		}
-
-		&.derniers-articles-bis{
+		.derniers-articles{
 			.autres-articles{
-				padding-left: 8.3%;
-				padding-right: 0;
+				flex:1;
+				padding-right: 8.3%;
 			}
 
 			.dernier-article{
-				order:1;
-				padding-left: 8.3%;
-				padding-right: 0;
-
-				.panneau-article{
-					.descriptif-article{
-						padding:35px 21% 55px 40px;
-					}
-
-					> div{
-						padding-right: 21%;
-						padding-left: 0;
-					}
-				}
+				width: 45.5%;
+				padding-right: 8.3%;
 			}
 
-		}
-	} 
+			&.derniers-articles-bis{
+				.autres-articles{
+					padding-left: 8.3%;
+					padding-right: 0;
+				}
+
+				.dernier-article{
+					order:1;
+					padding-left: 8.3%;
+					padding-right: 0;
+
+					.panneau-article{
+						.descriptif-article{
+							padding:35px 21% 55px 40px;
+						}
+
+						> div{
+							padding-right: 21%;
+							padding-left: 0;
+						}
+					}
+				}
+
+			}
+		} 
+	}
 }
 
 .header-cat{

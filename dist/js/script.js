@@ -63,27 +63,21 @@ $(document).ready(function() {
 
 
 	/* AJAX Liste archives */
-	var filtre_thematique = "Tous";
+	var filtre_type = -1;
 	var filtre_ordre = "DESC";
 	var offsetArticles = 10; 
+	var recherche = "";
 
 	/* Load more */
 	$('.afficher-plus-articles').click(function(){
-		if($(this).data('cat')!=""){
-			filtre_thematique = $(this).data('cat');
-		}
-
-		if($(this).data('ordre')!=""){
-			filtre_ordre = $(this).data('ordre');
-		}
-
 		jQuery.post(
 		    ajaxurl,
 		    {
 		        'action': 'load_more_articles',
 		        'offset': offsetArticles,
-		        'thematique': filtre_thematique,
-		        'ordre': filtre_ordre
+		        'type': filtre_type,
+		        'ordre': filtre_ordre,
+		        'recherche': recherche
 		    },
 		    function(response){
 		    	offsetArticles = offsetArticles + 10;
@@ -98,6 +92,73 @@ $(document).ready(function() {
 		return false;
 	});
 	/* /Load more */
+
+	/* Filtre articles */
+	$('.filtres .select:first-of-type .select-options li').click(function(){
+		filtre_type = $(this).attr('rel');
+
+		$(this).parent().prev('.select-styled').text($(this).text()).removeClass('active');
+        $(this).val($(this).attr('rel'));
+        $(this).parent().hide();
+
+		jQuery.post(
+		    ajaxurl,
+		    {
+		        'action': 'filtre_articles',
+		        'offset': 0,
+		        'type': filtre_type,
+		        'ordre': filtre_ordre,
+		        'recherche': recherche
+		    },
+		    function(response){
+		    	offsetArticles = 10;
+		    	$('.conteneur-liste-articles').html("");
+		    	$('.conteneur-liste-articles').append(response);
+		    	
+		    	if(offsetArticles>=$('#compteur-posts').val() || $('.panneau-article').length<10){
+		    		$('.afficher-plus-articles').css('display','none');
+		    	}
+		    	else{
+		    		$('.afficher-plus-articles').css('display','inline-block');
+		    	}
+		    }
+		);
+	});
+
+	$('.filtres .select:last-child .select-options li').click(function(){
+		filtre_ordre = $(this).attr('rel');
+
+		$(this).parent().prev('.select-styled').text($(this).text()).removeClass('active');
+        $(this).val($(this).attr('rel'));
+        $(this).parent().hide();
+
+		jQuery.post(
+		    ajaxurl,
+		    {
+		        'action': 'filtre_articles',
+		        'offset': 0,
+		        'type': filtre_type,
+		        'ordre': filtre_ordre,
+		        'recherche': recherche
+		    },
+		    function(response){
+		    	offsetArticles = 10; 
+		    	$('.conteneur-liste-articles').html("");
+		    	$('.conteneur-liste-articles').append(response);
+		    	
+		    	if(offsetArticles>=$('#compteur-posts').val() || $('.panneau-article').length<10){
+		    		$('.afficher-plus-articles').css('display','none');
+		    	}
+		    	else{
+		    		$('.afficher-plus-articles').css('display','inline-block');
+		    	}
+		    }
+		);
+	});
+
+	/* /Filtre articles */
+
+
 
 	/* Chargement playlist */
 	$('.lien-playlist').click(function(){
