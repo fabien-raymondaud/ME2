@@ -218,8 +218,10 @@ else{
 		<a href="#" class="ouvrir-radio typo1 size13 flex-container-h">Ouvrir la radio</a>
 
 		<div class="recherche">
-			
+			<span></span>
+			<?php get_search_form(); ?>
 		</div>
+		
 
 		<button class="burger">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 18"><g id="Calque_1-2" data-name="Calque 1"><path class="cls-1" d="M18,2H1A1,1,0,0,1,1,0H18a1,1,0,0,1,0,2Z"/><path class="cls-1" d="M18,18H1a1,1,0,0,1,0-2H18a1,1,0,0,1,0,2Z"/><path class="cls-1" d="M22,10H1A1,1,0,0,1,1,8H22a1,1,0,0,1,0,2Z"/></g></svg>

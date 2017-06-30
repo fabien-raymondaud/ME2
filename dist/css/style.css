@@ -2435,7 +2435,8 @@ body.unscrolled {
   padding: 0;
   height: 18px;
   width: 23px;
-  margin-left: 40px;
+  margin-left: auto;
+  margin-right: 50px;
 }
 .header-general .burger svg {
   width: 23px;
@@ -2526,6 +2527,51 @@ body.unscrolled {
   text-align: right;
   color: #333;
   line-height: 1.15em;
+}
+.header-general .recherche > span {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url("../../img/css/svg/icn-loupe.svg") no-repeat center;
+  -webkit-background-size: contain;
+          background-size: contain;
+  cursor: pointer;
+}
+.header-general .searchform {
+  position: relative;
+  display: none;
+}
+.header-general .searchform label {
+  display: none;
+}
+.header-general .searchform .awesomplete {
+  position: absolute;
+  left: -630px;
+  width: 598px;
+  top: -7px;
+  height: 34px;
+}
+.header-general .searchform .awesomplete input {
+  height: 34px;
+  width: 100%;
+}
+.header-general .searchform.ouvert {
+  display: block;
+}
+.header-general .searchform #searchsubmit {
+  color: transparent;
+  background: url("../../img/css/svg/icn-loupe.svg") no-repeat center;
+  -webkit-background-size: contain;
+          background-size: contain;
+  display: block;
+  height: 18px;
+  width: 18px;
+  border: none;
+  -webkit-border-radius: none;
+          border-radius: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  cursor: pointer;
 }
 
 .page-template-template_installation .header-general h1 svg .cls-1 {
@@ -2648,6 +2694,7 @@ body.unscrolled {
   -webkit-transition: all 0.3s ease;
           transition: all 0.3s ease;
   background: #fff;
+  margin-right: 50px;
 }
 .ouvrir-radio:hover, .ouvrir-radio:focus {
   color: #fff;

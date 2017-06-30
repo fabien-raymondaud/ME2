@@ -224,7 +224,8 @@ body{
 		padding: 0;
 		height: 18px;
 		width: 23px;
-		margin-left: 40px;
+		margin-left: auto;
+		margin-right: 50px;
 
 		svg{
 			width:23px;
@@ -322,6 +323,55 @@ body{
 			text-align: right;
 			color:$color7;
 			line-height: 1.15em;
+		}
+	}
+
+	.recherche{
+		> span{
+			display: block;
+			width: 18px;
+			height: 18px;
+			background: url('../../img/css/svg/icn-loupe.svg') no-repeat center;
+			background-size: contain;
+			cursor:pointer;
+		}
+	}
+
+	.searchform{
+		position: relative;
+		display: none;
+		label{
+			display: none;
+		}
+
+		.awesomplete{
+			position: absolute;
+			left: -630px;
+			width: 598px;
+			top:-7px;
+			height: 34px;
+
+			input{
+				height: 34px;
+				width: 100%;
+			}
+		}
+
+		&.ouvert{
+			display: block;
+		}
+
+		#searchsubmit{
+			color:transparent;
+			background: url('../../img/css/svg/icn-loupe.svg') no-repeat center;
+			background-size: contain;
+			display: block;
+			height: 18px;
+			width: 18px;
+			border:none;
+			border-radius: none;
+			box-shadow: none;
+			cursor:pointer;
 		}
 	}
 }
@@ -469,6 +519,7 @@ body{
 	align-items:center;
 	transition: all 0.3s ease;
 	background: $color2;
+	margin-right: 50px;
 
 	&:hover, &:focus{
 		color:$color2;
