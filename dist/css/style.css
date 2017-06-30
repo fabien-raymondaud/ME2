@@ -2528,7 +2528,10 @@ body.unscrolled {
   color: #333;
   line-height: 1.15em;
 }
-.header-general .recherche > span {
+.header-general .recherche {
+  position: relative;
+}
+.header-general .recherche > span.open-search {
   display: block;
   width: 18px;
   height: 18px;
@@ -2537,23 +2540,42 @@ body.unscrolled {
           background-size: contain;
   cursor: pointer;
 }
+.header-general .recherche > span.close-search {
+  width: 18px;
+  height: 18px;
+  background: url("../../img/css/svg/close-search.svg") no-repeat center;
+  -webkit-background-size: contain;
+          background-size: contain;
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+  right: 71px;
+  top: 1px;
+}
 .header-general .searchform {
-  position: relative;
+  position: absolute;
   display: none;
+  top: 0;
 }
 .header-general .searchform label {
   display: none;
 }
 .header-general .searchform .awesomplete {
   position: absolute;
-  left: -630px;
-  width: 598px;
+  right: 51px;
+  max-width: 598px;
   top: -7px;
   height: 34px;
 }
 .header-general .searchform .awesomplete input {
   height: 34px;
   width: 100%;
+  padding: 0 15px;
+  font-size: 1.4rem;
+  font-family: "sofia_pro_regular", "Montserrat", Helvetica, Arial, sans-serif !important;
+}
+.header-general .searchform .awesomplete input:hover, .header-general .searchform .awesomplete input:focus {
+  outline: none;
 }
 .header-general .searchform.ouvert {
   display: block;
@@ -5454,11 +5476,8 @@ body .ff-icon-inner::after {
     margin-left: 40px;
     width: 245px;
   }
-  .header-general .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-track-details .mejs-track-title {
-    display: none !important;
-  }
-  .header-general .cue-playlist.max-width-300 .cue-skin-default.mejs-container .mejs-track-details {
-    display: block;
+  .header-general .player .infos-player .titre {
+    display: none;
   }
 
   body.page-archive .nav-footer {

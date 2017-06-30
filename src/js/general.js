@@ -132,6 +132,23 @@ function fermeRadio() {
 }
 
 $(document).ready(function() {
+	var winwidth = document.body.clientWidth;
+
+	$('.recherche .awesomplete > input').attr('placeholder', 'Votre recherche');
+
+	$('.recherche .open-search').click(function(){
+		$('.recherche .searchform').addClass('ouvert');
+		$('.recherche .close-search').removeClass('invisible');
+	});
+
+	$('.recherche .close-search').click(function(){
+		$('.recherche .searchform').removeClass('ouvert');
+		$(this).addClass('invisible');
+	});
+
+	var largeur_recherche = winwidth * 58.4 / 100;
+	$('.header-general .searchform .awesomplete').css('width', largeur_recherche+'px');
+
 	if($('.header-cat .filtres select').length){
 		$('.header-cat .filtres select').each(function(){
 		    var $this = $(this), numberOfOptions = $(this).children('option').length;
@@ -241,7 +258,7 @@ $(document).ready(function() {
 	});
 
 	var compteur_click_nav_retro = 0;
-	var winwidth = document.body.clientWidth;
+	
 	var multiplicateur = 85;
 	var decalage = 0;
 	var largeur_nav = 0;
@@ -402,6 +419,10 @@ $(document).ready(function() {
 
 		positionne_raccourci_ME(winwidth);
 		fonctionnement_nav_annees(winwidth);
+
+		var largeur_recherche = winwidth * 58.4 / 100;
+		$('.header-general .searchform .awesomplete').css('width', largeur_recherche+'px');
+
 		if(winwidth<=767){
 			largeur_nav = winwidth - 60;
 			$('.flexslider-retro .flex-control-paging li').css('width', largeur_nav+'px');

@@ -345,14 +345,10 @@
     .player{
       margin-left: 40px;
       width: 245px;
-    }
 
-    .cue-playlist.max-width-380 .cue-skin-default.mejs-container .mejs-track-details .mejs-track-title{
-      display: none !important;
-    }
-
-    .cue-playlist.max-width-300 .cue-skin-default.mejs-container .mejs-track-details{
-      display: block;
+      .infos-player .titre{
+        display: none;
+      }
     }
   }
 

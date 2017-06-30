@@ -327,7 +327,8 @@ body{
 	}
 
 	.recherche{
-		> span{
+		position: relative;
+		> span.open-search{
 			display: block;
 			width: 18px;
 			height: 18px;
@@ -335,25 +336,46 @@ body{
 			background-size: contain;
 			cursor:pointer;
 		}
+
+		> span.close-search{
+			width: 18px;
+			height: 18px;
+			background: url('../../img/css/svg/close-search.svg') no-repeat center;
+			background-size: contain;
+			cursor:pointer;
+			position: absolute;
+			z-index: 10;
+			right: 71px;
+			top: 1px;
+		}
 	}
 
 	.searchform{
-		position: relative;
+		position: absolute;
 		display: none;
+		top:0;
+
 		label{
 			display: none;
 		}
 
 		.awesomplete{
 			position: absolute;
-			left: -630px;
-			width: 598px;
+			right: 51px;
+			max-width: 598px;
 			top:-7px;
 			height: 34px;
 
 			input{
 				height: 34px;
 				width: 100%;
+				padding: 0 15px;
+				font-size: $size-14;
+				font-family: $typo1;
+
+				&:hover, &:focus{
+					outline: none;
+				}
 			}
 		}
 
