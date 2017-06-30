@@ -2026,13 +2026,13 @@ body.page-archive{
 
 		&:after {
 			content:"";
-			width: 0;
-			height: 0;
-			border: 7px solid transparent;
-			border-color: $color2 transparent transparent transparent;
+			width: 12px;
+			height: 7px;
 			position: absolute;
-			top: 16px;
-			right: 10px;
+			top: 21px;
+			right: 15px;
+			background: url('../../img/css/svg/icn-dropdown.svg') no-repeat;
+			background-size: contain;
 		}
 
 		&:hover {
@@ -2041,11 +2041,6 @@ body.page-archive{
 
 		&:active, &.active {
 			background-color: $color2;
-
-			&:after {
-				top: 9px;
-				border-color: transparent transparent #ccc transparent;
-			}
 		}
 	}
 
@@ -2071,6 +2066,16 @@ body.page-archive{
 
 			&:first-child{
 				border-top: none;
+				&::after{
+					content:"";
+					width: 12px;
+					height: 7px;
+					position: absolute;
+					top: 21px;
+					right: 15px;
+					background: url('../../img/css/svg/icn-dropdown.svg') no-repeat;
+					background-size: contain;
+				}
 			}
 
 			&:hover {

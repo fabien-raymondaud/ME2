@@ -4192,23 +4192,20 @@ body.page-archive .derniers-articles.derniers-articles-bis .dernier-article .pan
 }
 .header-cat .select-styled:after {
   content: "";
-  width: 0;
-  height: 0;
-  border: 7px solid transparent;
-  border-color: #fff transparent transparent transparent;
+  width: 12px;
+  height: 7px;
   position: absolute;
-  top: 16px;
-  right: 10px;
+  top: 21px;
+  right: 15px;
+  background: url("../../img/css/svg/icn-dropdown.svg") no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
 }
 .header-cat .select-styled:hover {
   background-color: #fff;
 }
 .header-cat .select-styled:active, .header-cat .select-styled.active {
   background-color: #fff;
-}
-.header-cat .select-styled:active:after, .header-cat .select-styled.active:after {
-  top: 9px;
-  border-color: transparent transparent #ccc transparent;
 }
 .header-cat .select-options {
   display: none;
@@ -4234,6 +4231,17 @@ body.page-archive .derniers-articles.derniers-articles-bis .dernier-article .pan
 }
 .header-cat .select-options li:first-child {
   border-top: none;
+}
+.header-cat .select-options li:first-child::after {
+  content: "";
+  width: 12px;
+  height: 7px;
+  position: absolute;
+  top: 21px;
+  right: 15px;
+  background: url("../../img/css/svg/icn-dropdown.svg") no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
 }
 .header-cat .select-options li:hover {
   color: #333;
