@@ -79,7 +79,7 @@ if($term->count>1){
 				<option selected="selected" value="-1">Toutes les catégories</option>
 <?php
 				$terms = get_terms( array(
-				    'taxonomy' => 'thematique'
+				    'taxonomy' => 'type_editorial'
 				));
 				foreach($terms as $term){
 ?>
@@ -90,9 +90,8 @@ if($term->count>1){
 			</select>
 
 			<select name="select_categorie" class="select_categorie">
-				<option selected="selected" value="1">Date de publication croissante</option>
-				<option value="2">Date de publication décroissante</option>
-				<option value="3">Libellé de tri</option>
+				<option selected="selected" value="ASC">Date de publication croissante</option>
+				<option value="DESC">Date de publication décroissante</option>
 			</select>
 		</div>
 <?php

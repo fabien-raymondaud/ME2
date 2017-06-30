@@ -217,7 +217,7 @@ else{
 
 		<a href="#" class="ouvrir-radio typo1 size13 flex-container-h">Ouvrir la radio</a>
 
-		<div class="recherche">
+		<div class="recherche recherche-header">
 			<span class="open-search"></span>
 			<?php get_search_form(); ?>
 			<span class="close-search invisible"></span>

@@ -2528,10 +2528,11 @@ body.unscrolled {
   color: #333;
   line-height: 1.15em;
 }
-.header-general .recherche {
+
+.recherche {
   position: relative;
 }
-.header-general .recherche > span.open-search {
+.recherche > span.open-search {
   display: block;
   width: 18px;
   height: 18px;
@@ -2540,7 +2541,7 @@ body.unscrolled {
           background-size: contain;
   cursor: pointer;
 }
-.header-general .recherche > span.close-search {
+.recherche > span.close-search {
   width: 18px;
   height: 18px;
   background: url("../../img/css/svg/close-search.svg") no-repeat center;
@@ -2552,35 +2553,67 @@ body.unscrolled {
   right: 71px;
   top: 1px;
 }
-.header-general .searchform {
+.recherche.recherche-page-recherche {
+  width: 58.4%;
+  max-width: 58.4%;
+  margin: 30px auto 40px;
+}
+.recherche.recherche-page-recherche .searchform {
+  display: block;
+  position: relative;
+  top: inherit;
+}
+.recherche.recherche-page-recherche .searchform .awesomplete {
+  position: relative;
+  right: inherit;
+  top: inherit;
+  width: 100%;
+  max-width: 100%;
+  height: 48px;
+}
+.recherche.recherche-page-recherche .searchform .awesomplete input {
+  height: 48px;
+}
+.recherche.recherche-page-recherche .searchform #searchsubmit {
+  padding: 0;
+  position: absolute;
+  right: -47px;
+  top: 15px;
+}
+.recherche.recherche-page-recherche > span.close-search {
+  right: 20px;
+  top: 15px;
+}
+
+.searchform {
   position: absolute;
   display: none;
   top: 0;
 }
-.header-general .searchform label {
+.searchform label {
   display: none;
 }
-.header-general .searchform .awesomplete {
+.searchform .awesomplete {
   position: absolute;
   right: 51px;
   max-width: 598px;
   top: -7px;
   height: 34px;
 }
-.header-general .searchform .awesomplete input {
+.searchform .awesomplete input {
   height: 34px;
   width: 100%;
   padding: 0 15px;
   font-size: 1.4rem;
   font-family: "sofia_pro_regular", "Montserrat", Helvetica, Arial, sans-serif !important;
 }
-.header-general .searchform .awesomplete input:hover, .header-general .searchform .awesomplete input:focus {
+.searchform .awesomplete input:hover, .searchform .awesomplete input:focus {
   outline: none;
 }
-.header-general .searchform.ouvert {
+.searchform.ouvert {
   display: block;
 }
-.header-general .searchform #searchsubmit {
+.searchform #searchsubmit {
   color: transparent;
   background: url("../../img/css/svg/icn-loupe.svg") no-repeat center;
   -webkit-background-size: contain;

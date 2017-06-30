@@ -14,6 +14,32 @@ if($nb_resultats>1){
 <div class="header-cat txtcenter">
 	<h1 class="txtcenter size30"><?php echo '"'.get_search_query().'"';?></h1>
 	<p class="nb-articles size18 txtcenter tk-utopia-std-display"><?php echo $nb_resultats.' '.$texte_articles;?></p>
+
+	<div class="recherche recherche-page-recherche">
+		<?php get_search_form(); ?>
+		<span class="close-search"></span>
+	</div>
+
+	<div class="flex-container-h filtres filtres-recherche">
+		<select name="select_categorie" class="select_categorie">
+			<option selected="selected" value="-1">Toutes les catégories</option>
+<?php
+			$terms = get_terms( array(
+			    'taxonomy' => 'type_editorial'
+			));
+			foreach($terms as $term){
+?>
+				<option value="<?php echo $term->term_id?>"><?php echo $term->name?></option>
+<?php
+			}
+?>
+		</select>
+
+		<select name="select_categorie" class="select_categorie">
+			<option selected="selected" value="ASC">Date de publication croissante</option>
+			<option value="DESC">Date de publication décroissante</option>
+		</select>
+	</div>
 </div>
 
 	<div class="derniers-articles flex-container-h">

@@ -136,14 +136,18 @@ $(document).ready(function() {
 
 	$('.recherche .awesomplete > input').attr('placeholder', 'Votre recherche');
 
-	$('.recherche .open-search').click(function(){
-		$('.recherche .searchform').addClass('ouvert');
-		$('.recherche .close-search').removeClass('invisible');
+	$('.recherche-header .open-search').click(function(){
+		$('.recherche-header .searchform').addClass('ouvert');
+		$('.recherche-header .close-search').removeClass('invisible');
 	});
 
-	$('.recherche .close-search').click(function(){
-		$('.recherche .searchform').removeClass('ouvert');
+	$('.recherche-header .close-search').click(function(){
+		$('.recherche-header .searchform').removeClass('ouvert');
 		$(this).addClass('invisible');
+	});
+
+	$('.recherche-page-recherche .close-search').click(function(){
+		$('.recherche-page-recherche .searchform .awesomplete input').val("");
 	});
 
 	var largeur_recherche = winwidth * 58.4 / 100;
