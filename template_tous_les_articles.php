@@ -32,6 +32,7 @@ Template Name: Tous les articles
 			<option value="DESC">Du plus ancien au plus récent</option>
 		</select>
 	</div>
+	<span class="invisible cat-recherche" data-cat-recherche=""></span>
 </div>
 
 <div class="conteneur-liste-articles">

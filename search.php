@@ -39,6 +39,8 @@ if($nb_resultats>1){
 			<option value="DESC">Du plus ancien au plus récent</option>
 		</select>
 	</div>
+
+	<span class="invisible cat-recherche" data-cat-recherche="<?php echo get_search_query();?>"></span>
 </div>
 
 <div class="conteneur-liste-articles">

@@ -96,6 +96,7 @@ $(document).ready(function() {
 	/* Filtre articles */
 	$('.filtres .select:first-of-type .select-options li').click(function(){
 		filtre_type = $(this).attr('rel');
+		recherche = $('.cat-recherche').data('cat-recherche');
 
 		$(this).parent().prev('.select-styled').text($(this).text()).removeClass('active');
         $(this).val($(this).attr('rel'));
@@ -127,6 +128,7 @@ $(document).ready(function() {
 
 	$('.filtres .select:last-child .select-options li').click(function(){
 		filtre_ordre = $(this).attr('rel');
+		recherche = $('.cat-recherche').data('cat-recherche');
 
 		$(this).parent().prev('.select-styled').text($(this).text()).removeClass('active');
         $(this).val($(this).attr('rel'));

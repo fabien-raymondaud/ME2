@@ -97,6 +97,7 @@ if($term->count>1){
 <?php
 	}
 ?>
+	<span class="invisible cat-recherche" data-cat-recherche="<?php echo $term->name;?>"></span>
 </div>
 
 <div class="conteneur-liste-articles">
