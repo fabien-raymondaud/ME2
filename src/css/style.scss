@@ -2271,6 +2271,21 @@ body.page-archive{
 		color:$color3;
 	}
 }
+
+.lien-tous-les-articles{
+	height: 34px;
+	display: inline-block;
+	border-radius: 17px;
+	padding: 3px 20px;
+	background:$color2;
+	border:1px solid $color4;
+	transition: all 0.3s ease;
+
+	&:hover, &:focus{
+		background: $color4;
+		color:$color2;
+	}
+}
 /* Fin Archives */
 
 /* Installation */

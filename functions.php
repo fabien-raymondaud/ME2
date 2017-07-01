@@ -266,8 +266,6 @@ function load_more_articles(){
 	$args['posts_per_page']=1;
 	$args['post_status']='publish';
 
-	$ajax_query = new WP_Query($args);
-
 	if($type!=-1 || $recherche!=""){
 		if($type!=-1){
 			if($recherche!=""){
@@ -406,8 +404,6 @@ function filtre_articles(){
 	$args['posts_per_page']=1;
 	$args['post_status']='publish';
 
-	$ajax_query = new WP_Query($args);
-
 	if($type!=-1 || $recherche!=""){
 		if($type!=-1){
 			if($recherche!=""){
@@ -434,6 +430,19 @@ function filtre_articles(){
 	//Premier bloc
 
 	$liste_derniers_articles = get_posts($args);
+
+	//Pour le nouveau compteur d'articles
+	$args['posts_per_page'] = -1;
+	$nb_derniers_articles = get_posts($args);
+?>
+		<span class="new-compteur-post invisible" data-nb-posts="<?php echo count($nb_derniers_articles);?>"></span>
+<?php
+
+	//Fin Pour le nouveau compteur d'articles
+
+	if(count($liste_derniers_articles)==0){
+		include(locate_template('no-article.php'));
+	}
 
 	if(count($liste_derniers_articles)>0){
 ?>
@@ -522,7 +531,6 @@ function filtre_articles(){
 	</div>
 <?php
 	}
-
 	die();
 }
 /* /Filtre articles archive */

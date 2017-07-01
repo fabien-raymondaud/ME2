@@ -4428,6 +4428,22 @@ body.page-archive .nav-footer .back-to-top {
   color: #001FFF;
 }
 
+.lien-tous-les-articles {
+  height: 34px;
+  display: inline-block;
+  -webkit-border-radius: 17px;
+          border-radius: 17px;
+  padding: 3px 20px;
+  background: #fff;
+  border: 1px solid #1a1a1a;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+}
+.lien-tous-les-articles:hover, .lien-tous-les-articles:focus {
+  background: #1a1a1a;
+  color: #fff;
+}
+
 /* Fin Archives */
 /* Installation */
 body.page-template-template_installation .footer-principal {
