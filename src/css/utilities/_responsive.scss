@@ -1095,6 +1095,25 @@
       }
     }
 
+    .conteneur-breve{
+      &:nth-of-type(n+3){
+        display: none;
+      }
+
+      &.ouvert{
+        &:nth-of-type(n+3){
+          display: block;
+        }
+      }
+    }
+  }
+
+  .plus-actu-installation{
+    display: flex;
+
+    &.ferme{
+      display: none;
+    }
   }
 }
 

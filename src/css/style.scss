@@ -2607,9 +2607,10 @@ body.page-template-template_installation{
 
 	.conteneur-breve{
 		padding: 28px 0;
+		border-bottom:1px solid $color2;
 
-		+ .conteneur-breve{
-			border-top:1px solid $color2;
+		&:last-of-type{
+			border-bottom: none;
 		}
 
 		h3{
@@ -2639,6 +2640,17 @@ body.page-template-template_installation{
 			}
 		}
 	}
+}
+
+.plus-actu-installation{
+	display: none;
+	align-items:center;
+	height: 36px;
+	width: 140px;
+	justify-content:center;
+	border-radius: 18px;
+	background: $color2;
+	margin-top: 50px;
 }
 
 .conteneur-flux-rs{

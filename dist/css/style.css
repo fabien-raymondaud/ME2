@@ -4747,9 +4747,10 @@ body.page-template-template_installation .all-playlists > ul > li.is-playing .li
 }
 .actus-installation .conteneur-breve {
   padding: 28px 0;
+  border-bottom: 1px solid #fff;
 }
-.actus-installation .conteneur-breve + .conteneur-breve {
-  border-top: 1px solid #fff;
+.actus-installation .conteneur-breve:last-of-type {
+  border-bottom: none;
 }
 .actus-installation .conteneur-breve h3 {
   line-height: 1.15em;
@@ -4775,6 +4776,24 @@ body.page-template-template_installation .all-playlists > ul > li.is-playing .li
 }
 .actus-installation .conteneur-breve .texte-breve p {
   line-height: 1.35em;
+}
+
+.plus-actu-installation {
+  display: none;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 36px;
+  width: 140px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-border-radius: 18px;
+          border-radius: 18px;
+  background: #fff;
+  margin-top: 50px;
 }
 
 .conteneur-flux-rs > h3 {
@@ -6309,6 +6328,22 @@ body .ff-icon-inner::after {
   .actus-installation .avec-overflow > h2 {
     font-size: 3rem;
     font-weight: 800;
+  }
+  .actus-installation .conteneur-breve:nth-of-type(n+3) {
+    display: none;
+  }
+  .actus-installation .conteneur-breve.ouvert:nth-of-type(n+3) {
+    display: block;
+  }
+
+  .plus-actu-installation {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .plus-actu-installation.ferme {
+    display: none;
   }
 }
 @media screen and (max-width: 480px) {

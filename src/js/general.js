@@ -327,6 +327,12 @@ $(document).ready(function() {
 		return false;
 	});
 
+	$('.plus-actu-installation').click(function(){
+		$(this).addClass('ferme');
+		$('.conteneur-breve').addClass('ouvert');
+		return false;
+	});
+
 	positionne_raccourci_ME(winwidth);
 
 	fonctionnement_nav_annees(winwidth);

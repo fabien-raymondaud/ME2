@@ -100,7 +100,8 @@ Template Name: Installation
 					endwhile;
 					wp_reset_postdata();
 				endif;
-?>			
+?>	
+			<a href="#" class="plus-actu-installation color5 typo1 size16">Plus d'actus</a>		
 		</div>
 	</div>
 
