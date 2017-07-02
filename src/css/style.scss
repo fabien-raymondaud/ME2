@@ -3264,6 +3264,83 @@ body{
 	}
 }
 
+.elements-parallax{
+	> div{
+		position: absolute;
+		z-index: 10;
+
+		svg{
+			width: 100%;
+		}
+	}
+
+	.blue-wave{
+		top: 410px;
+		left: 56.1523%;
+		width: 4.1%;
+
+		.cls-1{
+			fill:$color3;
+			stroke:$color3;
+			stroke-miterlimit:10;
+		}
+	}
+
+	.zebra-noir{
+		top: 990px;
+		left: 12.6%;
+		width: 4.1%;
+
+		.cls-1{
+			fill:$color7;
+		}
+	}
+
+	.entrelaces{
+		top: 1605px;
+		left: 34.2%;
+		width: 6.347%;
+
+		.cls-1{
+			fill:$color1;
+		}
+	}
+
+	.hachures{
+		bottom: 190px;
+		right: 13.378%;
+		width: 6.347%;
+
+		.cls-1{
+			fill:$color7;
+		}
+	}
+}
+
+.page-archive{
+	.elements-parallax{
+		.blue-wave{
+			top: 605px;
+			left: 39.2%;
+		}
+
+		.zebra-noir{
+			top: 880px;
+			left: 18.6523%;
+		}
+
+		.entrelaces{
+			top: 1500px;
+			right: 33.95%;
+			left: inherit;
+		}
+	}
+}
+
+html{
+	position: relative;
+}
+
 /* Fin Footer */
 
 

@@ -5403,6 +5403,66 @@ body .ff-icon-inner::after {
   fill: #fff;
 }
 
+.elements-parallax > div {
+  position: absolute;
+  z-index: 10;
+}
+.elements-parallax > div svg {
+  width: 100%;
+}
+.elements-parallax .blue-wave {
+  top: 410px;
+  left: 56.1523%;
+  width: 4.1%;
+}
+.elements-parallax .blue-wave .cls-1 {
+  fill: #001FFF;
+  stroke: #001FFF;
+  stroke-miterlimit: 10;
+}
+.elements-parallax .zebra-noir {
+  top: 990px;
+  left: 12.6%;
+  width: 4.1%;
+}
+.elements-parallax .zebra-noir .cls-1 {
+  fill: #333;
+}
+.elements-parallax .entrelaces {
+  top: 1605px;
+  left: 34.2%;
+  width: 6.347%;
+}
+.elements-parallax .entrelaces .cls-1 {
+  fill: #5551FB;
+}
+.elements-parallax .hachures {
+  bottom: 190px;
+  right: 13.378%;
+  width: 6.347%;
+}
+.elements-parallax .hachures .cls-1 {
+  fill: #333;
+}
+
+.page-archive .elements-parallax .blue-wave {
+  top: 605px;
+  left: 39.2%;
+}
+.page-archive .elements-parallax .zebra-noir {
+  top: 880px;
+  left: 18.6523%;
+}
+.page-archive .elements-parallax .entrelaces {
+  top: 1500px;
+  right: 33.95%;
+  left: inherit;
+}
+
+html {
+  position: relative;
+}
+
 /* Fin Footer */
 /* -------------------------- */
 /* ==Responsive helpers       */
@@ -6418,7 +6478,7 @@ body .ff-icon-inner::after {
     background-position: center;
   }
 
-  .bgvid {
+  .bgvid, .elements-parallax {
     display: none;
   }
 }

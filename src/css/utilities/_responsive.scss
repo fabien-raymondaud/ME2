@@ -1171,9 +1171,11 @@
     }
   }
 
-  .bgvid{
+  .bgvid, .elements-parallax{
     display: none;
   }
+
+
 }
 
 @media screen and (max-width: 728px) {
