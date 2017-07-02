@@ -8,8 +8,27 @@ Template Name: Installation
 <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 <div class="conteneur-video-installation">
 	<video autoplay loop poster="http://memoireselectriques.fr/wp-content/uploads/2015/05/accueil-iphone.jpg" class="bgvid">
-		<!--<source src="<?php the_field('video_installation'); ;?>" type="video/mp4">-->
+		<source src="<?php the_field('video_installation'); ;?>" type="video/mp4">
 	</video>
+
+<?php
+	$poster_bloc = get_field('poster_video_installation');
+	$poster_src = wp_get_attachment_image_src($poster_bloc, 'image-poster-installation', false);
+?>	
+
+	<div class="video-installation">
+		<!--<video class="video-js vjs-default-skin" preload="auto" width="100%" poster="<?php echo $poster_src[0];?>" controls="control">
+			<source src="<?php echo get_field('video_installation')?>" type="video/mp4">
+			<p class="vjs-no-js">
+			  Pour visualiser la vidéo correctement merci de vous équiper d\'un. navigateur qui
+			  <a href="http://videojs.com/html5-video-support/" target="_blank">supporte les vidéos HTML5</a>
+			</p>
+		</video>-->
+<?php 
+		echo do_shortcode('[videojs_video url="'.get_field('video_installation').'" width="100%" poster="'.$poster_src[0].'"]');
+?>
+	</div>
+
 	<h1 class="color2 size50">Promesse de l'installation</h1>
 </div>
 

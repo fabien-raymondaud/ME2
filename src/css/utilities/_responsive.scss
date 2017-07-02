@@ -1012,11 +1012,51 @@
   }
 
   .conteneur-video-installation{
-    height: 400px;
+    height: auto;
 
     h1{
       font-size: 3rem;
       line-height:1.15em;
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      display: flex;
+      align-items:center;
+    }
+
+    .video-installation{
+      .vjs-big-play-button{
+        width: 157px;
+        height: 32px !important;
+        left: 50%;
+        margin-left: -78px;
+        top: 50%;
+        margin-top: 50px !important;
+        background: none;
+        border:none;
+        border-radius: 0;
+
+        &::before{
+          display: none;
+        }
+
+        &::after{
+          content:'Voir la vidéo';
+          border:1px solid $color2;
+          width: 157px;
+          height: 32px;
+          border-radius: 16px;
+          font-family: $typo1;
+          font-size: $size-16;
+          display: flex;
+          color:$color2;
+          align-items:center;
+          justify-content:center;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
     }
   }
 
@@ -1114,6 +1154,25 @@
     &.ferme{
       display: none;
     }
+  }
+
+  .video-installation{
+    display: block;
+    height: auto;
+
+    .video-js{
+      height: auto;
+      width: 100%;
+    }
+
+    .vjs-poster{
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  .bgvid{
+    display: none;
   }
 }
 

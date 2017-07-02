@@ -4796,6 +4796,12 @@ body.page-template-template_installation .all-playlists > ul > li.is-playing .li
   margin-top: 50px;
 }
 
+.video-installation {
+  display: none;
+  height: 400px;
+  width: 100%;
+}
+
 .conteneur-flux-rs > h3 {
   line-height: 1;
   margin: 40px 0;
@@ -6259,11 +6265,63 @@ body .ff-icon-inner::after {
   }
 
   .conteneur-video-installation {
-    height: 400px;
+    height: auto;
   }
   .conteneur-video-installation h1 {
     font-size: 3rem;
     line-height: 1.15em;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .conteneur-video-installation .video-installation .vjs-big-play-button {
+    width: 157px;
+    height: 32px !important;
+    left: 50%;
+    margin-left: -78px;
+    top: 50%;
+    margin-top: 50px !important;
+    background: none;
+    border: none;
+    -webkit-border-radius: 0;
+            border-radius: 0;
+  }
+  .conteneur-video-installation .video-installation .vjs-big-play-button::before {
+    display: none;
+  }
+  .conteneur-video-installation .video-installation .vjs-big-play-button::after {
+    content: 'Voir la vidéo';
+    border: 1px solid #fff;
+    width: 157px;
+    height: 32px;
+    -webkit-border-radius: 16px;
+            border-radius: 16px;
+    font-family: "sofia_pro_regular", "Montserrat", Helvetica, Arial, sans-serif !important;
+    font-size: 1.6rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    color: #fff;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
   }
 
   .contenu-installation {
@@ -6343,6 +6401,24 @@ body .ff-icon-inner::after {
     display: flex;
   }
   .plus-actu-installation.ferme {
+    display: none;
+  }
+
+  .video-installation {
+    display: block;
+    height: auto;
+  }
+  .video-installation .video-js {
+    height: auto;
+    width: 100%;
+  }
+  .video-installation .vjs-poster {
+    -webkit-background-size: cover;
+            background-size: cover;
+    background-position: center;
+  }
+
+  .bgvid {
     display: none;
   }
 }

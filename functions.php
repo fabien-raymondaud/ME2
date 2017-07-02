@@ -22,6 +22,7 @@ if ( ! function_exists( 'memoires_setup' ) ){
 
     	add_image_size('image-slider-a-la-une', 1792, 800, true);
     	add_image_size('image-poster-video', 1366, 750, true);
+    	add_image_size('image-poster-installation', 767, 400, true);
 	}
 }
 
