@@ -3742,6 +3742,70 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 .single-central .video-entete video {
   display: block;
 }
+.single-central .video-entete.heberge > .vjs-fluid {
+  padding-top: 44.6428%;
+}
+.single-central .video-entete.heberge .vjs-poster {
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: center;
+}
+.single-central .video-entete.heberge .vjs-play-progress {
+  background-color: #001FFF;
+}
+.single-central .video-entete.heberge .vjs-control-bar {
+  font-family: "sofia_pro_regular", "Montserrat", Helvetica, Arial, sans-serif !important;
+}
+.single-central .video-entete.heberge .vjs-big-play-button {
+  width: 195px;
+  height: 130px !important;
+  left: 50%;
+  margin-left: -97px;
+  top: 50%;
+  margin-top: -65px !important;
+  background: none;
+  border: none;
+  -webkit-border-radius: 0;
+          border-radius: 0;
+}
+.single-central .video-entete.heberge .vjs-big-play-button::before {
+  content: '';
+  background: url("../../img/css/svg/play-video.svg") no-repeat center;
+  -webkit-background-size: contain;
+          background-size: contain;
+  display: block;
+  width: 66px;
+  height: 66px;
+  top: 0;
+  left: 50%;
+  margin-left: -33px;
+}
+.single-central .video-entete.heberge .vjs-big-play-button::after {
+  content: 'Lancer la vidéo';
+  border: 1px solid #fff;
+  width: 193px;
+  height: 36px;
+  -webkit-border-radius: 18px;
+          border-radius: 18px;
+  font-family: "sofia_pro_regular", "Montserrat", Helvetica, Arial, sans-serif !important;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
 
 .bordures-single {
   width: 87.5%;
@@ -4819,6 +4883,106 @@ body .ff-icon-inner::after {
 }
 
 /* Fin installation*/
+/* Videojs */
+.video-js .vjs-menu-button-inline.vjs-slider-active, .video-js .vjs-menu-button-inline:focus, .video-js .vjs-menu-button-inline:hover, .video-js.vjs-no-flex .vjs-menu-button-inline {
+  width: 10em;
+}
+
+.video-js .vjs-controls-disabled .vjs-big-play-button {
+  display: none !important;
+}
+
+.video-js .vjs-control {
+  width: 3em;
+}
+
+.video-js .vjs-menu-button-inline:before {
+  width: 1.5em;
+}
+
+.vjs-menu-button-inline .vjs-menu {
+  left: 3em;
+}
+
+.vjs-paused.vjs-has-started.video-js .vjs-big-play-button, .video-js.vjs-ended .vjs-big-play-button, .video-js.vjs-paused .vjs-big-play-button {
+  display: block;
+}
+
+.video-js .vjs-load-progress div, .vjs-seeking .vjs-big-play-button, .vjs-waiting .vjs-big-play-button {
+  display: none !important;
+}
+
+.video-js .vjs-mouse-display:after, .video-js .vjs-play-progress:after {
+  padding: 0 0.4em 0.3em;
+}
+
+.video-js.vjs-ended .vjs-loading-spinner {
+  display: none;
+}
+
+.video-js.vjs-ended .vjs-big-play-button {
+  display: block !important;
+}
+
+.video-js.vjs-ended .vjs-big-play-button, .video-js.vjs-paused .vjs-big-play-button, .vjs-paused.vjs-has-started.video-js .vjs-big-play-button {
+  display: block;
+}
+
+.video-js .vjs-big-play-button {
+  top: 50%;
+  left: 50%;
+  margin-left: -1.5em;
+  margin-top: -1em;
+}
+
+.video-js .vjs-big-play-button {
+  background-color: rgba(255, 255, 255, 0.25);
+  font-size: 3.5em;
+  -webkit-border-radius: 35%;
+          border-radius: 35%;
+  height: 1.6em !important;
+  line-height: 1.6em !important;
+  margin-top: -0.8em !important;
+}
+
+.video-js:hover .vjs-big-play-button, .video-js .vjs-big-play-button:focus, .video-js .vjs-big-play-button:active {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+.video-js .vjs-loading-spinner {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.video-js .vjs-control-bar2 {
+  background-color: transparent;
+}
+
+.video-js .vjs-control-bar {
+  background-color: transparent !important;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.video-js .vjs-play-progress, .video-js .vjs-volume-level {
+  background-color: #cccccc;
+}
+
+.video-js .vjs-progress-holder {
+  font-size: 1.7em;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+}
+
+.video-js .vjs-progress-holder .vjs-play-progress, .video-js .vjs-progress-holder .vjs-load-progress, .video-js .vjs-progress-holder .vjs-load-progress div, .video-js .vjs-slider, .vjs-volume-level {
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+}
+
+.video-js .vjs-load-progress {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Fin Videojs */
 /* Footer */
 .footer-principal {
   background: #eee url("../../img/css/svg/big-wave-footer.svg") no-repeat left bottom;

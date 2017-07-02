@@ -184,7 +184,7 @@ function load_slider_articles() {
 			        'posts_per_page' => 5,
 			        'post_type' => 'post',
 			        'orderby' => 'menu_order',
-			        'order' => 'DESC',
+			        'order' => 'ASC',
 			        'offset' => 1
 			    );
 
@@ -213,7 +213,7 @@ function load_liste_articles() {
 			        'posts_per_page' => 1,
 			        'post_type' => 'post',
 			        'orderby' => 'menu_order',
-			        'order' => 'DESC'
+			        'order' => 'ASC'
 			    );
 
 			$liste_derniers_articles = get_posts($args);
@@ -231,7 +231,7 @@ function load_liste_articles() {
 			        'posts_per_page' => 4,
 			        'post_type' => 'post',
 			        'orderby' => 'menu_order',
-			        'order' => 'DESC',
+			        'order' => 'ASC',
 			        'offset' => 1
 			    );
 

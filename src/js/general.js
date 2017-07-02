@@ -320,7 +320,7 @@ $(document).ready(function() {
 		return false;
 	});
 
-	$('.poster').click(function(){
+	$('body').on('click', '.poster', function() {
 		$(this).addClass('ferme');
 		var element_video = $(this).siblings('.video-container').find('iframe');
 		$(element_video)[0].src += "&autoplay=1";
