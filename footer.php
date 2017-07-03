@@ -167,7 +167,7 @@ if($avecblocvideo){
 <?php
 }
 
-if(is_home() || is_front_page() || is_archive() || is_page_template('template_tous_les_articles.php')){
+if(is_home() || is_front_page() || is_archive() || is_page_template('template_tous_les_articles.php') || is_search()){
 ?>
 	<div class="elements-parallax">
 		<div class="blue-wave">

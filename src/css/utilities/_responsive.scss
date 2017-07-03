@@ -500,6 +500,43 @@
     }
   }
 
+  .header-cat{
+    .filtres{
+      margin-top: 20px;
+      margin-bottom: 30px;
+      padding: 0 30px;
+    }
+
+    .select{
+      width: 100%;
+
+      +.select{
+        .select-styled{
+          border-top: none;
+        }
+      }
+    }
+  }
+
+  .recherche.recherche-page-recherche{
+    width: 100%;
+    max-width: 100%;
+    padding: 0 30px;
+
+    > span.close-search{
+      right: 24%;
+    }
+
+    .searchform{
+      position: static;
+      width: 85%;
+
+      #searchsubmit{
+        right: 30px;
+      }
+    }
+  }
+
   .single-central{
     .media-entete{
       width: 100%;

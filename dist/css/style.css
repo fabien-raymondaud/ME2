@@ -5905,6 +5905,34 @@ html {
     margin-left: auto;
   }
 
+  .header-cat .filtres {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 0 30px;
+  }
+  .header-cat .select {
+    width: 100%;
+  }
+  .header-cat .select + .select .select-styled {
+    border-top: none;
+  }
+
+  .recherche.recherche-page-recherche {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 30px;
+  }
+  .recherche.recherche-page-recherche > span.close-search {
+    right: 24%;
+  }
+  .recherche.recherche-page-recherche .searchform {
+    position: static;
+    width: 85%;
+  }
+  .recherche.recherche-page-recherche .searchform #searchsubmit {
+    right: 30px;
+  }
+
   .single-central .media-entete {
     width: 100%;
   }

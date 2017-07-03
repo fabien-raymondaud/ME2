@@ -49,7 +49,7 @@
 
 <?php
 
-if(is_archive() || is_page_template('template_tous_les_articles.php')){
+if(is_archive() || is_page_template('template_tous_les_articles.php') || is_search()){
 ?>
 	<body class="page-archive unscrolled">
 <?php
@@ -59,7 +59,7 @@ else{
 	<body <?php body_class(); ?>>
 <?php
 }
-	if(is_archive() || is_page_template('template_tous_les_articles.php')){
+	if(is_archive() || is_page_template('template_tous_les_articles.php') || is_search()){
 ?>
 		<div class="anim-archive flex-container-h">
 			<div class="masque-logo"></div>
