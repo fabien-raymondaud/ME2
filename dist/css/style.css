@@ -3725,7 +3725,8 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 }
 .single-central .image-entete img {
   min-height: 400px;
-  width: 100%;
+  width: auto;
+  max-width: inherit;
 }
 .single-central .legende-entete {
   position: relative;
