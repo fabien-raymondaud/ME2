@@ -1588,6 +1588,17 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 				height: 100% !important;
 			}
 
+			.mejs-mediaelement{
+				display: flex;
+				align-items:center;
+				justify-content:center;
+			}
+
+			.mejs-poster{
+				background-size: cover;
+				background-position: center;
+			}
+
 			> .vjs-fluid{
 				padding-top: 44.6428%;
 			}

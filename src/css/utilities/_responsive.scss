@@ -485,6 +485,14 @@
 }
 
 @media screen and (max-width: 767px) {
+  .nav-burger, .nav-footer{
+    .nav-2{
+      li:last-child{
+        display: none;
+      }
+    }
+  }
+
   .header-general{
     .player, .ouvrir-radio{
       display: none;
