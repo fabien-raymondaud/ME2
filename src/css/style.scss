@@ -2449,6 +2449,7 @@ body.page-template-template_installation{
 	z-index: -100;
 	background: url(../../img/poster.jpg) 0 0 no-repeat;
 	background-size: cover;
+	max-width: inherit;
 }
 
 .contenu-installation{

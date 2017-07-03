@@ -593,6 +593,22 @@ function load_petit_slider() {
 }
 /* /Load slider installation */
 
+/* Load vidéo installation */
+add_action( 'wp_ajax_load_video_background', 'load_video_background' );
+add_action( 'wp_ajax_nopriv_load_video_background', 'load_video_background' );
+
+function load_video_background() {
+	$poster_bloc = get_field('poster_video_installation', 2);
+	$poster_src = wp_get_attachment_image_src($poster_bloc, 'image-poster-installation', false);
+?>
+	<video autoplay loop poster="<?php echo $poster_src[0];?>" class="bgvid">
+		<source src="<?php the_field('video_installation', 2); ;?>" type="video/mp4">
+	</video>
+<?php
+	die();
+}
+/* /Load vidéo installation */
+
 /* Load playlist */
 add_action( 'wp_ajax_load_playlist', 'load_playlist' );
 add_action( 'wp_ajax_nopriv_load_playlist', 'load_playlist' );

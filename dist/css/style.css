@@ -4593,6 +4593,7 @@ body.page-template-template_installation .all-playlists > ul > li.is-playing .li
   background: url(../../img/poster.jpg) 0 0 no-repeat;
   -webkit-background-size: cover;
           background-size: cover;
+  max-width: inherit;
 }
 
 .contenu-installation {
