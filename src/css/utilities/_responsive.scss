@@ -373,6 +373,16 @@
       height: 100%;
     }
   }
+
+  .single-central{
+    .image-entete{
+      img{
+        min-height: 400px;
+        width: auto;
+        max-width: inherit;
+      }
+    }
+  }
 }
 
 
