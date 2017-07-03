@@ -342,6 +342,7 @@
   }
 
   .header-general{
+    padding-left: 30px;
     .player{
       margin-left: 40px;
       width: 245px;
@@ -350,8 +351,16 @@
         display: none;
       }
     }
-  }
 
+    .burger{
+      margin-right: 30px;
+    }
+
+    .ouvrir-radio{
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+  }
 
   body.page-archive{
     .nav-footer{
@@ -479,6 +488,15 @@
   .header-general{
     .player, .ouvrir-radio{
       display: none;
+    }
+
+    .burger{
+      margin-right: 30px;
+      margin-left: 30px;
+    }
+
+    .recherche{
+      margin-left: auto;
     }
   }
 

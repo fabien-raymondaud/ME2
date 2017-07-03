@@ -679,17 +679,29 @@ function load_next_article() {
 									  <a href="http://videojs.com/html5-video-support/" target="_blank">supporte les vidéos HTML5</a>
 									</p>
 								</video>';
-								
+
+					$classeVideo = "heberge";
 					if(get_field('source_youtube', $identifiant)==true){
 						$chaine_video = '<div class="poster" style="background-image:url(\''.$poster_src[0].'\');"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.48 66.48"><g id="Calque_1-2" data-name="Calque 1"><circle class="cls-1" cx="33.24" cy="33.24" r="31.11"/><path class="cls-2" d="M33.24,0A33.24,33.24,0,1,0,66.48,33.24,33.27,33.27,0,0,0,33.24,0Zm0,3.33A29.92,29.92,0,1,1,3.32,33.24,29.89,29.89,0,0,1,33.24,3.33Zm-8.31,15V48.2l26.59-15Z"/></g></svg><span class="size16 typo1 color2">Lancer la vidéo</span></div></div><div class="video-container"><iframe width="100%" src="http://www.youtube.com/embed/'.get_field('video_entete', $identifiant).'?rel=0" frameborder="0" allowfullscreen></iframe></div>';
+						$classeVideo = "";
 					}
 					
 ?>
-					<div class="video-entete">
+					<div class="video-entete <?php echo $classeVideo;?>">
 						<?php //echo do_shortcode('[embed width="123" height="456"]http://www.youtube.com/watch?v=dQw4w9WgXcQ[/embed]'); ?>
 						<?php //echo do_shortcode('[video src="'.get_field('video_entete').'" type="video/mp4"]'); ?>
 	        			<!--<video id="video_<?php echo $compteur_video;?>" class="video-js vjs-default-skin" controls preload="auto" width="100%" poster="<?php echo $poster_src[0];?>" data-setup="{'aspectRatio':'896:400', <?php echo $par_youtube;?>}">-->
-							<?php echo $chaine_video;?>
+	        			<?php 
+	        				echo $chaine_video;
+							/*if(get_field('source_youtube')==true){
+								echo $chaine_video;
+							}
+							else{
+								//echo $chaine_video;
+								echo do_shortcode('[evp_embed_video url="'.get_field('video_entete', $identifiant).'" width="100%" poster="'.$poster_src[0].'" ratio="0.446"]');
+							}*/
+						?>
+							<?php //echo $chaine_video;?>
 						<!--</video>-->
 
 	        		</div>

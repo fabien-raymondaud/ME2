@@ -40,14 +40,14 @@
 					$poster_bloc = get_field('poster_video_entete');
 					$poster_src = wp_get_attachment_image_src($poster_bloc, 'image-slider-a-la-une', false);
 
-					/*$chaine_video = '
+					$chaine_video = '
 								<video class="video-js vjs-default-skin" preload="auto" width="100%" poster="'.$poster_src[0].'" controls="control" data-setup="{\'aspectRatio\':\'896:400\'}">
 									<source src="'.get_field('video_entete').'" type="video/mp4">
 									<p class="vjs-no-js">
 									  Pour visualiser la vidéo correctement merci de vous équiper d\'un. navigateur qui
 									  <a href="http://videojs.com/html5-video-support/" target="_blank">supporte les vidéos HTML5</a>
 									</p>
-								</video>';*/
+								</video>';
 					
 					$classeVideo = "heberge";
 					if(get_field('source_youtube')==true){
@@ -60,13 +60,15 @@
 						<?php //echo do_shortcode('[embed width="123" height="456"]http://www.youtube.com/watch?v=dQw4w9WgXcQ[/embed]'); ?>
 						<?php //echo do_shortcode('[video src="'.get_field('video_entete').'" type="video/mp4"]'); ?>
 							<?php 
-							if(get_field('source_youtube')==true){
+							echo $chaine_video;
+							/*if(get_field('source_youtube')==true){
 								echo $chaine_video;
 							}
 							else{
 								//echo $chaine_video;
-								echo do_shortcode('[videojs_video url="'.get_field('video_entete').'" width="100%" poster="'.$poster_src[0].'"]');
-							}
+								//echo do_shortcode('[videojs_video url="'.get_field('video_entete').'" width="100%" poster="'.$poster_src[0].'"]');
+								echo do_shortcode('[evp_embed_video url="'.get_field('video_entete').'" width="100%" poster="'.$poster_src[0].'" ratio="0.446"]');
+							}*/
 							?>
 						<!--</video>-->
 

@@ -3742,6 +3742,12 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 .single-central .video-entete video {
   display: block;
 }
+.single-central .video-entete.heberge {
+  height: 400px;
+}
+.single-central .video-entete.heberge .mejs-container {
+  height: 100% !important;
+}
 .single-central .video-entete.heberge > .vjs-fluid {
   padding-top: 44.6428%;
 }
@@ -5779,12 +5785,22 @@ html {
     left: calc(66.666% + 30px);
   }
 
+  .header-general {
+    padding-left: 30px;
+  }
   .header-general .player {
     margin-left: 40px;
     width: 245px;
   }
   .header-general .player .infos-player .titre {
     display: none;
+  }
+  .header-general .burger {
+    margin-right: 30px;
+  }
+  .header-general .ouvrir-radio {
+    margin-left: 30px;
+    margin-right: 30px;
   }
 
   body.page-archive .nav-footer {
@@ -5880,6 +5896,13 @@ html {
 @media screen and (max-width: 767px) {
   .header-general .player, .header-general .ouvrir-radio {
     display: none;
+  }
+  .header-general .burger {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+  .header-general .recherche {
+    margin-left: auto;
   }
 
   .single-central .media-entete {

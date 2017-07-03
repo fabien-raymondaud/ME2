@@ -1582,6 +1582,12 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 		}
 
 		&.heberge{
+			height: 400px;
+
+			.mejs-container{
+				height: 100% !important;
+			}
+
 			> .vjs-fluid{
 				padding-top: 44.6428%;
 			}
