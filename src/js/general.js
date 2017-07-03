@@ -396,11 +396,12 @@ $(document).ready(function() {
 				);
 			}
 			
+			var compteurHashs = 0;
 	        $('.hashs').each(function () {
 	            var top = window.pageYOffset;
 	            var distance = top - $(this).offset().top;
 	            var hash = $(this).data('new-url');
-	            
+
 	            if (distance < 100 && distance > -100 && currentHash != hash) {
 	                history.replaceState('changement URL', $(this).data('new-title'), $(this).data('new-url'));
 	                currentHash = hash;
