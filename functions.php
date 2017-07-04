@@ -601,9 +601,39 @@ function load_video_background() {
 	$poster_bloc = get_field('poster_video_installation', 2);
 	$poster_src = wp_get_attachment_image_src($poster_bloc, 'image-poster-installation', false);
 ?>
-	<video autoplay loop poster="<?php echo $poster_src[0];?>" class="bgvid">
-		<source src="<?php the_field('video_installation', 2); ;?>" type="video/mp4">
-	</video>
+	<h1 class="color2 size50">Promesse de l'installation</h1>
+
+	<div class="conteneur-video-background">
+		<video autoplay loop poster="<?php echo $poster_src[0];?>" class="bgvid">
+			<source src="<?php the_field('video_installation', 2); ;?>" type="video/mp4">
+		</video>
+	</div>
+	
+<?php
+	die();
+}
+
+add_action( 'wp_ajax_load_video_installation', 'load_video_installation' );
+add_action( 'wp_ajax_nopriv_load_video_installation', 'load_video_installation' );
+
+function load_video_installation() {
+	$poster_bloc = get_field('poster_video_installation', 2);
+	$poster_src = wp_get_attachment_image_src($poster_bloc, 'image-poster-installation', false);
+
+	$chaine_video = '
+	<video class="video-js vjs-default-skin" preload="auto" width="100%" poster="'.$poster_src[0].'" controls="control" data-setup="{\'aspectRatio\':\'896:400\'}">
+		<source src="'.get_field('video_installation', 2).'" type="video/mp4">
+		<p class="vjs-no-js">
+		  Pour visualiser la vidéo correctement merci de vous équiper d\'un. navigateur qui
+		  <a href="http://videojs.com/html5-video-support/" target="_blank">supporte les vidéos HTML5</a>
+		</p>
+	</video>';
+?>
+	<div class="video-installation">
+		<?php echo $chaine_video;?>
+	</div>
+
+	<h1 class="color2 size50">Promesse de l'installation</h1>
 <?php
 	die();
 }

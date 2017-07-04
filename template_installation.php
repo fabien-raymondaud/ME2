@@ -7,22 +7,7 @@ Template Name: Installation
 
 <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 <div class="conteneur-video-installation">
-<?php
-	$poster_bloc = get_field('poster_video_installation');
-	$poster_src = wp_get_attachment_image_src($poster_bloc, 'image-poster-installation', false);
-?>	
 
-	<div class="video-installation">
-<?php 
-		echo do_shortcode('[videojs_video url="'.get_field('video_installation').'" width="100%" poster="'.$poster_src[0].'"]');
-?>
-	</div>
-
-	<h1 class="color2 size50">Promesse de l'installation</h1>
-
-	<div class="conteneur-video-background">
-
-	</div>
 </div>
 
 <div class="contenu-installation">

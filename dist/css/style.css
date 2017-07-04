@@ -6393,7 +6393,8 @@ html {
   }
 
   .conteneur-video-installation {
-    height: auto;
+    height: 400px;
+    overflow: hidden;
   }
   .conteneur-video-installation h1 {
     font-size: 3rem;
@@ -6401,6 +6402,20 @@ html {
     position: absolute;
     bottom: 0;
     top: 0;
+    display: none;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .conteneur-video-installation .mejs-container {
+    height: 100% !important;
+  }
+  .conteneur-video-installation .mejs-mediaelement {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6409,29 +6424,48 @@ html {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
-  .conteneur-video-installation .video-installation .vjs-big-play-button {
-    width: 157px;
-    height: 32px !important;
+  .conteneur-video-installation .mejs-poster {
+    -webkit-background-size: cover;
+            background-size: cover;
+    background-position: center;
+  }
+  .conteneur-video-installation .mejs-controls .mejs-time-rail .mejs-time-loaded, .conteneur-video-installation .mejs-controls .mejs-time-rail .mejs-time-total {
+    background: rgba(255, 255, 255, 0.75);
+  }
+  .conteneur-video-installation .mejs-controls .mejs-time-rail .mejs-time-current {
+    background: #FF6045;
+  }
+  .conteneur-video-installation .mejs-overlay-button {
+    width: 195px;
+    height: 130px;
     left: 50%;
-    margin-left: -78px;
+    margin-left: -97px;
     top: 50%;
-    margin-top: 50px !important;
+    margin-top: -65px;
     background: none;
-    border: none;
-    -webkit-border-radius: 0;
-            border-radius: 0;
   }
-  .conteneur-video-installation .video-installation .vjs-big-play-button::before {
-    display: none;
+  .conteneur-video-installation .mejs-overlay-button::before {
+    content: '';
+    background: url("../../img/css/svg/play-video.svg") no-repeat center;
+    -webkit-background-size: contain;
+            background-size: contain;
+    display: block;
+    width: 66px;
+    height: 66px;
+    margin: auto;
   }
-  .conteneur-video-installation .video-installation .vjs-big-play-button::after {
-    content: 'Voir la vidéo';
+  .conteneur-video-installation .mejs-overlay-button::after {
+    content: 'Lancer la vidéo';
     border: 1px solid #fff;
-    width: 157px;
-    height: 32px;
-    -webkit-border-radius: 16px;
-            border-radius: 16px;
+    width: 193px;
+    height: 36px;
+    -webkit-border-radius: 18px;
+            border-radius: 18px;
     font-family: "sofia_pro_regular", "Montserrat", Helvetica, Arial, sans-serif !important;
     font-size: 1.6rem;
     display: -webkit-box;
@@ -6534,16 +6568,7 @@ html {
 
   .video-installation {
     display: block;
-    height: auto;
-  }
-  .video-installation .video-js {
-    height: auto;
-    width: 100%;
-  }
-  .video-installation .vjs-poster {
-    -webkit-background-size: cover;
-            background-size: cover;
-    background-position: center;
+    height: 400px;
   }
 
   .bgvid, .elements-parallax {
@@ -6551,7 +6576,7 @@ html {
   }
 }
 @media screen and (max-width: 710px) {
-  .video-entete.heberge .mejs-mediaelement {
+  .video-entete.heberge .mejs-mediaelement, .conteneur-video-installation .mejs-mediaelement {
     width: 710px;
     height: 400px !important;
   }
