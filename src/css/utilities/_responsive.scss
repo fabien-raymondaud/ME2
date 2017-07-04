@@ -1251,8 +1251,13 @@
 
 }
 
-@media screen and (max-width: 728px) {
-  
+@media screen and (max-width: 710px) {
+  .video-entete.heberge{
+    .mejs-mediaelement{
+      width: 710px;
+      height: 400px !important;
+    }
+  } 
 }
 
 @media screen and (max-width: 620px) {

@@ -1599,33 +1599,26 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 				background-position: center;
 			}
 
-			> .vjs-fluid{
-				padding-top: 44.6428%;
+			.mejs-controls{
+				.mejs-time-rail{
+					.mejs-time-loaded, .mejs-time-total{
+						background:rgba(255, 255, 255, 0.75);
+					}
+
+					.mejs-time-current{
+						background: $color3;
+					}
+				}
 			}
 
-			.vjs-poster{
-				background-size: cover;
-				background-position: center;
-			}
-
-			.vjs-play-progress{
-				background-color: $color3;
-			}
-
-			.vjs-control-bar{
-				font-family: $typo1;
-			}
-
-			.vjs-big-play-button{
+			.mejs-overlay-button{
 				width: 195px;
-				height: 130px !important;
+				height: 130px;
 				left: 50%;
 				margin-left: -97px;
 				top: 50%;
-				margin-top: -65px !important;
+				margin-top: -65px;
 				background: none;
-				border:none;
-				border-radius: 0;
 
 				&::before{
 					content:'';
@@ -1634,9 +1627,7 @@ html[xmlns] .flexslider .slides, html[xmlns] .flexslider-dossier .slides, html[x
 					display: block;
 					width: 66px;
 					height: 66px;
-					top:0;
-					left: 50%;
-					margin-left: -33px;
+					margin: auto;
 				}
 
 				&::after{

@@ -688,22 +688,7 @@ function load_next_article() {
 					
 ?>
 					<div class="video-entete <?php echo $classeVideo;?>">
-						<?php //echo do_shortcode('[embed width="123" height="456"]http://www.youtube.com/watch?v=dQw4w9WgXcQ[/embed]'); ?>
-						<?php //echo do_shortcode('[video src="'.get_field('video_entete').'" type="video/mp4"]'); ?>
-	        			<!--<video id="video_<?php echo $compteur_video;?>" class="video-js vjs-default-skin" controls preload="auto" width="100%" poster="<?php echo $poster_src[0];?>" data-setup="{'aspectRatio':'896:400', <?php echo $par_youtube;?>}">-->
-	        			<?php 
-	        				echo $chaine_video;
-							/*if(get_field('source_youtube')==true){
-								echo $chaine_video;
-							}
-							else{
-								//echo $chaine_video;
-								echo do_shortcode('[evp_embed_video url="'.get_field('video_entete', $identifiant).'" width="100%" poster="'.$poster_src[0].'" ratio="0.446"]');
-							}*/
-						?>
-							<?php //echo $chaine_video;?>
-						<!--</video>-->
-
+						<?php echo $chaine_video;?>
 	        		</div>
 <?php
 				break;

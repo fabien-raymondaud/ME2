@@ -57,21 +57,7 @@
 					
 ?>
 					<div class="video-entete <?php echo $classeVideo;?>">
-						<?php //echo do_shortcode('[embed width="123" height="456"]http://www.youtube.com/watch?v=dQw4w9WgXcQ[/embed]'); ?>
-						<?php //echo do_shortcode('[video src="'.get_field('video_entete').'" type="video/mp4"]'); ?>
-							<?php 
-							echo $chaine_video;
-							/*if(get_field('source_youtube')==true){
-								echo $chaine_video;
-							}
-							else{
-								//echo $chaine_video;
-								//echo do_shortcode('[videojs_video url="'.get_field('video_entete').'" width="100%" poster="'.$poster_src[0].'"]');
-								echo do_shortcode('[evp_embed_video url="'.get_field('video_entete').'" width="100%" poster="'.$poster_src[0].'" ratio="0.446"]');
-							}*/
-							?>
-						<!--</video>-->
-
+						<?php echo $chaine_video;?>
 	        		</div>
 <?php
 				break;

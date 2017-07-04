@@ -158,16 +158,8 @@ if(is_home() || is_front_page()){
 	</nav>
 </footer>
 <?php 
-if($avecblocvideo){
-?>
-<!--<link href="http://vjs.zencdn.net/6.1.0/video-js.css" rel="stylesheet">
-<script src="http://vjs.zencdn.net/6.1.0/video.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/2.3.2/Youtube.min.js"></script>-->
-<!--<script src="<?php bloginfo( 'template_url' ); ?>/dist/js/Youtube.min.js"></script>-->
-<?php
-}
 
-if(is_home() || is_front_page() || is_archive() || is_page_template('template_tous_les_articles.php') || is_search()){
+/*if(is_home() || is_front_page() || is_archive() || is_page_template('template_tous_les_articles.php') || is_search()){
 ?>
 	<div class="elements-parallax">
 		<div class="blue-wave">
@@ -187,7 +179,7 @@ if(is_home() || is_front_page() || is_archive() || is_page_template('template_to
 		</div>
 	</div>
 <?php
-}
+}*/
 ?>
 <?php wp_footer(); ?>
 </body>
